@@ -4,7 +4,7 @@
 내용: Member 회원 정보 내 필요 속성
 산출물 기준: CD-101
 */
-package Model;
+package model;
 
 public class Member {
     private String id;

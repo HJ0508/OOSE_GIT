@@ -1,3 +1,4 @@
+package db;
 /*
 작성 일자: 2020.05.31
 작성자: 윤진
@@ -5,10 +6,12 @@
 산출물 기준: DCD-1711
 */
 
+import db.DBConnector;
+import model.ProductPackage;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
-import OOSE.model.ProductPackage;
 
 public class ProductPackageDBManager {
     private DBConnector conn;
@@ -27,7 +30,7 @@ public class ProductPackageDBManager {
 //
 //    }
 //
-    /*Model.ProductPackage.Model.*/ProductPackage[] browseProductInfo() throws SQLException {
+        ProductPackage[] browseProductInfo() throws SQLException {
         ProductPackage productPackage;
         Vector<ProductPackage> vector = new Vector<>();
         conn = new DBConnector();

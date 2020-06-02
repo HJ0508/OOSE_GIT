@@ -4,7 +4,7 @@
 내용: Reservation 예약 시 필요 속성
 산출물 기준: CD-102
 */
-package Model;
+package model;
 
 public class Reservation {
 

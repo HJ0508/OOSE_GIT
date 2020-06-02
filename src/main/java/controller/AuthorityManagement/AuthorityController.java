@@ -1,4 +1,4 @@
-package OOSE.controller.AuthorityManagement;
+package controller.AuthorityManagement;
 
 
 import javax.servlet.ServletConfig;

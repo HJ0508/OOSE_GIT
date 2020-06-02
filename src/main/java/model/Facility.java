@@ -4,7 +4,7 @@
 내용: Facility 시설 정보 내 필요 속성
 산출물 기준: CD-2401
 */
-package Model;
+package model;
 
 public class Facility {
     private int id;

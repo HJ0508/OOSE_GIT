@@ -4,7 +4,7 @@
 내용: product package payment 결제 시 필요 속성
 산출물 기준: CD-1702
 */
-package Model;
+package model;
 
 public class ProductPackagePayment {
     private int id;

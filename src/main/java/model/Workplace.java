@@ -4,7 +4,7 @@
 내용: workplace 사업장 및 사업장 필요 속성
 산출물 기준: CD-2501
 */
-package Model;
+package model;
 
 public class Workplace {
     private int id;

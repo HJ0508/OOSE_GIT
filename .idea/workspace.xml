@@ -7,7 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AuthorityManagement/AuthorityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/DBConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/ProductPackageDBManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Accommodation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/AccomodationPayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Authority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Facility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ProductPackage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ProductPackagePayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Workplace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/OOSE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/DBConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackageDBManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Accommodation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/AccomodationPayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Authority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Facility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/ProductPackage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/ProductPackagePayment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Reservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Workplace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main1.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,9 +165,7 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="main:war exploded" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -311,5 +337,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590575829813" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/db/DBConnector.java</url>
+          <line>1</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
