@@ -9,9 +9,11 @@
 <html>
 <head>
     <title>회원 관리 메뉴</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css" />
+    <link href="../../css/memberControl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%@include file="main.jsp"%>
+    <%@include file="../default/main.jsp"%>
     <%@include file="memberSideMenu.jsp"%>
 </body>
 </html>

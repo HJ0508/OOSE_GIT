@@ -26,7 +26,7 @@
                 <div id="top-menu">
                     <ul class="navbar-nav">
                         <li>
-                            <a href="#">회원</a>
+                            <a href="${pageContext.request.contextPath}/view/MemberView/memberMenuView.jsp">회원</a>
                         </li>
                         <li>
                             <a href="#">권한</a>
@@ -35,7 +35,7 @@
                             <a href="#">사업장</a>
                         </li>
                         <li>
-                            <a href="#">시설</a>
+                            <a href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설</a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath}/view/reservation/reservationBrowse.jsp">예약</a>
