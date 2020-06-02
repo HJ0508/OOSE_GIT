@@ -17,6 +17,7 @@ public class Workplace {
     private String openingTime;
     private String closingTime;
     private int square;
+    private String otherInfo;
 
     public int getId() {
         return id;
@@ -96,5 +97,19 @@ public class Workplace {
 
     public void setSquare(int square) {
         this.square = square;
+    }
+
+    public Workplace(int id, String name, String manager, String address, String phoneNumber, String status, int fee, String openingTime, String closingTime, int square, String otherInfo) {
+        this.id = id;
+        this.name = name;
+        this.manager = manager;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.status = status;
+        this.fee = fee;
+        this.openingTime = openingTime;
+        this.closingTime = closingTime;
+        this.square = square;
+        this.otherInfo = otherInfo;
     }
 }

@@ -2,7 +2,6 @@ package OOSE.controller.reservation;
 
 import OOSE.db.ReservationDBManager;
 import OOSE.model.Reservation;
-import javafx.scene.text.FontPosture;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +14,6 @@ import java.io.PrintWriter;
 
 public class BrowseReservation extends HttpServlet {
     ReservationDBManager reservationDBManager;
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, java.io.IOException {
         String keyword = req.getParameter("keyword");
@@ -32,7 +30,7 @@ public class BrowseReservation extends HttpServlet {
         try {
             Reservation[] list = reservationDBManager.browseReservation(keyword, tmp);
             req.setAttribute("list", list);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/reservation/reservationBrowse.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/reservationBrowse.jsp");
             dispatcher.forward(req,resp);
         } catch (Exception e){
             e.printStackTrace();

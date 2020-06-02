@@ -31,14 +31,16 @@ public class ReservationDBManager extends DBConnector {
         if(option!=0) pstmt.setString(1, keyword);
 
         res = pstmt.executeQuery();
-        Vector<Reservation> data = new Vector<>();
+        Reservation[] data = new Reservation[res.getMetaData().getColumnCount()];
+
+        int i=0;
         while(!res.next()){
-            data.add(new Reservation(res.getInt(1), res.getInt(2), res.getInt(3),
+            data[i++]=new Reservation(res.getInt(1), res.getInt(2), res.getInt(3),
                     res.getString(4), res.getString(11), res.getString(5), res.getString(6),
                     res.getString(7), res.getInt(8), res.getString(9),
-                    res.getInt(10)));
+                    res.getInt(10));
         }
-        return data.toArray();
+        return data;
 
     }
     public boolean registerReservation(Reservation reservation) throws SQLException{

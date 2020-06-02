@@ -55,33 +55,21 @@
                     <c:forEach items="${list}" var = "reservation">
                         <tr>
                             <td>${reservation.reservation}</td>
-                            <td>${reservation.userId}</td>
-                            <td>${reservation.accommodationId}</td>
-                            <td>${reservation.roomNumber}</td>
-                            <td>${reservation.checkInDate}</td>
-                            <td>${reservation.phoneNum}</td>
-                            <td>${reservation.carNumber}</td>
-                            <td>${reservaiton.reservationCode}</td>
-                            <td><input type="radio"></td>
-                            <td><input type="checkbox"></td>
-                        </tr>
-                    </c:forEach>
-                    <tr>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                        <td class="table-cell"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <td>${reservation.userId}</td>
+        <td>${reservation.accommodationId}</td>
+        <td>${reservation.roomNumber}</td>
+        <td>${reservation.checkInDate}</td>
+        <td>${reservation.phoneNum}</td>
+        <td>${reservation.carNumber}</td>
+        <td>${reservaiton.reservationCode}</td>
+        <td><input type="radio"></td>
+        <td><input type="checkbox"></td>
+        </tr>
+        </c:forEach>
+        </tbody>
+        </table>
+    </div>
+    </div>
     </div>
     <script type="text/javascript">
         function registerOpen(){
