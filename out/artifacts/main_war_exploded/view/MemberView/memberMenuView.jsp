@@ -13,7 +13,7 @@
     <link href="../../css/memberControl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%@include file="../default/main.jsp"%>
+    <%@include file="../default/header.jsp"%>
     <%@include file="memberSideMenu.jsp"%>
 </body>
 </html>
