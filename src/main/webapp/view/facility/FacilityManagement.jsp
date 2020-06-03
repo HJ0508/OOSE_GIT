@@ -11,12 +11,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../css/FacilityManagement.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
     <title>시설관리</title>
 </head>
 <body>
-<%@include file="../default/header.jsp"%>
+<%@include file="../default/header.jsp" %>
 
 <div class="sidebar">
     <div>
@@ -27,31 +26,38 @@
     </div>
 </div>
 <div class="content-container">
-    <div id = "content-name">
-        시설 조회
-    </div>
-    <div class="content">
-        <table border="1">
-            <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>선택</th>
-            </tr>
-            <%
-                String[] result = (String[]) request.getAttribute("result");
-                System.out.println(result);
-            %>
-            <tr>
-                <th></th>
-                <th></th>
-                <th><input type="checkbox"></th>
-            </tr>
-        </table>
-        <input type="button" value="등록">
-        <input type="button" value="수정">
-        <input type="button" value="삭제">
-    </div>
+<div id="content-name">
+    시설 조회
 </div>
+    <br>
+    <br>
+    <br>
 
-</body>
-</html>
+    <form action="/facilitycontrol" method="POST">
+    <input type="submit" value="조회">
+
+</form>
+<input type="button" value="등록">
+<input type="button" value="수정">
+<input type="button" value="삭제">
+
+<div class="content">
+<table border="1">
+<tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>선택</th>
+</tr>
+<c:forEach items="${result}" var="result">
+    <tr>
+    <th></th>
+    <th>${result[0]}</th>
+    <th><input type="checkbox"></th>
+    </tr>
+</c:forEach>
+    </table>
+    </div>
+    </div>
+
+    </body>
+    </html>

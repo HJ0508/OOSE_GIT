@@ -11,9 +11,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
 import java.io.IOException;
 
-@WebServlet("/FacilityManagement/*")
+@WebServlet("/facilitycontrol")
 public class FacilityController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
 
@@ -41,11 +42,15 @@ public class FacilityController extends HttpServlet {
 //    }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String[] result;
-        result = dbManager.browseFacilityInfo();
-        req.setAttribute("result", result);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/FacilityManagement.jsp");
-        dispatcher.forward(req, resp);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            String[] result;
+            result = dbManager.browseFacilityInfo();
+            req.setAttribute("result", result);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/facility/FacilityManagement.jsp");
+            dispatcher.forward(req, resp);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
