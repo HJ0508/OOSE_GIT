@@ -1,6 +1,5 @@
-package OOSE.Database;
-
-import OOSE.Model.Facility;
+package OOSE.db;
+import OOSE.model.Facility;
 
 public class FacilityInformationDBManager {
     DBConnector conn;

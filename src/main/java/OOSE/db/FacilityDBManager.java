@@ -1,6 +1,6 @@
-package OOSE.Database;
+package OOSE.db;
 
-import OOSE.Model.*;
+import OOSE.model.*;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

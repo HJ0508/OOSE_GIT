@@ -4,7 +4,7 @@
 내용: product package - 상품 패키지 내 필요 속성
 산출물 기준: CD-1701
 */
-package OOSE.Model;
+package OOSE.model;
 
 public class ProductPackage {
     private int id;

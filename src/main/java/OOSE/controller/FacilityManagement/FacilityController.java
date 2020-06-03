@@ -1,6 +1,6 @@
 package OOSE.controller.FacilityManagement;
 
-import OOSE.Database.*;
+import OOSE.db.*;
 import sun.misc.Request;
 
 import javax.jws.WebService;

@@ -4,7 +4,7 @@
 내용: Accommodation 숙박시설 정보 내 필요 속성
 산출물 기준: CD-101
 */
-package OOSE.Model;
+package OOSE.model;
 
 public class Accommodation {
 

@@ -1,6 +1,6 @@
 package OOSE.controller.FacilityManagement;
-import OOSE.Model.*;
-import OOSE.Database.FacilityDBManager;
+import OOSE.model.*;
+import OOSE.db.FacilityDBManager;
 
 import javax.servlet.http.HttpServlet;
 
