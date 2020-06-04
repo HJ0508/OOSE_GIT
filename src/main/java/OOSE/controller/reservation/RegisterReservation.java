@@ -24,8 +24,8 @@ public class RegisterReservation extends HttpServlet {
         request.setAttribute("result", result);
         if(result)
             htmlPrint(response, "저장 완료");
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/reservation/registerReservationPopup.jsp");
-//        dispatcher.forward(request,response);
+        else
+            htmlPrint(response, "저장 실패");
     }
 
     public RegisterReservation() {

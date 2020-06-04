@@ -52,15 +52,13 @@
             <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00"><br>
             <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00"><br>
             <br>
-            <input class="cancel" type="button" value="취소" onclick="close()">
-            <input class="save" type="submit" value="저장" onclick="close()">
+            <input class="cancel" type="button" value="취소">
+            <input class="save" type="submit" value="저장">
         </div>
     </form>
 </div>
 <script>
-    function close() {
-        close();
-    }
+
 
 </script>
 </body>

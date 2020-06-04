@@ -22,7 +22,6 @@ public class BrowseReservation extends HttpServlet {
         String keyword = req.getParameter("keyword");
         String category = req.getParameter("option-category");
         int tmp=0;
-        System.out.println("ㅎㅇ");
         switch (category){
             case "회원명":
                 tmp=1;

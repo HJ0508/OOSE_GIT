@@ -32,7 +32,7 @@
                             <a href="#">권한</a>
                         </li>
                         <li>
-                            <a href="#">사업장</a>
+                            <a href="${pageContext.request.contextPath}/view/workPlaceInfo/workplaceInfoBrowse.jsp">사업장</a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설</a>
