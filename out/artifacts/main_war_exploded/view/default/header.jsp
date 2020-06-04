@@ -41,7 +41,7 @@
                             <a href="${pageContext.request.contextPath}/view/reservation/reservationBrowse.jsp">예약</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/view/productPackage/browseProductPackage.jsp">판매상품</a>
+                            <a href="${pageContext.request.contextPath}/view/productPackage/browseProductPackage">판매상품</a>
                         </li>
                         <li>
                             <a href="#">결제</a>

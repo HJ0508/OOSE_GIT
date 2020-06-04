@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-@WebServlet(name = "ap", urlPatterns = {"/view/ap"})
+@WebServlet(name = "ap", urlPatterns = {"/view/productPackage/ap"})
 public class AggregateController extends HttpServlet {
     ProductPackagePaymentDBManager dbManager = new ProductPackagePaymentDBManager();
 
@@ -40,7 +40,7 @@ public class AggregateController extends HttpServlet {
                 req.setAttribute("productPackagePayments", productPackagePayments);
             }
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/performanceAggregate.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/performanceAggregate.jsp");
             dispatcher.forward(req, resp);
         } catch (SQLException e) {
             e.printStackTrace();

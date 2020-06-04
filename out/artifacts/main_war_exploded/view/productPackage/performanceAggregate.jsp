@@ -28,7 +28,7 @@
 
     <div class="side-menu">
         <ul>
-            <li><a href="${pageContext.request.contextPath}/view/productPackage/browseProductPackage.jsp">관리</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/productPackage/browseProductPackage">관리</a></li>
             <li><a href="#" class="selected">판매 실적</a></li>
             <li><a href="#">상품 구입</a></li>
         </ul>

@@ -1,6 +1,5 @@
 package OOSE.controller.AuthorityManagement;
 
-
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
