@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : OOSE.war">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="OOSE.war">
+      <element id="artifact" artifact-name="Gradle : OOSE.war (exploded)" />
+    </root>
+  </artifact>
+</component>
