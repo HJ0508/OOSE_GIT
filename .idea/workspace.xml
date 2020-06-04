@@ -5,8 +5,33 @@
       <artifact name="main:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
@@ -15,6 +40,16 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AccomodationPaymentDBManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentDelete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentModify.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentRegister.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/META-INF/main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +59,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< Updated upstream
+=======
+        <option value="HTML File" />
+        <option value="CSS File" />
+>>>>>>> Stashed changes
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,11 +85,15 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+<<<<<<< Updated upstream
+=======
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+>>>>>>> Stashed changes
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -200,6 +245,7 @@
       </method>
     </configuration>
   </component>
+<<<<<<< Updated upstream
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -235,6 +281,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -247,11 +295,31 @@
       <updated>1590574400228</updated>
       <workItem from="1590574403353" duration="1565000" />
       <workItem from="1590750338890" duration="2437000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1590990638989" duration="38616000" />
+      <workItem from="1591107884740" duration="1847000" />
+      <workItem from="1591188548363" duration="7842000" />
+      <workItem from="1591198020472" duration="13000" />
+      <workItem from="1591258187573" duration="1790000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -265,19 +333,66 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1590750344143" />
+<<<<<<< Updated upstream
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590751375151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590751375151" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590574502896">
+=======
+    <state x="737" y="396" key="#Tomcat_Server" timestamp="1591188804048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="737" y="396" key="#Tomcat_Server/0.0.1920.1040@0.0.1920.1040" timestamp="1591188804048" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591188814354">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591107863644" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591188814354" />
+    <state x="709" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590978993170">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590574502896" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1590575683365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+<<<<<<< Updated upstream
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590575683365" />
     <state width="1293" height="215" key="GridCell.Tab.0.bottom" timestamp="1590752186600">
+=======
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591103456807" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591075421471" />
+    <state x="628" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590997704276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="628" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590997704276" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591082593725">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591082593725" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1591188802705">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591107451950" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591188802705" />
+    <state width="1877" height="210" key="GridCell.Tab.0.bottom" timestamp="1591109959897">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591109959897" />
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591091377501" />
+    <state width="1877" height="210" key="GridCell.Tab.0.center" timestamp="1591109959897">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="210" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591109959897" />
+    <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591091377501" />
+    <state width="1877" height="210" key="GridCell.Tab.0.left" timestamp="1591109959897">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="210" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591109959897" />
+    <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591091377501" />
+    <state width="1877" height="210" key="GridCell.Tab.0.right" timestamp="1591109959897">
+>>>>>>> Stashed changes
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="215" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590752186600" />
@@ -328,6 +443,14 @@
     <state x="440" y="94" key="SettingsEditor" timestamp="1590575829813">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+<<<<<<< Updated upstream
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590575829813" />
+=======
+    <state x="653" y="251" width="613" height="538" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591091928776" />
+    <state x="409" y="109" key="new project wizard" timestamp="1591258906271">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="409" y="109" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1591258906271" />
+>>>>>>> Stashed changes
   </component>
 </project>
