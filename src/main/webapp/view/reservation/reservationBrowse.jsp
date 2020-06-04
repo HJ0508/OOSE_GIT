@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core%" prefix="c"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -52,24 +53,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${list}" var = "reservation">
-                        <tr>
-                            <td>${reservation.reservation}</td>
-        <td>${reservation.userId}</td>
-        <td>${reservation.accommodationId}</td>
-        <td>${reservation.roomNumber}</td>
-        <td>${reservation.checkInDate}</td>
-        <td>${reservation.phoneNum}</td>
-        <td>${reservation.carNumber}</td>
-        <td>${reservaiton.reservationCode}</td>
-        <td><input type="radio"></td>
-        <td><input type="checkbox"></td>
-        </tr>
-        </c:forEach>
-        </tbody>
-        </table>
-    </div>
-    </div>
+                        <c:forEach items="${list}" var = "reservation">
+                            <tr>
+                                <td>${reservation.reservation}</td>
+                                <td>${reservation.userId}</td>
+                                <td>${reservation.accommodationId}</td>
+                                <td>${reservation.roomNumber}</td>
+                                <td>${reservation.checkInDate}</td>
+                                <td>${reservation.phoneNum}</td>
+                                <td>${reservation.carNumber}</td>
+                                <td>${reservaiton.reservationCode}</td>
+                                <td><input type="radio"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script type="text/javascript">
         function registerOpen(){

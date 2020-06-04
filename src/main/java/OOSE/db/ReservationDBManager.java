@@ -16,7 +16,7 @@ public class ReservationDBManager extends DBConnector {
 
     private int authority;
 
-    public Reservation[] browseReservation(String keyword, int option) throws SQLException {
+    public Object[] browseReservation(String keyword, int option) throws SQLException {
         query = "SELECT oose.reservation.*, oose.member.phoneNumber FROM oose.reservation, oose.member ";
 
         String condition1 = "where userId=(select memberId from oose.member where memberName = ?) ";
@@ -31,16 +31,16 @@ public class ReservationDBManager extends DBConnector {
         if(option!=0) pstmt.setString(1, keyword);
 
         res = pstmt.executeQuery();
-        Reservation[] data = new Reservation[res.getMetaData().getColumnCount()];
 
+        Vector<Reservation> data = new Vector<>();
         int i=0;
-        while(!res.next()){
-            data[i++]=new Reservation(res.getInt(1), res.getInt(2), res.getInt(3),
-                    res.getString(4), res.getString(11), res.getString(5), res.getString(6),
+        while(res.next()){
+            data.add(new Reservation(res.getInt(1), res.getInt(2), res.getInt(4),
+                    res.getString(3), res.getString(11), res.getString(5), res.getString(6),
                     res.getString(7), res.getInt(8), res.getString(9),
-                    res.getInt(10));
+                    res.getInt(10)));
         }
-        return data;
+        return data.toArray();
 
     }
     public boolean registerReservation(Reservation reservation) throws SQLException{

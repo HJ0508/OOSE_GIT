@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class BrowseReservation extends HttpServlet {
     ReservationDBManager reservationDBManager;
@@ -19,6 +22,7 @@ public class BrowseReservation extends HttpServlet {
         String keyword = req.getParameter("keyword");
         String category = req.getParameter("option-category");
         int tmp=0;
+        System.out.println("ㅎㅇ");
         switch (category){
             case "회원명":
                 tmp=1;
@@ -28,7 +32,8 @@ public class BrowseReservation extends HttpServlet {
                 break;
         }
         try {
-            Reservation[] list = reservationDBManager.browseReservation(keyword, tmp);
+            Reservation[] data = reservationDBManager.browseReservation(keyword, tmp);
+            List<Reservation> list = new ArrayList<>(Arrays.asList(data));
             req.setAttribute("list", list);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/reservationBrowse.jsp");
             dispatcher.forward(req,resp);

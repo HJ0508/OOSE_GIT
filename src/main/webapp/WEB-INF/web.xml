@@ -30,4 +30,15 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
+    <resource-ref>
+        <description>jstl</description>
+        <res-ref-name></res-ref-name>
+    </resource-ref>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jsp/jstl/core%</taglib-uri>
+            <taglib-location>/WEB-INF/lib/c.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
 </web-app>
