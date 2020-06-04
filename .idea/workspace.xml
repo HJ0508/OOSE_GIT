@@ -30,6 +30,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
 <<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -51,6 +52,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" afterDir="false" />
 >>>>>>> Stashed changes
     </list>
+=======
+    <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,6 +250,7 @@
     </configuration>
   </component>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -281,6 +286,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   <component name="SvnConfiguration">
@@ -320,6 +327,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

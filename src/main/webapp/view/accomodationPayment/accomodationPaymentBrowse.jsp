@@ -14,13 +14,13 @@
     <title>소공도 관광지</title>
     <script language="JavaScript">
         function showPR(){
-            window.open("accomodationPaymentRegister","결제등록","width=400,height=800,left=100,top=50");
+            window.open("accomodationPaymentRegister.jsp","결제등록","width=400,height=800,left=100,top=50");
         }
         function showPM(){
-            window.open("accomodationPaymentModify","결제수정","width=400,height=800,left=100,top=50");
+            window.open("accomodationPaymentModify.jsp","결제수정","width=400,height=800,left=100,top=50");
         }
         function showPD(){
-            window.open("accomodationPaymentDelete","결제삭제","width=400,height=800,left=100,top=50");
+            window.open("accomodationPaymentDelete.jsp","결제삭제","width=400,height=800,left=100,top=50");
         }
     </script>
 </head>
