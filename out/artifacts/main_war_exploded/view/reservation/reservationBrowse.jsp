@@ -63,7 +63,7 @@
                                 <td>${reservation.phoneNum}</td>
                                 <td>${reservation.carNumber}</td>
                                 <td>${reservaiton.reservationCode}</td>
-                                <td><input type="radio"></td>
+                                <td><input type="button" value="수정"></td>
                                 <td><input type="checkbox"></td>
                             </tr>
                         </c:forEach>

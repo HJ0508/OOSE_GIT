@@ -32,8 +32,7 @@ public class BrowseReservation extends HttpServlet {
                 break;
         }
         try {
-            Reservation[] data = reservationDBManager.browseReservation(keyword, tmp);
-            List<Reservation> list = new ArrayList<>(Arrays.asList(data));
+            List<Reservation> list = new ArrayList(Arrays.asList(reservationDBManager.browseReservation(keyword, tmp)));
             req.setAttribute("list", list);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/reservationBrowse.jsp");
             dispatcher.forward(req,resp);
