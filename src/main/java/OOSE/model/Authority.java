@@ -4,7 +4,7 @@
 내용: Authority 권한 정보 내 필요 속성
 산출물 기준: CD-1201
 */
-package Model;
+package OOSE.model;
 
 public class Authority {
     private int id;

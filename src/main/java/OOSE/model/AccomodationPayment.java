@@ -4,7 +4,7 @@
 내용: AccomodationPayment 숙박 결제에 관련 정보 내 필요 속성
 산출물 기준: CD-2301
 */
-package Model;
+package OOSE.model;
 
 public class AccomodationPayment {
     private int paymentId;

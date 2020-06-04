@@ -4,7 +4,7 @@
 내용: Reservation 예약 시 필요 속성
 산출물 기준: CD-102
 */
-package Model;
+package OOSE.model;
 
 public class Reservation {
 
@@ -105,6 +105,20 @@ public class Reservation {
     }
 
     public void setHeadCount(int headCount) {
+        this.headCount = headCount;
+    }
+
+    public Reservation(int reservation, int accommodationId, int roomNumber, String userId, String phoneNum, String carNumber, String checkInDate, String checkOutDate, int totalPrice, String reservationCode, int headCount) {
+        this.reservation = reservation;
+        this.accommodationId = accommodationId;
+        this.roomNumber = roomNumber;
+        this.userId = userId;
+        this.phoneNum = phoneNum;
+        this.carNumber = carNumber;
+        this.checkInDate = checkInDate;
+        this.checkOutDate = checkOutDate;
+        this.totalPrice = totalPrice;
+        this.reservationCode = reservationCode;
         this.headCount = headCount;
     }
 }

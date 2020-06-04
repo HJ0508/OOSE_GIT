@@ -4,16 +4,15 @@
 내용: jdbc util
 산출물 기준: CD-001
 */
-package Database;
+package OOSE.db;
 
 import java.sql.*;
 
 public class DBConnector {
     String url = "jdbc:mysql://(host=haejun.iptime.org,port=3306,serverTimezone=UTC,allowMultiQueries=TRUE)/oose?useUnicode=true&characterEncoding=utf8";
     Connection conn = null;
-    Statement stmt = null; // 안씀
     ResultSet res = null;
-    PreparedStatement pstmt = null; // 이거씀
+    PreparedStatement pstmt = null;
     String user = "user";
     String password = "5555";
 
