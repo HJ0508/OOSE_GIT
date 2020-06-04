@@ -17,6 +17,15 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
     </welcome-file-list>
 
     <servlet>
+        <servlet-name>facilityManagement</servlet-name>
+        <jsp-file>/facilityManagement.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>facilityManagement</servlet-name>
+        <url-pattern>/facilityManagement.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>browseReservation</servlet-name>
         <servlet-class>OOSE.controller.reservation.BrowseReservation</servlet-class>
     </servlet>

@@ -13,6 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
     <title>시설관리</title>
+    <script language="javascript">
+        function register() {
+            window.open("FacilityRegister.jsp", "register", "width=500, height=400, left=200, top=100");
+        }
+        function modify() {
+            window.open("FacilityModify.jsp", "modify", "width=500, height=400, left=200, top=100");
+        }
+        function remove() {
+            window.open("FacilityRemove.jsp", "remove", "width=500, height=400, left=200, top=100");
+        }
+    </script>
 </head>
 <body>
 <%@include file="../default/header.jsp" %>
@@ -33,13 +44,13 @@
     <br>
     <br>
 
-    <form action="/facilitycontrol" method="POST">
+    <form action="FacilityManagement.jsp" method="POST">
     <input type="submit" value="조회">
 
 </form>
-<input type="button" value="등록">
-<input type="button" value="수정">
-<input type="button" value="삭제">
+<input type="button" value="등록" onclick="register();"/>
+<input type="button" value="수정" onclick="modify();"/>
+<input type="button" value="삭제" onclick="remove();"/>
 
 <div class="content">
 <table border="1">
