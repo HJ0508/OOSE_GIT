@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
+@WebServlet("/workplace/browseWorkplaceInfo")
 public class WorkplaceInfoBrowseController extends HttpServlet {
 
 //    @Override

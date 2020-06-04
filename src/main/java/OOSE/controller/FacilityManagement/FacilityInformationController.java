@@ -3,6 +3,7 @@ import OOSE.model.*;
 import OOSE.db.FacilityDBManager;
 
 import javax.servlet.http.HttpServlet;
+import java.util.ArrayList;
 
 public class FacilityInformationController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
@@ -22,7 +23,7 @@ public class FacilityInformationController extends HttpServlet {
         return false;
     }
 
-    String[] facilityInformationBrowse() {
+    ArrayList<String> facilityInformationBrowse() {
         return dbManager.browseFacilityInfo();
     }
 

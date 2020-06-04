@@ -18,9 +18,7 @@
 
 <h1><b>사업장 속성 조회</b></h1>
 
-<%
-    String workplaceName = (String)request.getAttribute("content");
-%>
+
 <p>${content}</p>
 
 

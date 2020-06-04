@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "browseProductPackage", urlPatterns = {"/browseProductPackage"})
+@WebServlet(name = "browseProductPackage", urlPatterns = {"/view/productPackage/browseProductPackage"})
 public class BrowseController extends HttpServlet {
 
     private final ProductPackageDBManager dbManager = new ProductPackageDBManager();
@@ -23,7 +23,7 @@ public class BrowseController extends HttpServlet {
             ProductPackage[] productPackages = dbManager.browseProductInfo();
             req.setAttribute("productPackages", productPackages);
             // ServletContext context = req.getServletContext();
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/browseProductPackage.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductPackage.jsp"); /*경로 변경*/
 
             dispatcher.forward(req, resp);
             System.out.println("Success");

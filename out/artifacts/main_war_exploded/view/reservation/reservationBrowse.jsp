@@ -88,12 +88,16 @@
                 alert("취소되었습니다.");
         }
 
-        // function sendSelectedReservationInfo(){
-        //     const selectedItem = document.getElementsByClassName("selected");
-        //     for(var i=0;i<selectedItem.length;i++){
-        //         if(selectedItem[i])
-        //     }
-        // }
+        function sendSelectedReservationInfo(){
+            const selectedItem = document.getElementsByClassName("selected");
+            for(var i=0;i<selectedItem.length;i++){
+                if(selectedItem[i].checked){
+
+                } else {
+
+                }
+            }
+        }
     </script>
 
 </body>

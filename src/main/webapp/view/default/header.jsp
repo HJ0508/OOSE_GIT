@@ -44,7 +44,7 @@
                             <a href="${pageContext.request.contextPath}/view/productPackage/browseProductPackage.jsp">판매상품</a>
                         </li>
                         <li>
-                            <a href="#">결제</a>
+                            <a href="${pageContext.request.contextPath}/view/accomodationPayment/accomodationPaymentBrowse.jsp">결제</a>
                         </li>
                     </ul>
                 </div>

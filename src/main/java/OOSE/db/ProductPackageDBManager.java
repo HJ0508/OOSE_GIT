@@ -18,10 +18,19 @@ public class ProductPackageDBManager {
     private DBConnector conn;
     private int autority;
 
-    //    boolean registerProductInfo(Model.ProductPackage.Model.ProductPackage info){
-//
-//    }
-//
+    /*public boolean*/ public void registerProductInfo(ProductPackage info){
+        info.getId();
+        info.getName();
+        info.getPrice();
+        info.getState();
+        info.getStock();
+        info.getNote();
+
+        conn = new DBConnector();
+        String sql = "";
+        //아이디에 auto increment 적용?
+    }
+    //
 //    boolean modifyProductInfo(Model.ProductPackage.Model.ProductPackage info){
 //
 //    }

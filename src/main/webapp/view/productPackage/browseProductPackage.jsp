@@ -1,9 +1,8 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: samsung
-  Date: 2020-06-01
-  Time: 오후 4:43
-  To change this template use File | Settings | File Templates.
+ 작성 일자: 2020.06.03
+작성자: 윤진
+내용: 상품 패키지 조회
+산출물 기준: UI-047
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="OOSE.model.*" %>
