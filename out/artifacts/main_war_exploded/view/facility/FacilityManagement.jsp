@@ -48,7 +48,7 @@
     <br>
     <br>
     <br>
-    <form action="browseFacilityManagement" method="POST">
+    <form action="/browseFacilityManagement" method="POST">
         <input type="submit" value="조회">
     </form>
     <input type="button" value="등록" onclick="register();"/>
@@ -62,12 +62,21 @@
                 <td>Name</td>
                 <td>선택</td>
             </tr>
-
+            <%
+                if(request.getAttribute("facility") != null) {
+                    ArrayList<Facility> arr = (ArrayList<Facility>)request.getAttribute("facility");
+                    for(Facility facility : arr) {
+                        pageContext.setAttribute("facility", facility);
+            %>
             <tr>
-                <td></td>
-                <td></td>
+                <td>${facility.id}</td>
+                <td>${facility.name}</td>
                 <td><input type="checkbox"></td>
             </tr>
+            <%
+                    }
+                }
+            %>
         </table>
     </div>
 </div>

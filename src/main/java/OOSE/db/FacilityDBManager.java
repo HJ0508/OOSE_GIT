@@ -1,7 +1,11 @@
 package OOSE.db;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import OOSE.Model.*;
+import com.mysql.cj.protocol.Resultset;
+
+import javax.xml.transform.Result;
 
 public class FacilityDBManager {
     DBConnector conn;
@@ -10,13 +14,14 @@ public class FacilityDBManager {
         conn = new DBConnector();
     }
     public boolean registerFacilityInfo(String s) {
+        System.out.println("1");
         if(checkDuplicateInfo(s)) return false;
-
-        //query에서 1부분 어떤 기준으로 workplaceid를 가져와야할까
         try {
-            String query = "INSERT INTO oose.facility(SELECT LAST_INSERT_Id(), ?, 1 , NULL, NULL, NULL, NULL, NULL, NULL)";
+            System.out.println("2");
+            String query = "INSERT INTO oose.facility (`facilityName`) VALUES (?)";
             conn.pstmt = conn.conn.prepareStatement(query);
-            conn.pstmt.setString(2, s);
+            conn.pstmt.setString(1, s);
+            System.out.println("3");
             return conn.pstmt.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -85,11 +90,16 @@ public class FacilityDBManager {
 
     //변경
     public boolean checkDuplicateInfo(String s) {
-        String query = "SELECT * FROM oose.facility GROUP BY facilityName HAVING COUNT(facilityName) > 1";
+        String query = "SELECT facilityName FROM oose.facility WHERE facilityName = ?";
         try {
             conn.pstmt = conn.conn.prepareStatement(query);
+            conn.pstmt.setString(1, s);
+            boolean rs = conn.pstmt.execute();
             //여기서 return말고 autority의 기준을 알아야 truefalse를 구별할텐데
-            return conn.pstmt.execute();
+            if(rs) {
+                return true;
+            }
+            return false;
         }catch(SQLException throwables) {
             throwables.printStackTrace();
         }

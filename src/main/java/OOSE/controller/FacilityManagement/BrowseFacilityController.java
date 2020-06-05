@@ -23,11 +23,10 @@ public class BrowseFacilityController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            System.out.println("1234");
             ArrayList<Facility> facility;
             facility = dbManager.browseFacilityInfo();
             req.setAttribute("facility", facility);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("facility/FacilityManagement.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
             dispatcher.forward(req, resp);
         } catch(Exception e) {
             e.printStackTrace();

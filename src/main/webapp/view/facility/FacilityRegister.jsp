@@ -16,9 +16,11 @@
 <body>
     <div class = "content-name">시설 등록</div>
     <div class = "content-container">
+        <form action="/registerFacilityManagement" method="POST">
         시설명
-        <input type="text"><br>
-        <input type="button" value="등록">
+        <input type="text" name = "name"><br>
+            <input type="submit" value="등록">
+        </form>
         <input type="button" value="취소">
     </div>
 </body>
