@@ -1,3 +1,5 @@
+<%@ page import="OOSE.Model.*" %>
+<%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
   User: tngh1
@@ -6,7 +8,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -14,14 +15,18 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
     <title>시설관리</title>
     <script language="javascript">
+        const url = "${pageContext.request.contextPath}/view/facility/";
+
         function register() {
-            window.open("FacilityRegister.jsp", "register", "width=500, height=400, left=200, top=100");
+            window.open(url + "FacilityRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
+
         function modify() {
-            window.open("FacilityModify.jsp", "modify", "width=500, height=400, left=200, top=100");
+            window.open(url + "FacilityModify.jsp", "modify", "width=500, height=400, left=200, top=100");
         }
+
         function remove() {
-            window.open("FacilityRemove.jsp", "remove", "width=500, height=400, left=200, top=100");
+            window.open(url + "FacilityRemove.jsp", "remove", "width=500, height=400, left=200, top=100");
         }
     </script>
 </head>
@@ -37,38 +42,35 @@
     </div>
 </div>
 <div class="content-container">
-<div id="content-name">
-    시설 조회
+    <div id="content-name">
+        시설 조회
+    </div>
+    <br>
+    <br>
+    <br>
+    <form action="browseFacilityManagement" method="POST">
+        <input type="submit" value="조회">
+    </form>
+    <input type="button" value="등록" onclick="register();"/>
+    <input type="button" value="수정" onclick="modify();"/>
+    <input type="button" value="삭제" onclick="remove();"/>
+
+    <div class="content">
+        <table border="1">
+            <tr>
+                <td>No.</td>
+                <td>Name</td>
+                <td>선택</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="checkbox"></td>
+            </tr>
+        </table>
+    </div>
 </div>
-    <br>
-    <br>
-    <br>
 
-    <form action="FacilityManagement.jsp" method="POST">
-    <input type="submit" value="조회">
-
-</form>
-<input type="button" value="등록" onclick="register();"/>
-<input type="button" value="수정" onclick="modify();"/>
-<input type="button" value="삭제" onclick="remove();"/>
-
-<div class="content">
-<table border="1">
-<tr>
-    <th>No.</th>
-    <th>Name</th>
-    <th>선택</th>
-</tr>
-<c:forEach items="${result}" var="result">
-    <tr>
-    <th></th>
-    <th>${result[0]}</th>
-    <th><input type="checkbox"></th>
-    </tr>
-</c:forEach>
-    </table>
-    </div>
-    </div>
-
-    </body>
-    </html>
+</body>
+</html>

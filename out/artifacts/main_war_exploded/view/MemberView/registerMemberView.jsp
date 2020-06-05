@@ -5,16 +5,15 @@
 산출물 기준: DCD-1404
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
 <html>
 <head>
     <title>회원 등록</title>
-    <link href="/css/memberControl.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/css/memberControl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <%@include file="memberMenuView.jsp"%>
     <div>
-        <form method="post" action="/reqRegisterMember" >
+        <form method="post" action="/reqRegisterMember">
             <div class="contentDiv">
                 <table>
                     <tr>

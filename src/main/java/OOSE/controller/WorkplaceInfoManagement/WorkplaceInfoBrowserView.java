@@ -31,34 +31,34 @@ public class WorkplaceInfoBrowserView extends HttpServlet {
         System.out.println(reqWorkplaceId);
 
         int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
-        try {
-            workplaces = dbManager.selectWorkplaceInfo(intWorkplaceId);
-            System.out.println(workplaces[0].getId());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getId());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getName());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getManager());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getAddress());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getPhoneNumber());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getStatus());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getFee());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getOpeningTime());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getClosingTime());
-            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getSquare());
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
-        String[] test = req.getParameterValues("workplaceInfo");
-        int length = test.length;
-        for(int i = 0; i<length; i++) {
-            System.out.println(test[i]);
-
-            out.printf("workplace id: %s<br>", test[i]);
-
-        }
-
+//        try {
+        //workplaces = dbManager.selectWorkplaceInfo(intWorkplaceId);
+        //System.out.println(workplaces[0].getId());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getId());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getName());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getManager());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getAddress());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getPhoneNumber());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getStatus());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getFee());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getOpeningTime());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getClosingTime());
+//            out.printf("디비조회결과 사업장 속성: %s<br>",workplaces[0].getSquare());
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//
+//        String[] test = req.getParameterValues("workplaceInfo");
+//        int length = test.length;
+//        for(int i = 0; i<length; i++) {
+//            System.out.println(test[i]);
+//
+//            out.printf("workplace id: %s<br>", test[i]);
+//
+//        }
+//
     }
-    void showWorkplaceRegisterView(){
+    void showWorkplaceRegisterView() {
 
     }
 }

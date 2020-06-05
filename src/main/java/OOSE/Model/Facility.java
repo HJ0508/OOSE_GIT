@@ -4,7 +4,7 @@
 내용: Facility 시설 정보 내 필요 속성
 산출물 기준: CD-2401
 */
-package OOSE.model;
+package OOSE.Model;
 
 public class Facility {
     private int id;
@@ -16,6 +16,12 @@ public class Facility {
     private String manager;
     private String phoneNumber;
     private int capacity;
+
+    public Facility() {
+        id = -1;
+        name = null;
+        facilityState = null;
+    }
 
     public int getId() {
         return id;

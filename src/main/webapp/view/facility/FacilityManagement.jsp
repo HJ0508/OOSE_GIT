@@ -1,4 +1,6 @@
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="OOSE.Model.*" %>
+<%@ page import="java.util.ArrayList" %>
+<%--
   Created by IntelliJ IDEA.
   User: tngh1
   Date: 2020-05-31
@@ -14,12 +16,15 @@
     <title>시설관리</title>
     <script language="javascript">
         const url = "${pageContext.request.contextPath}/view/facility/";
+
         function register() {
             window.open(url + "FacilityRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
+
         function modify() {
             window.open(url + "FacilityModify.jsp", "modify", "width=500, height=400, left=200, top=100");
         }
+
         function remove() {
             window.open(url + "FacilityRemove.jsp", "remove", "width=500, height=400, left=200, top=100");
         }
@@ -37,37 +42,35 @@
     </div>
 </div>
 <div class="content-container">
-<div id="content-name">
-    시설 조회
+    <div id="content-name">
+        시설 조회
+    </div>
+    <br>
+    <br>
+    <br>
+    <form action="/browseFacilityManagement" method="POST">
+        <input type="submit" value="조회">
+    </form>
+    <input type="button" value="등록" onclick="register();"/>
+    <input type="button" value="수정" onclick="modify();"/>
+    <input type="button" value="삭제" onclick="remove();"/>
+
+    <div class="content">
+        <table border="1">
+            <tr>
+                <td>No.</td>
+                <td>Name</td>
+                <td>선택</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="checkbox"></td>
+            </tr>
+        </table>
+    </div>
 </div>
-<br>
-<br>
-<br>
 
-<form action="${pageContext.request.contextPath}/FacilityManagement.jsp" method="post">
-    <input type="submit" value="조회">
-</form>
-<input type="button" value="등록" onclick="register();"/>
-<input type="button" value="수정" onclick="modify();"/>
-<input type="button" value="삭제" onclick="remove();"/>
-
-<div class="content">
-<table border="1">
-<tr>
-    <td>No.</td>
-    <td>Name</td>
-    <td>선택</td>
-</tr>
-<c:forEach items="${facility}" var = "facility">
-    <tr>
-    <td>${facility.id}</td>
-    <td>${facility.facilityName}</td>
-    <td><input type="checkbox"></td>
-    </tr>
-
-    </table>
-    </div>
-    </div>
-
-    </body>
+</body>
 </html>

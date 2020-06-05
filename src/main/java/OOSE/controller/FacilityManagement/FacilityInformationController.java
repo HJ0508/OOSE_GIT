@@ -1,5 +1,5 @@
 package OOSE.controller.FacilityManagement;
-import OOSE.model.*;
+import OOSE.Model.*;
 import OOSE.db.FacilityDBManager;
 
 import javax.servlet.http.HttpServlet;
@@ -23,7 +23,7 @@ public class FacilityInformationController extends HttpServlet {
         return false;
     }
 
-    ArrayList<String> facilityInformationBrowse() {
+    ArrayList<Facility> facilityInformationBrowse() {
         return dbManager.browseFacilityInfo();
     }
 
