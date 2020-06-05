@@ -112,4 +112,7 @@ public class Workplace {
         this.square = square;
         this.otherInfo = otherInfo;
     }
+
+    public Workplace() {
+    }
 }

@@ -20,7 +20,7 @@ dependencies {
 
     // servlet 3.1
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+//    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
     testCompile 'junit:junit:4.12'
 

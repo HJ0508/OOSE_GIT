@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core%" prefix="c"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,16 +23,16 @@
         <div class="contents">
             <div class="title"><strong>예약 정보 관리</strong><br><br></div>
             <div class="contents-option">
-                <form action="/reservation/browseReservation" method="POST">
-                    <button onclick = registerOpen()>등록</button>
-                    <button onclick = confirmDelete()>삭제</button>
+                <button onclick = registerOpen()>등록</button>
+                <button onclick = confirmDelete()>삭제</button>
+                <form method="POST">
                     <select name="option-category", id="selectBox">
                         <option value="">선택</option>
                         <option value="회원명">회원명</option>
                         <option value="시설명">시설명</option>
                     </select>
-                    <input name = "keyword" type="text" name="search_keyword">
-                    <input type="submit" value="검색">
+                    <input name="keyword" type="text" name="search_keyword">
+                    <input type="submit" value="검색" formaction="/reservation/browseReservation">
                 </form>
             </div>
             <br><br>
@@ -52,24 +53,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${list}" var = "reservation">
-                        <tr>
-                            <td>${reservation.reservation}</td>
-        <td>${reservation.userId}</td>
-        <td>${reservation.accommodationId}</td>
-        <td>${reservation.roomNumber}</td>
-        <td>${reservation.checkInDate}</td>
-        <td>${reservation.phoneNum}</td>
-        <td>${reservation.carNumber}</td>
-        <td>${reservaiton.reservationCode}</td>
-        <td><input type="radio"></td>
-        <td><input type="checkbox"></td>
-        </tr>
-        </c:forEach>
-        </tbody>
-        </table>
-    </div>
-    </div>
+                        <c:forEach items="${list}" var = "reservation">
+                            <tr>
+                                <td>${reservation.reservation}</td>
+                                <td>${reservation.userId}</td>
+                                <td>${reservation.accommodationId}</td>
+                                <td>${reservation.roomNumber}</td>
+                                <td>${reservation.checkInDate}</td>
+                                <td>${reservation.phoneNum}</td>
+                                <td>${reservation.carNumber}</td>
+                                <td>${reservaiton.reservationCode}</td>
+                                <td><input type="button" value="수정"></td>
+                                <td><input name="selected" type="checkbox"></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script type="text/javascript">
         function registerOpen(){
@@ -85,6 +86,17 @@
                 alert("삭제되었습니다.");
             else
                 alert("취소되었습니다.");
+        }
+
+        function sendSelectedReservationInfo(){
+            const selectedItem = document.getElementsByClassName("selected");
+            for(var i=0;i<selectedItem.length;i++){
+                if(selectedItem[i].checked){
+
+                } else {
+
+                }
+            }
         }
     </script>
 

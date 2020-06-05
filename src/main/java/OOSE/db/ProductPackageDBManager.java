@@ -18,6 +18,7 @@ public class ProductPackageDBManager {
     private DBConnector conn;
     private int autority;
 
+<<<<<<< HEAD
       /*public boolean*/ public void registerProductInfo(ProductPackage info){
           info.getId();
           info.getName();
@@ -31,6 +32,21 @@ public class ProductPackageDBManager {
           //아이디에 auto increment 적용?
       }
 //
+=======
+    /*public boolean*/ public void registerProductInfo(ProductPackage info){
+        info.getId();
+        info.getName();
+        info.getPrice();
+        info.getState();
+        info.getStock();
+        info.getNote();
+
+        conn = new DBConnector();
+        String sql = "";
+        //아이디에 auto increment 적용?
+    }
+    //
+>>>>>>> master
 //    boolean modifyProductInfo(Model.ProductPackage.Model.ProductPackage info){
 //
 //    }

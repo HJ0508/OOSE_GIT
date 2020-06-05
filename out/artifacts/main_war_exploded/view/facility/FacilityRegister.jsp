@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,7 +17,7 @@
     <div class = "content-name">시설 등록</div>
     <div class = "content-container">
         시설명
-        <input type="text">
+        <input type="text"><br>
         <input type="button" value="등록">
         <input type="button" value="취소">
     </div>
