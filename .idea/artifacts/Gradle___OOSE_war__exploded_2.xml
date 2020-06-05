@@ -19,6 +19,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.20" />
           <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
         </element>
       </element>
     </root>

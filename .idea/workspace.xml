@@ -7,7 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accomodationPayment/paymentBrowse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundBrowse.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +44,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -244,7 +252,13 @@
       <workItem from="1590750338890" duration="2437000" />
       <workItem from="1590990638989" duration="38616000" />
       <workItem from="1591107884740" duration="1847000" />
+<<<<<<< Updated upstream
       <workItem from="1591364418699" duration="276000" />
+=======
+      <workItem from="1591185031091" duration="3464000" />
+      <workItem from="1591296368279" duration="3783000" />
+      <workItem from="1591365037646" duration="1501000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -252,7 +266,19 @@
     <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+<<<<<<< Updated upstream
     <option name="oldMeFiltersMigrated" value="true" />
+=======
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> Stashed changes
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
