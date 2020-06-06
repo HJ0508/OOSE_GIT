@@ -48,11 +48,16 @@
     <div class="content">
         <table border="1">
             <tr>
-                <th>No.</th>
-                <th>시설명</th>
-                <th>시설 상태</th>
-                <th>시설 담당자</th>
-                <th>선택</th>
+                <td>No.</td>
+                <td>시설명</td>
+                <td>사업장ID</td>
+                <td>시설 상태</td>
+                <td>요금</td>
+                <td>여는시간</td>
+                <td>닫는시간</td>
+                <td>시설 담당자</td>
+                <td>크기</td>
+                <td>선택</td>
             </tr>
             <%
                 if(request.getAttribute("facility") != null) {
@@ -63,8 +68,13 @@
             <tr>
                 <td>${facility.id}</td>
                 <td>${facility.name}</td>
+                <td>${facility.workPlaceId}</td>
                 <td>${facility.facilityState}</td>
+                <td>${facility.fee}</td>
+                <td>${facility.openTime}</td>
+                <td>${facility.closeTime}</td>
                 <td>${facility.manager}</td>
+                <td>${facility.capacity}</td>
                 <td><input type="checkbox"></td>
             </tr>
             <%

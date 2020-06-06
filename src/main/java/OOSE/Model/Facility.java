@@ -9,12 +9,12 @@ package OOSE.Model;
 public class Facility {
     private int id;
     private String name;
+    private int workPlaceId;
     private String facilityState;
     private int fee;
     private String openTime;
     private String closeTime;
     private String manager;
-    private String phoneNumber;
     private int capacity;
 
     public Facility() {
@@ -79,19 +79,19 @@ public class Facility {
         this.manager = manager;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public int getCapacity() {
         return capacity;
     }
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public int getWorkPlaceId() {
+        return workPlaceId;
+    }
+
+    public void setWorkPlaceId(int workPlaceId) {
+        this.workPlaceId = workPlaceId;
     }
 }

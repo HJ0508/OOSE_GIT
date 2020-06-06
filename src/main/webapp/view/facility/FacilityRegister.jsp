@@ -12,6 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>시설 등록</title>
+    <script language="javascript">
+
+    </script>
 </head>
 <body>
     <div class = "content-name">시설 등록</div>

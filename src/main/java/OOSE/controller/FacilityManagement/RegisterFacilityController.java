@@ -28,6 +28,7 @@ public class RegisterFacilityController extends HttpServlet {
             String name = req.getParameter("name");
             boolean check = dbManager.registerFacilityInfo(name);
             if(check) {
+                req.setCharacterEncoding("UTF-8");
                 req.setAttribute("check", check);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
                 dispatcher.forward(req, resp);
