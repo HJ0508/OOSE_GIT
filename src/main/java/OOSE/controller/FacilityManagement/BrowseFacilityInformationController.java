@@ -1,8 +1,8 @@
 package OOSE.controller.FacilityManagement;
 
-
 import OOSE.Model.Facility;
 import OOSE.db.FacilityDBManager;
+import OOSE.db.FacilityInformationDBManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet("/modifyFacilityManagement")
-public class ModifyFacilityController extends HttpServlet {
-    FacilityDBManager dbManager = new FacilityDBManager();
+@WebServlet("/browseFacilityInformationManagement")
+public class BrowseFacilityInformationController extends HttpServlet {
+    FacilityInformationDBManager dbManager = new FacilityInformationDBManager();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,20 +25,14 @@ public class ModifyFacilityController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            String name = req.getParameter("name");
-            boolean check = dbManager.registerFacilityInfo(name);
-            if(check) {
-                req.setAttribute("check", check);
-                RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                dispatcher.forward(req, resp);
-            }else {//실패
-                req.setAttribute("check", check);
-                RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                dispatcher.forward(req, resp);
-            }
+            //고쳐
+            ArrayList<Facility> facility;
+            facility = dbManager.browseFacilityInforInfo();
+            req.setAttribute("facility", facility);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityInformationManagement.jsp");
+            dispatcher.forward(req, resp);
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
-
 }

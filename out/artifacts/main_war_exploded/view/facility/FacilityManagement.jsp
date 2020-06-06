@@ -31,13 +31,13 @@
     </script>
 </head>
 <body>
-<%@include file="../default/header.jsp" %>
+<%--<%@include file="../default/header.jsp" %>--%>
 
 <div class="sidebar">
     <div>
         <ul class="sidebar-content">
-            <li>시설관리</li>
-            <li>시설정보관리</li>
+            <li><a href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설관리</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/facility/FacilityInformationManagement.jsp">시설정보관리</a></li>
         </ul>
     </div>
 </div>
@@ -63,6 +63,7 @@
                 <td>선택</td>
             </tr>
             <%
+                int cnt = 1;
                 if(request.getAttribute("facility") != null) {
                     ArrayList<Facility> arr = (ArrayList<Facility>)request.getAttribute("facility");
                     for(Facility facility : arr) {
@@ -71,7 +72,7 @@
             <tr>
                 <td>${facility.id}</td>
                 <td>${facility.name}</td>
-                <td><input type="checkbox"></td>
+                <td><input type="checkbox" id = "${facility.id}" value="${facility.name}"></td>
             </tr>
             <%
                     }

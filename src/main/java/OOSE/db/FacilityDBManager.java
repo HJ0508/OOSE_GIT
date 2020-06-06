@@ -14,14 +14,11 @@ public class FacilityDBManager {
         conn = new DBConnector();
     }
     public boolean registerFacilityInfo(String s) {
-        System.out.println("1");
         if(checkDuplicateInfo(s)) return false;
         try {
-            System.out.println("2");
             String query = "INSERT INTO oose.facility (`facilityName`) VALUES (?)";
             conn.pstmt = conn.conn.prepareStatement(query);
             conn.pstmt.setString(1, s);
-            System.out.println("3");
             return conn.pstmt.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -94,9 +91,9 @@ public class FacilityDBManager {
         try {
             conn.pstmt = conn.conn.prepareStatement(query);
             conn.pstmt.setString(1, s);
-            boolean rs = conn.pstmt.execute();
+            conn.res = conn.pstmt.executeQuery();
             //여기서 return말고 autority의 기준을 알아야 truefalse를 구별할텐데
-            if(rs) {
+            if(conn.res.next()) {
                 return true;
             }
             return false;

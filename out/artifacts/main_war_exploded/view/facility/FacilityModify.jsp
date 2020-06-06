@@ -11,10 +11,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>시설 수정</title>
+    <script type="javascript">
+        function getParentText() {
+            opener.document.getElementById("${facility.id}").value
+        }
+    </script>
 </head>
 <body>
 <div class="content-name">시설 수정</div>
 <div class="content-container">
+    현재 시설명
     시설명
     <input type="text">
     <input type="button" value="등록">

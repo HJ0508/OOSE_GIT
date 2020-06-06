@@ -26,13 +26,10 @@ public class RegisterFacilityController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             String name = req.getParameter("name");
-            System.out.println("123");
             boolean check = dbManager.registerFacilityInfo(name);
-            System.out.println("234");
             if(check) {
                 req.setAttribute("check", check);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                System.out.println("345");
                 dispatcher.forward(req, resp);
             }else {//실패
                 req.setAttribute("check", check);
