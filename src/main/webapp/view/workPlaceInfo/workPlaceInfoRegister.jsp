@@ -60,7 +60,7 @@
         <input class="inputText" type=${modifyEditable[8]} name="closingTime"  value="${workplace.getClosingTime()}">내용
         <br>
         <label>사업장 면적 : </label>
-        <input class="inputText" type=${modifyEditable[9]} name="sqareMeasure"  value="${workplace.getSquare()}">내용
+        <input class="inputText" type=${modifyEditable[9]} name="squareMeasure"  value="${workplace.getSquare()}">내용
         <br>
         <label>사업장 기타정보 : </label>
         <input class="inputText" type=${modifyEditable[10]} name="otherInfo"  value="">내용

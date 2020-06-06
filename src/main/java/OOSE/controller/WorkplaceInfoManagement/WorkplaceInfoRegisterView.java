@@ -29,53 +29,50 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
             int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
-            String[] checkedList = req.getParameterValues("workplaceInfo");
-            String[] modifyEditable = new String[11];
-            for(int i = 0; i<11; i++){ modifyEditable[i] = "readonly"; }
 
-            for(int i = 0; i<checkedList.length; i++){
-                switch(checkedList[i]){
-                    case "workplaceId":
-                        modifyEditable[0] = "";
-                        break;
-                    case "workplaceName":
-                        modifyEditable[1] = "";
-                        break;
-                    case "manager":
-                        modifyEditable[2] = "";
-                        break;
-                    case "address":
-                        modifyEditable[3] = "";
-                        break;
-                    case "phoneNumber":
-                        modifyEditable[4] = "";
-                        break;
-                    case "workplaceStatus":
-                        modifyEditable[5] = "";
-                        break;
-                    case "fee":
-                        modifyEditable[6] = "";
-                        break;
-                    case "openingTime":
-                        modifyEditable[7] = "";
-                        break;
-                    case "closingTime":
-                        modifyEditable[8] = "";
-                        break;
-                    case "sqareMeasure":
-                        modifyEditable[9] = "";
-                        break;
-                    case "otherInfo":
-                        modifyEditable[10] = "";
-                        break;
-                }
+            String[] modifyEditable = new String[11];
+            for(int i = 0; i<11; i++){ modifyEditable[i] = "hidden"; }
+
+            if(req.getParameter("workplaceId").equals("") || req.getParameter("workplaceId")==null){
+                modifyEditable[0] = "text";
             }
+            else if(req.getParameter("workplaceName").equals("") || req.getParameter("workplaceName")==null){
+                modifyEditable[1] = "text";
+            }
+            else if(req.getParameter("manager").equals("") || req.getParameter("manager")==null){
+                modifyEditable[2] = "text";
+            }
+            else if(req.getParameter("address").equals("") || req.getParameter("address")==null){
+                modifyEditable[3] = "text";
+            }
+            else if(req.getParameter("phoneNumber").equals("") || req.getParameter("phoneNumber")==null){
+                modifyEditable[4] = "text";
+            }
+            else if(req.getParameter("workplaceStatus").equals("") || req.getParameter("workspaceStatus")==null){
+                modifyEditable[5] = "text";
+            }
+            else if(req.getParameter("fee").equals("") || req.getParameter("fee").equals("0") || req.getParameter("fee")==null){
+                modifyEditable[6] = "text";
+            }
+            else if(req.getParameter("openingTime").equals("") || req.getParameter("openingTime")==null){
+                modifyEditable[7] = "text";
+            }
+            else if(req.getParameter("closingTime").equals("") || req.getParameter("closingTime")==null){
+                modifyEditable[8] = "text";
+            }
+            else if(req.getParameter("squareMeasure").equals("")|| req.getParameter("squareMeasure").equals("0") || req.getParameter("squareMeasure")==null){
+                modifyEditable[9] = "text";
+            }
+            else if(req.getParameter("otherInfo").equals("") || req.getParameter("otherInfo")==null){
+                modifyEditable[10] = "text";
+            }
+
 
             req.setAttribute("modifyEditable", modifyEditable);
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoModify.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoRegister.jsp");
             dispatcher.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();

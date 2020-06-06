@@ -30,7 +30,7 @@ public class WorkplaceInfoModifyController extends HttpServlet {
             int fee = Integer.parseInt(req.getParameter("fee"));
             String openTime = req.getParameter("openingTime");
             String closeTime = req.getParameter("closingTime");
-            String sqare = req.getParameter("sqareMeasure");
+            String sqare = req.getParameter("squareMeasure");
             String otherInfo = req.getParameter("otherInfo");
 
             dbManager.updateWorkplaceInfo(workplaceId, workplaceName, manager, address, phoneNumber, status, fee, openTime, closeTime, sqare, otherInfo);

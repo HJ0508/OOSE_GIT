@@ -57,8 +57,8 @@
         <input class="inputText" type="text" name="closingTime" readonly value="${workplace.getClosingTime()}">내용
         <input type="checkbox" name="workplaceInfo" id="closingTimeCheck" value="closingTime"><br>
         <label>사업장 면적 : </label>
-        <input class="inputText" type="text" name="sqareMeasure" readonly value="${workplace.getSquare()}">내용
-        <input type="checkbox" name="workplaceInfo" id="sqareMeasureCheck" value="sqareMeasure"><br>
+        <input class="inputText" type="text" name="squareMeasure" readonly value="${workplace.getSquare()}">내용
+        <input type="checkbox" name="workplaceInfo" id="squareMeasureCheck" value="squareMeasure"><br>
         <label>사업장 기타정보 : </label>
         <input class="inputText" type="text" name="otherInfo" readonly value="">내용
         <input type="checkbox" name="workplaceInfo" id="otherInfoCheck" value="otherInfo"><br>
@@ -109,7 +109,7 @@
         window.open("","deletePop",popOption);
 
         formDatas.target = "deletePop";
-        formDatas.action = "/workplace/deleteWorkplaceInfo"
+        formDatas.action = "/workplace/viewDeleteWorkplaceInfo"
         formDatas.submit();
     }
     function browseOpen(){

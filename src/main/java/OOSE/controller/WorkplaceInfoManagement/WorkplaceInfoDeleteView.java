@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/workplace/viewModifyWorkplaceInfo")
-public class WorkplaceInfoModifyView extends HttpServlet {
+@WebServlet("/workplace/viewDeleteWorkplaceInfo")
+public class WorkplaceInfoDeleteView extends HttpServlet {
     WorkplaceDBManager dbManager = new WorkplaceDBManager();
 
 
@@ -37,36 +37,47 @@ public class WorkplaceInfoModifyView extends HttpServlet {
                 switch(checkedList[i]){
                     case "workplaceId":
                         modifyEditable[0] = "text";
+                        workplace.setId(0);
                         break;
                     case "workplaceName":
                         modifyEditable[1] = "text";
+                        workplace.setName("");
                         break;
                     case "manager":
                         modifyEditable[2] = "text";
+                        workplace.setManager("");
                         break;
                     case "address":
                         modifyEditable[3] = "text";
+                        workplace.setAddress("");
                         break;
                     case "phoneNumber":
                         modifyEditable[4] = "text";
+                        workplace.setPhoneNumber("");
                         break;
                     case "workplaceStatus":
                         modifyEditable[5] = "text";
+                        workplace.setStatus("");
                         break;
                     case "fee":
                         modifyEditable[6] = "text";
+                        workplace.setFee(0);
                         break;
                     case "openingTime":
                         modifyEditable[7] = "text";
+                        workplace.setOpeningTime("");
                         break;
                     case "closingTime":
                         modifyEditable[8] = "text";
+                        workplace.setClosingTime("");
                         break;
                     case "squareMeasure":
                         modifyEditable[9] = "text";
+                        workplace.setSquare(0);
                         break;
                     case "otherInfo":
                         modifyEditable[10] = "text";
+                        workplace.setOtherInfo("");
                         break;
 
                 }
@@ -76,7 +87,7 @@ public class WorkplaceInfoModifyView extends HttpServlet {
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoModify.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoDelete.jsp");
             dispatcher.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();

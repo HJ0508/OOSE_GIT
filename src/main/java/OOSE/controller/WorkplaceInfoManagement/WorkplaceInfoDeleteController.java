@@ -21,19 +21,32 @@ public class WorkplaceInfoDeleteController extends HttpServlet {
         try {
             resp.setCharacterEncoding("UTF-8");
 
-            Workplace workplace = new Workplace();
+            int workplaceId = Integer.parseInt(req.getParameter("workplaceId"));
+            String workplaceName = req.getParameter("workplaceName");
+            String manager = req.getParameter("manager");
+            String address = req.getParameter("address");
+            String phoneNumber = req.getParameter("phoneNumber");
+            String status = req.getParameter("workplaceStatus");
+            int fee = Integer.parseInt(req.getParameter("fee"));
+            String openTime = req.getParameter("openingTime");
+            String closeTime = req.getParameter("closingTime");
+            String sqare = req.getParameter("squareMeasure");
+            String otherInfo = req.getParameter("otherInfo");
 
-            String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
-            System.out.println(reqWorkplaceId);
-
-            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
-            workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
 
-            System.out.println(workplace.getName());
-            req.setAttribute("content", workplace);
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoDelete.jsp");
+
+            dbManager.updateWorkplaceInfo(workplaceId, workplaceName, manager, address, phoneNumber, status, fee, openTime, closeTime, sqare, otherInfo);
+
+
+
+
+
+
+
+
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoModify.jsp");
             dispatcher.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
