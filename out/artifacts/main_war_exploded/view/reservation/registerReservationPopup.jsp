@@ -41,7 +41,7 @@
             <option value="">2동</option>
             <option value="">3동</option>
             <option value="1111">test</option>
-        </select><br>
+            </select><br>
             <label>호실</label><select name="roomNumber">
             <option value="">선택</option>
             <option value="101">101</option>
@@ -52,14 +52,14 @@
             <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00"><br>
             <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00"><br>
             <br>
-            <input class="cancel" type="button" value="취소">
+            <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
         </div>
     </form>
 </div>
 <script>
-
-
+    function popupClose() { self.close();}
 </script>
 </body>
 </html>
+
