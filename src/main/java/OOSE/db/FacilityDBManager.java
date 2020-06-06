@@ -2,10 +2,8 @@ package OOSE.db;
 
 import OOSE.model.*;
 
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FacilityDBManager {
     DBConnector conn;
@@ -54,18 +52,18 @@ public class FacilityDBManager {
         }
     }
 
-    public String[] browseFacilityInfo() {
-        String query = "SELECT facilityName FROM oose.facility";
+    public ArrayList<String> browseFacilityInfo() {
+        System.out.println("234");
+        String query = "SELECT * FROM oose.facility";
         try {
             conn.pstmt = conn.conn.prepareStatement(query);
             conn.res = conn.pstmt.executeQuery();
-            List<String> temp = new ArrayList<String>();
+
+            ArrayList<String> info = new ArrayList<String>();
             while(conn.res.next()) {
                 String name = conn.res.getString("facilityName");
-                temp.add(name);
+                info.add(name);
             }
-            String[] info = new String[temp.size()];
-            info = temp.toArray(info);
             return info;
         }catch(SQLException throwables) {
             throwables.printStackTrace();

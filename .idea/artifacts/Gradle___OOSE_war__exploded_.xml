@@ -10,16 +10,16 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/build/libs/exploded/OOSE.war/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="OOSE.main/web/Web Gradle : OOSE.war" />
+      <element id="javaee-facet-resources" facet="OOSE_GIT.OOSE.main/web/Web Gradle : OOSE.war" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="OOSE.main" />
+          <element id="module-output" name="OOSE_GIT.OOSE.main" />
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/8.0.20/d8d388e71c823570662a45dd33f4284141921280/mysql-connector-java-8.0.20.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.6.1/d06d46ecfd92ec6d0f3b423b4cd81cb38d8b924/protobuf-java-3.6.1.jar" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:8.0.20" />
+          <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" />
         </element>
       </element>
     </root>

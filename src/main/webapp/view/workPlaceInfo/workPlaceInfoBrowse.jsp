@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%--<%@ page import= "OOSE.model.Workplace" %>--%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +15,14 @@
     <link href="css/workplaceInfoBrowse.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 <h1><b>사업장 속성 조회</b></h1>
 
-<form action="workplaceInfoBrowse" method = "POST">
+
+<p>${content}</p>
+
+
+<form method = "POST">
     <fieldset>
         <label>사업장 id : </label>
         <input class="inputText" type="text" name="workplaceId" value="123" readonly>value=123
@@ -56,10 +61,10 @@
     </fieldset>
 
 
-    <input type="submit" value="등록">
-    <input type="submit" value="수정">
-    <input type="submit" value="삭제">
-    <input type="submit" value="조회">
+    <input type="submit" value="등록" formaction="workplaceInfoRegister">
+    <input type="submit" value="수정" formaction="workplaceInfoModify">
+    <input type="submit" value="삭제" formaction="workplaceInfoDelete">
+    <input type="submit" value="조회" formaction="/workplace/browseWorkplaceInfo">
 </form>
 
 </body>

@@ -1,0 +1,231 @@
+/* 헤더 */
+#header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.container {
+    max-width: 1400px;
+    padding: 0px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#header .header-blank {
+    width: inherit;
+}
+
+.user-bar {
+    background-color: rgba( 192, 192, 192, 0.8 );
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: rgb(128, 128, 128);
+
+    /* border-bottom-color: rgb(128, 128, 128); */
+    text-align: right;
+}
+
+#header .header-blank > ul {
+    list-style: none;
+    padding-right: 14rem;
+}
+
+#header .header-blank > ul a{
+    color: rgb(80, 80, 80);
+}
+
+/* 헤더-navbar */
+#header .navbar{
+    position: absolute;
+    left: 0;
+    padding: 0;
+    display: block;
+    top: 2.37rem;
+    width: 100%;
+    height: 6.37rem;
+    background: rgba(52, 152, 219, 0.8);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header .navbar > .container {
+    position: relative;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#header .navbar .navbar-brand {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    display: inline-block;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.brand-logo{
+    font-size: 35px !important;
+    margin-top:15px !important;
+    margin-left: 150px !important;
+}
+
+#header .navbar .navbar-brand a {
+    float: left;
+    line-height: inherit;
+    margin-right: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+#header .navbar .navbar-brand a strong {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 3rem;
+    padding-left:1.18rem;
+    font-size:2rem;
+}
+
+#header .navbar .navbar-brand a div {
+    text-align: right;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+#header .navbar .navbar-brand img {
+    float:  left;
+    /* display: inline-block; */
+    width: 5rem;
+    filter: invert(100%);
+}
+
+
+a:link, a:visited, a:hover {
+    text-decoration: none;
+}
+
+
+
+
+/* 탑 메뉴 */
+#header #top-menu {
+    height: 6.37rem;
+    overflow: hidden;
+}
+
+#header #top-menu .navbar-nav {
+    margin-top: 0;
+}
+
+#header #top-menu .navbar-nav > li {
+    height: 6.37rem;
+    display: inline-block;
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1.25rem;
+    margin-right: 1.25rem;
+}
+
+/* 오버 시 노란색 */
+#header #top-menu .navbar-nav > li.mobile-active > a,
+#header #top-menu .navbar-nav > li.active > a,
+#header #top-menu .navbar-nav > li a.active,
+#header #top-menu .navbar-nav > li a:hover,
+#header #top-menu .navbar-nav > li a.focus {
+    color:#fdff6c;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#header #top-menu .navbar-nav > li > a {
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    color: #ffffff;
+    margin-top: 2.685rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 700;
+    padding: 0;
+
+}
+
+.sub-top{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top: 0px;
+    width: 100%;
+}
+
+.sub-top .sub-visual-wrapper {
+    display: block;
+    position: relative;
+    height: 25rem;
+    background: #000000;
+    overflow: hidden;
+}
+
+.sub-top .sub-visual-wrapper > img {
+    width: 100%;
+    height: inherit;
+}
+
+.sub-body{
+    position:absolute;
+    top:400px;
+    width:100%;
+    /*border-top: 0px;*/
+}
+
+/* 좌측 메뉴 */
+.side-menu{
+    float : left;
+    margin-top : 100px;
+    margin-left : 100px;
+    width : 250px;
+    height : 150px;
+}
+
+.side-menu > ul,
+.side-menu > ul li {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.side-menu > ul li {
+    text-align: center;
+    background: rgba(52, 152, 219, 0.8);
+    border : 0.5px solid white;
+    height : 50px;
+    line-height: 50px;
+    color:white;
+    font-weight : 700;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.selected{
+    color : red !important;
+}
+
+.side-menu > ul li a:hover {
+    color:#fdff6c;
+    text-decoration: none;
+}
