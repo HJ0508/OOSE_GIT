@@ -4,18 +4,15 @@ import OOSE.db.WorkplaceDBManager;
 import OOSE.model.Workplace;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-@WebServlet("/workplace/browseWorkplaceInfo")
-public class WorkplaceInfoBrowseController extends HttpServlet {
+
+@WebServlet("/workplace/deleteWorkplaceInfo")
+public class WorkplaceInfoDeleteController extends HttpServlet {
     WorkplaceDBManager dbManager = new WorkplaceDBManager();
 
 
@@ -36,7 +33,7 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoBrowse.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoDelete.jsp");
             dispatcher.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();

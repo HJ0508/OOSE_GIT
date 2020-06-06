@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/workplace/registerWorkplaceInfo")
-public class WorkplaceInfoRegisterController extends HttpServlet {
+@WebServlet("/workplace/modifyWorkplaceInfo")
+public class WorkplaceInfoModifyController extends HttpServlet {
     WorkplaceDBManager dbManager = new WorkplaceDBManager();
 
 
@@ -38,7 +38,11 @@ public class WorkplaceInfoRegisterController extends HttpServlet {
 
 
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoRegister.jsp");
+
+
+
+
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoModify.jsp");
             dispatcher.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
