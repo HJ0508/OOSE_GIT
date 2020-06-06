@@ -3,6 +3,7 @@ package OOSE.db;
 import OOSE.model.Workplace;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class WorkplaceDBManager {
@@ -42,4 +43,28 @@ public class WorkplaceDBManager {
         }
         return null;
     }
+
+
+    //승환 - 추가 작성한 부분 시작
+    public ArrayList<Workplace> browseWorkplace(){
+        String query = "SELECT workplaceName FROM oose.workplace";
+        try{
+            dbConnector.pstmt = dbConnector.conn.prepareStatement(query);
+            dbConnector.res = dbConnector.pstmt.executeQuery();
+
+            ArrayList<Workplace> info = new ArrayList<Workplace>();
+
+            while(dbConnector.res.next()){
+                Workplace w = new Workplace();
+                w.setId(dbConnector.res.getInt(1));
+                w.setName(dbConnector.res.getString(2));
+                info.add(w);
+            }
+            return info;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+    }
+    //승환 - 추가 작성한 부분 끝
 }
