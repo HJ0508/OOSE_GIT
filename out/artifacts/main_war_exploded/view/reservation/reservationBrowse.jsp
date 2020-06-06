@@ -18,7 +18,11 @@
             $('.modify').on('click', function() {
                 var currentRow = $(this).closest('tr');
                 var reservationId = currentRow.find('td:eq(0)').text();
-                location.href="/reservation/modifyReservation?reservation="+reservationId;
+                const popUrl = "${pageContext.request.contextPath}/reservation/modifyReservation?reservation="+reservationId;	//팝업창에 출력될 페이지 URL
+                const leftPosition = (window.screen.width-500)/2;
+                const topPosition = (window.screen.height-400)/2;
+                const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
+                window.open(popUrl,"",popOption);
             });
         })
     </script>
@@ -87,6 +91,14 @@
     <script>
         function registerOpen(){
             const popUrl = "${pageContext.request.contextPath}/view/reservation/registerReservationPopup.jsp";	//팝업창에 출력될 페이지 URL
+            const leftPosition = (window.screen.width-500)/2;
+            const topPosition = (window.screen.height-400)/2;
+            const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
+            window.open(popUrl,"",popOption);
+        }
+
+        function modifyOpen(){
+            const popUrl = "${pageContext.request.contextPath}/reservation/modifyReservation";	//팝업창에 출력될 페이지 URL
             const leftPosition = (window.screen.width-500)/2;
             const topPosition = (window.screen.height-400)/2;
             const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)

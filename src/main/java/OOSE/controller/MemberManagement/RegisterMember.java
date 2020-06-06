@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/reqRegisterMember")
-public class RegisterMember extends HttpServlet {
+public class RegisterMember extends HttpServlet
+{
     MemberDBManager dbManager = new MemberDBManager();
 
     @Override
@@ -18,7 +19,6 @@ public class RegisterMember extends HttpServlet {
     {
         Member member = new Member();
         member.setId(req.getParameter("id"));
-        System.out.println(req.getParameter("id"));
         member.setPassword(req.getParameter("password"));
         member.setName(req.getParameter("name"));
         member.setAuthority(1);

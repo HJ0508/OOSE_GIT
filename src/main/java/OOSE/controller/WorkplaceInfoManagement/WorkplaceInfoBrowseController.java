@@ -16,48 +16,25 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 @WebServlet("/workplace/browseWorkplaceInfo")
 public class WorkplaceInfoBrowseController extends HttpServlet {
+    WorkplaceDBManager dbManager = new WorkplaceDBManager();
 
-//    @Override
-//    public void init(ServletConfig sc) throws ServletException {
-//        super.init(getServletConfig());
-//    }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             resp.setCharacterEncoding("UTF-8");
-            WorkplaceDBManager dbManager = new WorkplaceDBManager();
+
             Workplace workplace = new Workplace();
-//        PrintWriter out = resp.getWriter();
+
             String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
             System.out.println(reqWorkplaceId);
 
-            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
+            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
-//        System.out.println(workplace.getId());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getId());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getName());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getManager());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getAddress());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getPhoneNumber());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getStatus());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getFee());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getOpeningTime());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getClosingTime());
-//            out.printf("디비조회결과 사업장 속성: %s<br>",workplace.getSquare());
-//
-//
-//        String[] test = req.getParameterValues("workplaceInfo");
-//        int length = test.length;
-//        for(int i = 0; i<length; i++) {
-//            System.out.println(test[i]);
-//
-//            out.printf("workplace id: %s<br>", test[i]);
-//
-//        }
+
             System.out.println(workplace.getName());
-            req.setAttribute("content", "test");
+            req.setAttribute("content", workplace);
 
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoBrowse.jsp");
             dispatcher.forward(req, resp);

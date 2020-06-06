@@ -41,7 +41,6 @@ public class BrowseMember extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
-        System.out.println("post");
         ArrayList<Member> memberList=new ArrayList<Member>();
         memberList=dbManager.browseMemberList();        //여기까지는 값이 잘 넘어옴(db쪽 연동 및 select는 잘 작동함)
         req.setAttribute("memberList",memberList);

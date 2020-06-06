@@ -3,6 +3,7 @@ package OOSE.db;
 import OOSE.model.Workplace;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class WorkplaceDBManager {
@@ -41,5 +42,89 @@ public class WorkplaceDBManager {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void updateWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, String square, String otherInfo){
+        try {
+            dbConnector.pstmt = dbConnector.conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
+                    "fee = ?, openingTime=?, closingTime=?, squareMeasure=?, otherInfo=? WHERE workplaceId = ?;");
+
+            dbConnector.pstmt.setString(1, workplaceName);
+            dbConnector.pstmt.setString(2, manager);
+            dbConnector.pstmt.setString(3, address);
+            dbConnector.pstmt.setString(4, phoneNumber);
+            dbConnector.pstmt.setString(5, status);
+            dbConnector.pstmt.setInt(6, fee);
+            dbConnector.pstmt.setString(7, openTime);
+            dbConnector.pstmt.setString(8, closeTime);
+            dbConnector.pstmt.setString(9, square);
+            dbConnector.pstmt.setString(10, otherInfo);
+            dbConnector.pstmt.setInt(11, workplaceId);
+//        dbConnector.res = dbConnector.pstmt.executeQuery();
+            dbConnector.pstmt.executeUpdate();
+            if(dbConnector.res!=null){
+                System.out.println("수정성공");
+            }
+            else{
+                System.out.println("뭔가잘못됨");
+            }
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    public void deleteWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, String square, String otherInfo){
+        try {
+            dbConnector.pstmt = dbConnector.conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
+                    "fee = ?, openingTime=?, closingTime=?, squareMeasure=?, otherInfo=? WHERE workplaceId = ?;");
+
+            dbConnector.pstmt.setString(1, workplaceName);
+            dbConnector.pstmt.setString(2, manager);
+            dbConnector.pstmt.setString(3, address);
+            dbConnector.pstmt.setString(4, phoneNumber);
+            dbConnector.pstmt.setString(5, status);
+            dbConnector.pstmt.setInt(6, fee);
+            dbConnector.pstmt.setString(7, openTime);
+            dbConnector.pstmt.setString(8, closeTime);
+            dbConnector.pstmt.setString(9, square);
+            dbConnector.pstmt.setString(10, otherInfo);
+            dbConnector.pstmt.setInt(11, workplaceId);
+//        dbConnector.res = dbConnector.pstmt.executeQuery();
+            dbConnector.pstmt.executeUpdate();
+            if(dbConnector.res!=null){
+                System.out.println("수정성공");
+            }
+            else{
+                System.out.println("뭔가잘못됨");
+            }
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public ArrayList<Workplace> browseWorkplace(){
+        String query = "SELECT workplaceName FROM oose.workplace";
+        try{
+            dbConnector.pstmt = dbConnector.conn.prepareStatement(query);
+            dbConnector.res = dbConnector.pstmt.executeQuery();
+
+            ArrayList<Workplace> info = new ArrayList<Workplace>();
+
+            while(dbConnector.res.next()){
+                Workplace w = new Workplace();
+                w.setId(dbConnector.res.getInt(1));
+                w.setName(dbConnector.res.getString(2));
+                info.add(w);
+            }
+            return info;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
     }
 }

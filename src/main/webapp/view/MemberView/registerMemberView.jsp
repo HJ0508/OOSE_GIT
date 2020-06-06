@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <th><span>전화번호</span></th>
-                        <th><input type="text" name="phoneNumber" placeholder="- 빼고 입력"></th>
+                        <th><input type="text" name="phoneNumber" placeholder="- 넣어서 입력"></th>
                     </tr>
                 </table>
                 <input id="submitBtn" type="submit"value="등록">

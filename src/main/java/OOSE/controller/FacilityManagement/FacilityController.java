@@ -1,6 +1,7 @@
 package OOSE.controller.FacilityManagement;
 
 import OOSE.db.*;
+import OOSE.model.Facility;
 import sun.misc.Request;
 
 import javax.jws.WebService;
@@ -22,7 +23,7 @@ public class FacilityController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             System.out.println("123");
-            ArrayList<String> facility;
+            ArrayList<Facility> facility;
             facility = dbManager.browseFacilityInfo();
             req.setAttribute("facility", facility);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/facility/FacilityManagement.jsp");

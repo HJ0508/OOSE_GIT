@@ -52,7 +52,7 @@
                         <td name="password">${member.password}</td>
                         <td name="authority">${member.authority}</td>
                         <td name="phoneNum">${member.phoneNum}</td>
-                        <td><input type="radio" name="selected"></td>     <%-- radio버튼 왜 안나옴????--%>
+                        <td><input type="radio" name="selected"></td>
                     </tr>
                     <%
                             }
@@ -64,27 +64,50 @@
         </div>
         <div class="modify_delete_div">
             <a id="modify" class="aLink" href="#" onclick="parsingMember()">수정</a>
-            <a class="aLink" href="#">삭제</a>
+            <a id ="delete" class="aLink" href="#" onclick="deleteConfirm()">삭제</a>
+            <a id="browseMemberView" class="aLink" href="#" onclick="reqBrowseMember()">회원</a>
         </div>
     </div>
 
+
 <script>
-    function parsingMember()        //수정 버튼을 누르면 라디오버튼이 체크된 행의 값을 파라미터로 수정 페이지에 전달한다 (a태그의 href 속성을 바꿔서 보냄)
+    var radio =document.getElementsByName("selected");
+    var radioSelectedRow;   //라디오 버튼이 출력된 행 번호 저장
+    function checkTableRow()        //라이도 버튼이 클릭된 행을 찾는 함수
     {
         var radio = document.getElementsByName("selected");
         for(var i=0;i<radio.length;i++)
         {
             if(radio[i].checked)
             {
-                var table = document.getElementsByTagName("table");
-                //var td = table.rows[i];
-
-                document.getElementById("modify").setAttribute("href", "/view/MemberView/modifyMemberView.jsp?name=" + document.getElementsByName("name")[i].innerHTML+
-                    "&id=" + document.getElementsByName("id")[i].innerHTML+"&password=" +document.getElementsByName("password").innerHTML +
-                    "&authority=" + document.getElementsByName("authority").innerHTML + "&phoneNum=" + document.getElementsByName("phoneNum")[i].innerHTML);
-                break;      //전송도 했겠다 빠져나가자
+                radioSelectedRow=i;
             }
         }
+    }
+
+    function parsingMember()        //수정 버튼을 누르면 라디오버튼이 체크된 행의 값을 파라미터로 수정 페이지에 전달한다 (a태그의 href 속성을 바꿔서 보냄)
+    {
+        checkTableRow();
+        document.getElementById("modify").setAttribute("href", "/view/MemberView/modifyMemberView.jsp?name=" + encodeURI(document.getElementsByName("name")[radioSelectedRow].innerHTML)+
+            "&id=" + encodeURI(document.getElementsByName("id")[radioSelectedRow].innerHTML)+"&password=" +encodeURI(document.getElementsByName("password")[radioSelectedRow].innerHTML) +
+            "&authority=" + encodeURI(document.getElementsByName("authority")[radioSelectedRow].innerHTML) + "&phoneNum=" + encodeURI(document.getElementsByName("phoneNum")[radioSelectedRow].innerHTML));
+    }
+    function deleteConfirm()
+    {
+        var clicked=confirm("정말 삭제하시겠습니까?")
+        if(clicked==true)
+        {
+            checkTableRow();
+            document.getElementById("delete").setAttribute("href", "/view/MemberView/reqDeleteMember?id=" + document.getElementsByName("id")[radioSelectedRow].innerHTML);       //서버에 삭제 요청
+        }
+    }
+
+    //테스트용임, 나중에 회원 페이지에 갖다넣을것
+    function reqBrowseMember()
+    {
+        checkTableRow();
+        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member?id="+document.getElementsByName("id")[radioSelectedRow].innerHTML);
+        //로그인된 사용자의 정보를 세션에서 가져옴, 로그인시 세션에 저장되어 있을것
     }
 </script>
 </body>
