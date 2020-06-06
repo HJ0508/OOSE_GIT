@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="OOSE_GIT:Web exploded">
+  <artifact type="war" name="OOSE_GIT:Web exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/OOSE_GIT_Web_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="OOSE_GIT_Web exploded.war">
       <element id="javaee-facet-resources" facet="OOSE_GIT/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
