@@ -24,7 +24,12 @@
     pageContext.setAttribute("workplace", workplace); //이렇게 해야 ${}해서 쓸수있는듯!
 %>
 
+<%
+    String id = (String)session.getAttribute("id") ;
+    int authority = (Integer)session.getAttribute("authority");
+%>
 
+<%= id%>
 
 
 <form method = "POST" name="formData">

@@ -7,11 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    String id = (String)session.getAttribute("id") ;
+    int authority = (Integer)session.getAttribute("authority");
+%>
+
+
+
+
 <body>
     <div class="main header" id="header">
         <div class="header-blank">
             <ul class="user-bar">
-                <li><a href="#"><strong>로그인</strong></a></li>
+                <li><a href="#"><strong><%= id%> 님 환영합니다. 권한: <%=authority%></strong></a></li>
             </ul>
         </div>
         <div class="navbar">
