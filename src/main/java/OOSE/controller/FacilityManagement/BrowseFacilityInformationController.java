@@ -1,8 +1,7 @@
 package OOSE.controller.FacilityManagement;
 
-import OOSE.Model.Facility;
 import OOSE.db.FacilityDBManager;
-import OOSE.db.FacilityInformationDBManager;
+import OOSE.model.Facility;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 
 @WebServlet("/browseFacilityInformationManagement")
 public class BrowseFacilityInformationController extends HttpServlet {
-    FacilityInformationDBManager dbManager = new FacilityInformationDBManager();
+    FacilityDBManager dbManager = new FacilityDBManager();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +24,6 @@ public class BrowseFacilityInformationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            //고쳐
             ArrayList<Facility> facility;
             facility = dbManager.browseFacilityInforInfo();
             req.setAttribute("facility", facility);

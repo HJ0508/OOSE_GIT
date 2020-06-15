@@ -2,8 +2,7 @@ package OOSE.db;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import OOSE.Model.*;
-import com.mysql.cj.protocol.Resultset;
+import OOSE.model.*;
 
 import javax.xml.transform.Result;
 
@@ -19,21 +18,30 @@ public class FacilityDBManager {
             String query = "INSERT INTO oose.facility (`facilityName`) VALUES (?)";
             conn.pstmt = conn.conn.prepareStatement(query);
             conn.pstmt.setString(1, s);
-            return conn.pstmt.execute();
+            int result = conn.pstmt.executeUpdate();
+            if(result > 0) {
+                return true;
+            }else {
+                return false;
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return false;
         }
     }
 
-    public boolean modifyFacilityInfo(String s) {
-        //수정하려는 시설이름은 파라미터로 가져와야하지 않나?
-        String query = "UPDATE oose.facility SET facilityName=? WHERE facilityName = 보류";
-
+    public boolean modifyFacilityInfo(String oldName, String name) {
+        String query = "UPDATE oose.facility SET facilityName=? WHERE facilityName = ?";
         try {
             conn.pstmt = conn.conn.prepareStatement(query);
-            conn.pstmt.setString(1, s);
-            return conn.pstmt.execute();
+            conn.pstmt.setString(1, name);
+            conn.pstmt.setString(2, oldName);
+            int result = conn.pstmt.executeUpdate();
+            if(result > 0) {
+                return true;
+            }else {
+                return false;
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return false;
@@ -41,11 +49,16 @@ public class FacilityDBManager {
     }
 
     public boolean deleteFacilityInfo(String s) {
-        String query = "DELETE oose.facility WHERE facilityName=?";
+        String query = "DELETE FROM oose.facility WHERE facilityName=?";
         try {
             conn.pstmt = conn.conn.prepareStatement(query);
             conn.pstmt.setString(1, s);
-            return conn.pstmt.execute();
+            int result = conn.pstmt.executeUpdate();
+            if(result > 0) {
+                return true;
+            }else {
+                return false;
+            }
         }catch(SQLException throwables) {
             throwables.printStackTrace();
             return false;
@@ -102,5 +115,45 @@ public class FacilityDBManager {
         }
         return false;
     }
+
+    public boolean registerFacilityInforInfo(String s) {
+        return false;
+    }
+
+    public boolean modifyFacilityInforInfo(String s) {
+        return false;
+    }
+
+    public boolean deleteFacilityInforInfo(String s) {
+        return false;
+    }
+
+    public ArrayList<Facility> browseFacilityInforInfo() {
+        String query = "SELECT * FROM oose.facility";
+        try {
+            conn.pstmt = conn.conn.prepareStatement(query);
+            conn.res = conn.pstmt.executeQuery();
+
+            ArrayList<Facility> info = new ArrayList<Facility>();
+            while(conn.res.next()) {
+                Facility f = new Facility();
+                f.setId(conn.res.getInt(1));
+                f.setName(conn.res.getString(2));
+                f.setWorkPlaceId(conn.res.getInt(3));
+                f.setFacilityState(conn.res.getString(4));
+                f.setFee(conn.res.getInt(5));
+                f.setOpenTime(conn.res.getString(6));
+                f.setCloseTime(conn.res.getString(7));
+                f.setManager(conn.res.getString(8));
+                f.setCapacity(conn.res.getInt(9));
+                info.add(f);
+            }
+            return info;
+        }catch(SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
+    }
+
 
 }

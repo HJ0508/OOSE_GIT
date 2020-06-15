@@ -23,9 +23,11 @@ public class ReservationDBManager extends DBConnector {
 
         String condition1 = "where userId=(select memberId from oose.member where memberName = ?) ";
         String condition2 = "where accommodationId=(select accommodationId from oose.accommodation where accommodationName = ?) ";
+        String condition3 = "where reservationId = ? ";
 
         if (option == 1) query += condition1; // according to option
         else if(option == 2) query += condition2;
+        else if(option == 3) query += condition3;
 
         query += "group by reservationId";
         System.out.println(query);
@@ -77,17 +79,29 @@ public class ReservationDBManager extends DBConnector {
         pstmt.setString(6, reservation.getCheckInDate());
         pstmt.setString(7, reservation.getCheckOutDate());
         pstmt.setInt(8, reservation.getTotalPrice());
-        pstmt.setInt(9, Integer.parseInt(reservation.getReservationCode()));
+        pstmt.setString(9, reservation.getReservationCode());
         pstmt.setInt(10, reservation.getHeadCount());
         pstmt.setInt(11, reservation.getReservation());
-        int tmp = pstmt.executeUpdate();
-        if(tmp!=0) return true;
-        return false;
+        System.out.println(query);
+        return pstmt.executeUpdate()!=0;
     }
-    public boolean deleteReservation(String userId) throws SQLException {
-        query = "DELETE FROM `oose`.`reservation` WHERE userId = ?";
+    public boolean deleteReservation(String reservationId) throws SQLException {
+
+        query = "DELETE FROM `oose`.`reservation` WHERE reservationId IN (";
+        String[] idList = reservationId.split(";");
+
+        for (int i = 0; i < idList.length; i++) {
+            if(i==0)
+                query+="? ";
+            else
+                query+=", ?";
+        }
+        query += ")";
+        System.out.println(query);
         pstmt = conn.prepareStatement(query);
-        pstmt.setString(1, userId);
+        for(int i=0;i<idList.length;i++)
+            pstmt.setString(i+1, idList[i]);
+
         return pstmt.executeUpdate()!=0;
     }
 

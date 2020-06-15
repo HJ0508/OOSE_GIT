@@ -1,7 +1,6 @@
 package OOSE.controller.FacilityManagement;
 
-
-import OOSE.Model.Facility;
+import OOSE.model.Facility;
 import OOSE.db.FacilityDBManager;
 
 import javax.servlet.RequestDispatcher;
@@ -25,17 +24,15 @@ public class RegisterFacilityController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
+            req.setCharacterEncoding("UTF-8");
             String name = req.getParameter("name");
             boolean check = dbManager.registerFacilityInfo(name);
             if(check) {
-                req.setCharacterEncoding("UTF-8");
                 req.setAttribute("check", check);
-                RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                dispatcher.forward(req, resp);
+                resp.sendRedirect("view/facility/FacilityRegister.jsp");
             }else {//실패
                 req.setAttribute("check", check);
-                RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                dispatcher.forward(req, resp);
+                resp.sendRedirect("view/facility/FacilityRegister.jsp");
             }
         } catch(Exception e) {
             e.printStackTrace();

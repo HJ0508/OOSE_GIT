@@ -1,7 +1,7 @@
 package OOSE.controller.FacilityManagement;
 
 import OOSE.db.*;
-import OOSE.Model.*;
+import OOSE.model.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,8 +26,7 @@ public class BrowseFacilityController extends HttpServlet {
             ArrayList<Facility> facility;
             facility = dbManager.browseFacilityInfo();
             req.setAttribute("facility", facility);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-            dispatcher.forward(req, resp);
+            resp.sendRedirect("view/facility/FacilityManagement.jsp");
         } catch(Exception e) {
             e.printStackTrace();
         }

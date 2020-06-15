@@ -22,8 +22,10 @@ public class RegisterReservation extends HttpServlet {
                 request.getParameter("checkIn"), request.getParameter("checkOut"), 0 , "예약", Integer.parseInt(request.getParameter("headCount")));
         boolean result = reservationDBManager.registerReservation(reservation);
         request.setAttribute("result", result);
-        if(result)
-            htmlPrint(response, "저장 완료");
+        if(result) {
+           htmlPrint(response, "저장 완료");
+           response.getWriter().print("<script>self.close()</script>");
+        }
         else
             htmlPrint(response, "저장 실패");
     }

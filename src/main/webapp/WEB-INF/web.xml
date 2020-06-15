@@ -16,7 +16,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
 
-
     <servlet>
         <servlet-name>browseReservation</servlet-name>
         <servlet-class>OOSE.controller.reservation.BrowseReservation</servlet-class>
@@ -42,6 +41,15 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
     <servlet-mapping>
         <servlet-name>deleteReservation</servlet-name>
         <url-pattern>/reservation/deleteReservation</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>modifyReservation</servlet-name>
+        <servlet-class>OOSE.controller.reservation.ModifyReservation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modifyReservation</servlet-name>
+        <url-pattern>/reservation/modifyReservation</url-pattern>
     </servlet-mapping>
 <!--    <servlet>-->
 <!--        <servlet-name>browseWorkplaceInfo</servlet-name>-->
