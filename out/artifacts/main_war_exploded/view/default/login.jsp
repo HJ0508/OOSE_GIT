@@ -33,7 +33,7 @@
     <%
         String loginMessage = (String)request.getAttribute("loginMessage");
         if(loginMessage==null)
-            loginMessage="";
+            loginMessage=""; //처음조회시 null로 출력돼서 빈칸으로 만듦.
     %>
     <%=
         loginMessage

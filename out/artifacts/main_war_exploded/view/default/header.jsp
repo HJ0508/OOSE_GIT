@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    String id = (String)session.getAttribute("id") ;
+    String id = (String)session.getAttribute("id") ; //세션에 저장된 id, 권한정보 받아오기
     int authority = (Integer)session.getAttribute("authority");
 %>
 
