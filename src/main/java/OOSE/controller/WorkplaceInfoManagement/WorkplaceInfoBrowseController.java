@@ -32,6 +32,12 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
             int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
+            if(workplace == null){
+                System.out.println("조회결과없음");
+                String message = "조회결과없음. 다시 시도해 주십시오";
+                htmlPrint(resp,message);
+            }
+
 
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
@@ -46,5 +52,15 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
+    }
+    private void htmlPrint(HttpServletResponse res, String message)
+            throws IOException {
+        res.setContentType("text/html; charset=euc-kr");
+        PrintWriter out = res.getWriter();
+        out.println("<script>");
+        out.println("alert('" + message + "');");
+//        out.println("history.back(-1);");
+        out.println("window.onload = closeWindow();");
+        out.println("</script>");
     }
 }
