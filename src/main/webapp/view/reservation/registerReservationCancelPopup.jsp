@@ -29,13 +29,13 @@
 </head>
 <body>
 <div class="register-contents">
-    <div class="title"><strong>예약 정보 수정</strong></div><br>
-    <form action="/reservation/modifyReservation" method="POST">
+    <div class="title"><strong>예약 취소정보 등록</strong></div><br>
+    <form action="/reservation/registerReservation" method="POST">
         <div class="input-info">
-            <label>회원이름</label><input name = "name" type="text" value = ${reservations.userId}><br>
-            <label>전화번호</label><input name = "tel" type="tel" value = ${reservations.phoneNum}><br>
-            <label>차량번호</label><input name = "carNumber" type="text" value = ${reservations.carNumber}><br>
-            <label>숙박시설</label><select name="accommodation" value = ${reservations.accommodationId}>
+            <label>회원이름</label><input name = "name" type="text" placeholder="이름을 입력하시오"><br>
+            <label>전화번호</label><input name = "tel" type="tel" placeholder="전화번호를 입력하시오"><br>
+            <label>차량번호</label><input name = "carNumber" type="text" placeholder="차량번호를 입력하시오"><br>
+            <label>숙박시설</label><select name="accommodation">
             <option value="">선택</option>
             <option value="">1동</option>
             <option value="">2동</option>
@@ -54,7 +54,7 @@
             <br>
             <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
-            <input style="visibility: hidden" name="reservationId" value=${reservations.reservation} >
+            <input name="condition" value="취소" style="visibility: hidden">
         </div>
     </form>
 </div>

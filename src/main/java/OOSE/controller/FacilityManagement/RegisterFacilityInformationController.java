@@ -1,18 +1,14 @@
 package OOSE.controller.FacilityManagement;
 
-import OOSE.db.*;
-import OOSE.model.*;
-import javax.servlet.RequestDispatcher;
+import OOSE.db.FacilityDBManager;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 
-@WebServlet("/browseFacilityManagement")
-public class BrowseFacilityController extends HttpServlet {
+public class RegisterFacilityInformationController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
 
     @Override
@@ -22,14 +18,16 @@ public class BrowseFacilityController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            ArrayList<Facility> facility;
-            facility = dbManager.browseFacilityInfo();
-            req.setAttribute("facility", facility);
-            resp.sendRedirect("view/facility/FacilityManagement.jsp");
-        } catch(Exception e) {
-            e.printStackTrace();
+        req.setCharacterEncoding("UTF-8");
+        //값가지고오기
+        //처음 콤보박스에 값가져오기
+        boolean check = dbManager.registerFacilityInforInfo("1234");
+        if(check) {
+            req.setAttribute("check", check);
+            resp.sendRedirect("view/facility/FacilityRegister.jsp");
+        }else {//실패
+            req.setAttribute("check", check);
+            resp.sendRedirect("view/facility/FacilityRegister.jsp");
         }
     }
-
 }

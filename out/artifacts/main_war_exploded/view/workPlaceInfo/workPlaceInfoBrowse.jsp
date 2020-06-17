@@ -24,7 +24,12 @@
     pageContext.setAttribute("workplace", workplace); //이렇게 해야 ${}해서 쓸수있는듯!
 %>
 
+<%
+    String id = (String)session.getAttribute("id") ;
+    int authority = (Integer)session.getAttribute("authority");
+%>
 
+<%= id%>
 
 
 <form method = "POST" name="formData">
@@ -70,7 +75,7 @@
     <input type="button" value="수정" onclick = modifyOpen()>
     <input type="button" value="삭제" onclick = deleteOpen()>
     <input type="button" value="조회" onclick = browseOpen()>
-<%--    <button onclick = registerOpen()>등록</button>  formaction="/workplace/browseWorkplaceInfo"--%>
+    <%--    <button onclick = registerOpen()>등록</button>  formaction="/workplace/browseWorkplaceInfo"--%>
 </form>
 
 </body>

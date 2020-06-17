@@ -20,8 +20,20 @@ public class ProductPackageDBManager {
 
     /*boolean*/
     public boolean registerProductInfo(ProductPackage info) throws SQLException {
+        System.out.println("entry");
         conn = new DBConnector();
-        String sql = "INSERT INTO oose.productpackage (productName, price, productState, stock, note) \n" +
+
+        String sql;
+        sql = "SELECT * FROM productpackage WHERE productpackage.productName = ?;";
+        System.out.println(sql);
+        conn.pstmt = conn.getConn().prepareStatement(sql);
+        conn.pstmt.setString(1, info.getName());
+        ResultSet res = conn.pstmt.executeQuery();
+        if(res.next()){
+            return false;
+        }
+
+        sql = "INSERT INTO oose.productpackage (productName, price, productState, stock, note) \n" +
                 "VALUES (?, ?, ?, ?, ?);";
 
         conn.pstmt = conn.getConn().prepareStatement(sql);
@@ -32,13 +44,8 @@ public class ProductPackageDBManager {
         conn.pstmt.setInt(4, info.getStock());
         conn.pstmt.setString(5, info.getNote());
 
-        int tmp = conn.pstmt.executeUpdate();
-
-        if (tmp == 1) {
-            return true;
-        } else {
-            return false;
-        }
+        conn.pstmt.executeUpdate();
+        return true;
     }
 
     public boolean modifyProductInfo(ProductPackage info) throws SQLException {

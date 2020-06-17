@@ -1,6 +1,5 @@
 package OOSE.controller.FacilityManagement;
 
-import OOSE.model.Facility;
 import OOSE.db.FacilityDBManager;
 
 import javax.servlet.RequestDispatcher;
@@ -10,10 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 
-@WebServlet("/registerFacilityManagement")
-public class RegisterFacilityController extends HttpServlet {
+@WebServlet("/deleteFacilityManagement")
+public class DeleteFacilityController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
 
     @Override
@@ -26,17 +24,16 @@ public class RegisterFacilityController extends HttpServlet {
         try {
             req.setCharacterEncoding("UTF-8");
             String name = req.getParameter("name");
-            boolean check = dbManager.registerFacilityInfo(name);
+            boolean check = dbManager.deleteFacilityInfo(name);
             if(check) {
                 req.setAttribute("check", check);
-                resp.sendRedirect("view/facility/FacilityRegister.jsp");
+                resp.sendRedirect("view/facility/FacilityDelete.jsp");
             }else {//실패
                 req.setAttribute("check", check);
-                resp.sendRedirect("view/facility/FacilityRegister.jsp");
+                resp.sendRedirect("view/facility/FacilityDelete.jsp");
             }
         } catch(Exception e) {
-            e.printStackTrace();
+
         }
     }
-
 }

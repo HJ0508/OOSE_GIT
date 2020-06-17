@@ -18,7 +18,7 @@
             $('.modify').on('click', function() {
                 var currentRow = $(this).closest('tr');
                 var reservationId = currentRow.find('td:eq(0)').text();
-                const popUrl = "${pageContext.request.contextPath}/reservation/modifyReservation?reservation="+reservationId;	//팝업창에 출력될 페이지 URL
+                const popUrl = "${pageContext.request.contextPath}/reservation/modifyReservation?reservation="+reservationId+"&condition=예약";	//팝업창에 출력될 페이지 URL
                 const leftPosition = (window.screen.width-500)/2;
                 const topPosition = (window.screen.height-400)/2;
                 const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
@@ -46,7 +46,8 @@
                         <option value="시설명">시설명</option>
                     </select>
                     <input name="keyword" type="text" name="search_keyword">
-                    <input type="submit" value="검색" formaction="/reservation/browseReservation">
+                    <input type="submit" name = "search" value="검색" formaction="/reservation/browseReservation">
+                    <input name="condition" value="예약" style="visibility: hidden">
                 </form>
             </div>
             <br><br>
@@ -109,7 +110,7 @@
             const isDeleted = confirm("정말로 삭제하시겠습니까?");
             if (isDeleted) {
                 const selectedItem = document.getElementsByName("selected");
-                var param = "?id=";
+                var param = "?reservation=취소&id=";
                 for (var i = 0; i < selectedItem.length; i++) {
                     if (selectedItem[i].checked) {
                         param += document.getElementsByName("reservation")[i].innerHTML + ";";

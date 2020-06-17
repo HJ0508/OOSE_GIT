@@ -14,7 +14,7 @@ public class FacilityInformationController extends HttpServlet {
     }
 
     boolean facilityInformationModify(String s) {
-        dbManager.modifyFacilityInfo(s);
+//        dbManager.modifyFacilityInfo(s); 구문 오류로 인해 주석처리 (0616 김해준)
         return false;
     }
 

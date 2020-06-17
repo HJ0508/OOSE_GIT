@@ -15,10 +15,22 @@
 <body>
 <div class = "content-name">시설 정보 수정</div>
 <div class = "content-container">
-    시설명 <input type="text"><br>
-    시설 상태 <input type="text"><br>
-    시설 담당자 <input type="text"><br>
-    전화번호 <input type="text"><br>
+    <%
+        String check = request.getParameter("name");
+        if(check != null) {
+            pageContext.setAttribute("check", check);
+    %>
+    시설명 <input type="text" value = ${check}><br>
+    사업장ID <input type="text" name = "workspaceId"><br>
+    시설 상태 <input type="text" name = "facilityState"><br>
+    요금 <input type="text" name = "fee"><br>
+    여는시간 <input type="text" name = "openTime"><br>
+    닫는시간 <input type="text" name = "closeTime"><br>
+    시설 담당자 <input type="text" name = "manager"><br>
+    크기 <input type="text" name = "capacity"><br>
+    <%
+        }
+    %>
     <input type="button" value="등록">
     <input type="button" value="취소">
 </div>

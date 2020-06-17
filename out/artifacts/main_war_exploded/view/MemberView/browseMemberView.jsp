@@ -15,59 +15,59 @@
 </head>
 <body>
 <%@include file="memberMenuView.jsp"%>
-    <div class="contentDiv">
-        <div style="font-size:20px;left:0;">
-            회원 정보
-            <div>
-                <form class="buttonForm" method="post" action="/reqBrowseMember">
-                    <input id="submitBtn" type="submit"value="조회">
-                </form>
-            </div>
-        </div>
+<div class="contentDiv">
+    <div style="font-size:20px;left:0;">
+        회원 정보
         <div>
-            <div>
-                <table id="browseTable">
-                    <thead>
-                        <tr>
-                            <th>회원 이름</th>
-                            <th>ID</th>
-                            <th>Password</th>
-                            <th>권한 레벨</th>
-                            <th>전화번호</th>
-                            <th>선택</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <%
-                        if(request.getAttribute("memberList")!=null)        //null이 아닐때만 실행
-                        {
-                            ArrayList<Member> list = (ArrayList<Member>)request.getAttribute("memberList");
-                            for(Member member : list)
-                            {
-                                pageContext.setAttribute("member", member);
-                    %>
-                    <tr class="memberList">
-                        <td name="name">${member.name}</td>
-                        <td name="id">${member.id}</td>
-                        <td name="password">${member.password}</td>
-                        <td name="authority">${member.authority}</td>
-                        <td name="phoneNum">${member.phoneNum}</td>
-                        <td><input type="radio" name="selected"></td>
-                    </tr>
-                    <%
-                            }
-                        } //if문의 끝
-                    %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="modify_delete_div">
-            <a id="modify" class="aLink" href="#" onclick="parsingMember()">수정</a>
-            <a id ="delete" class="aLink" href="#" onclick="deleteConfirm()">삭제</a>
-            <a id="browseMemberView" class="aLink" href="#" onclick="reqBrowseMember()">회원</a>
+            <form class="buttonForm" method="post" action="/reqBrowseMember">
+                <input id="submitBtn" type="submit"value="조회">
+            </form>
         </div>
     </div>
+    <div>
+        <div>
+            <table id="browseTable">
+                <thead>
+                <tr>
+                    <th>회원 이름</th>
+                    <th>ID</th>
+                    <th>Password</th>
+                    <th>권한 레벨</th>
+                    <th>전화번호</th>
+                    <th>선택</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%
+                    if(request.getAttribute("memberList")!=null)        //null이 아닐때만 실행
+                    {
+                        ArrayList<Member> list = (ArrayList<Member>)request.getAttribute("memberList");
+                        for(Member member : list)
+                        {
+                            pageContext.setAttribute("member", member);
+                %>
+                <tr class="memberList">
+                    <td name="name">${member.name}</td>
+                    <td name="id">${member.id}</td>
+                    <td name="password">${member.password}</td>
+                    <td name="authority">${member.authority}</td>
+                    <td name="phoneNum">${member.phoneNum}</td>
+                    <td><input type="radio" name="selected"></td>
+                </tr>
+                <%
+                        }
+                    } //if문의 끝
+                %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modify_delete_div">
+        <a id="modify" class="aLink" href="#" onclick="parsingMember()">수정</a>
+        <a id ="delete" class="aLink" href="#" onclick="deleteConfirm()">삭제</a>
+        <a id="browseMemberView" class="aLink" href="#" onclick="reqBrowseMember()">회원</a>
+    </div>
+</div>
 
 
 <script>

@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/view/default/main_member.jsp" %>
-<link href="../css/browseProduct.css" rel="stylesheet" type="text/css">
+<link href="../../css/browseProduct.css" rel="stylesheet" type="text/css">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>

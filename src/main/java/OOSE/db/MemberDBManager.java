@@ -24,9 +24,8 @@ public class MemberDBManager extends DBConnector
             pstmt.setString(1,member.getId());
             pstmt.setString(2,member.getName());
             pstmt.setString(3,member.getPassword());
-            pstmt.setInt(4,1);        //1레벨 줬음. string값으로 줘야되는지, int값으로 줘야되는지 잘 모르겠음
+            pstmt.setInt(4,1);        //1레벨
             pstmt.setString(5,member.getPhoneNum());
-
 
             pstmt.executeUpdate();
 
@@ -40,6 +39,28 @@ public class MemberDBManager extends DBConnector
         return true;    //오류가 안나면 true를 return
     }
 
+    public boolean checkDuplicationInfo(String id)      //회원정보 중복 체크
+    {
+        try {
+            String query = "select memberId from oose.member where memberId=?";
+            pstmt = conn.prepareStatement(query);
+
+            pstmt.setString(1, id);
+            res = pstmt.executeQuery();
+
+            while (res.next())
+            {
+                if(res.getString("memberId").equals(id))
+                    return true;       //중복 있음
+            }
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+            return true;
+        }
+        return false;        //중복 없음
+    }
     public boolean modifyMemberInfo(Member member)
     {
         try
@@ -54,7 +75,7 @@ public class MemberDBManager extends DBConnector
             pstmt.setString(5, member.getId());
 
             if(pstmt.executeUpdate()!=0)
-                return true;
+                return true;        //성공
             else
                 return false;
         }
@@ -78,10 +99,6 @@ public class MemberDBManager extends DBConnector
             pstmt=conn.prepareStatement(query);
             pstmt.setString(1, member.getId());
             pstmt.executeUpdate();
-//            if(pstmt.executeUpdate()!=0)       //업데이트에 성공했을 경우
-//                return true;
-//            else
-//                return false;
             return true;
         }
         catch(SQLException e)
@@ -169,5 +186,17 @@ public class MemberDBManager extends DBConnector
             e.getStackTrace();
             return null;
         }
+    }
+    public boolean checkMissingInfo(Member member)      //입력값 빠진거 확인
+    {
+        if(member.getId().equals(null) ||member.getId().equals(""))
+            return false;
+        if(member.getName().equals(null)||member.getName().equals(""))
+            return false;
+        if(member.getPassword().equals(null)||member.getPassword().equals(""))
+            return false;
+        if(member.getPhoneNum().equals(null)||member.getPhoneNum().equals(""))
+            return false;
+        return true;
     }
 }

@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="register-contents">
-    <div class="title"><strong>예약 등록</strong></div><br>
+    <div class="title"><strong>예약 정보 등록</strong></div><br>
     <form action="/reservation/registerReservation" method="POST">
         <div class="input-info">
             <label>회원이름</label><input name = "name" type="text" placeholder="이름을 입력하시오"><br>
@@ -54,6 +54,7 @@
             <br>
             <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
+            <input name="condition" value="예약" style="visibility: hidden">
         </div>
     </form>
 </div>

@@ -17,7 +17,7 @@ public class DeleteReservation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            if(reservationDBManager.deleteReservation(req.getParameter("id")))
+            if(reservationDBManager.deleteReservation(req.getParameter("id"), req.getParameter("reservation")))
                 htmlPrint(resp, "삭제 완료");
             else
                 htmlPrint(resp, "삭제 실패");

@@ -38,8 +38,7 @@
                 <th>가격</th>
                 <th>상품 상태</th>
                 <th>재고</th>
-                <th>빅오</th>
-                <th>선택</th>
+                <th>비고</th>
             </tr>
 
             <% Object[] productPackages = (Object[]) request.getAttribute("productPackages");
@@ -58,7 +57,6 @@
             <td>${productPackage.state}</td>
             <td>${productPackage.stock}</td>
             <td>${productPackage.note}</td>
-            <td><input type="checkbox" name="check" value="${productPackage.id}"></td>
         </tr>
         <%}%>
         </table>
@@ -79,11 +77,11 @@
     }
 
     function showModifyPopup() {
-        window.open("/view/modifyProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+        window.open("/view/productPackage/modifyProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
     }
 
     function showDeletePopup(){
-        window.open("/view/deleteProduct", "a", "width=500, height=300, left=100, top=50, resizable=no");
+        window.open("/view/productPackage/deleteProduct", "a", "width=500, height=300, left=100, top=50, resizable=no");
     }
 </script>
 

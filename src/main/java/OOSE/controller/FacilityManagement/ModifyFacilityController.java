@@ -25,16 +25,16 @@ public class ModifyFacilityController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
+            req.setCharacterEncoding("UTF-8");
             String name = req.getParameter("name");
-            boolean check = dbManager.registerFacilityInfo(name);
+            String oldName = req.getParameter("oldName");
+            boolean check = dbManager.modifyFacilityInfo(oldName, name);
             if(check) {
                 req.setAttribute("check", check);
-                RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                dispatcher.forward(req, resp);
+                resp.sendRedirect("view/facility/FacilityModify.jsp");
             }else {//실패
                 req.setAttribute("check", check);
-                RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityManagement.jsp");
-                dispatcher.forward(req, resp);
+                resp.sendRedirect("view/facility/FacilityModify.jsp");
             }
         } catch(Exception e) {
             e.printStackTrace();

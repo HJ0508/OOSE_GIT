@@ -24,14 +24,24 @@ public class ModifyMember extends HttpServlet
         member.setAuthority(1);
         member.setPhoneNum(req.getParameter("phoneNumber"));
 
-        dbManager.modifyMemberInfo(member);
-
-        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");     //회원쪽 사이트에서도 이용하려면 바꾸거나 다른 처리르 해 줘야됨
-
-//        PrintWriter out = resp.getWriter();
-//        out.println("<script>");
-//        out.println("history.back();");       //이전 페이지로 가는 함순데 자꾸 똑같은 페이지만 보여줌 ㅠ
-//        out.println("</script>");
-        //작동을 안하는데..?
+        if(!dbManager.checkMissingInfo(member))
+        {
+            PrintWriter out = resp.getWriter();
+            out.println("<script>");
+            out.println("alert('입력값이 빠졌습니다');");
+            out.println("history.back();");
+            out.println("</script>");
+            return;
+        }
+        if(dbManager.modifyMemberInfo(member))       //수정 성공
+            resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
+        else
+        {
+            PrintWriter out = resp.getWriter();
+            out.println("<script>");
+            out.println("alert('업데이트 실패했습니다');");
+            out.println("history.back();");
+            out.println("</script>");
+        }
     }
 }

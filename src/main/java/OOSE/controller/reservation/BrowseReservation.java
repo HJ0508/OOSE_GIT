@@ -21,6 +21,7 @@ public class BrowseReservation extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, java.io.IOException {
         String keyword = req.getParameter("keyword");
         String category = req.getParameter("option-category");
+        String reservationCode = req.getParameter("condition");
         int tmp=0;
         switch (category){
             case "회원명":
@@ -31,10 +32,16 @@ public class BrowseReservation extends HttpServlet {
                 break;
         }
         try {
-            List<Reservation> list = new ArrayList(Arrays.asList(reservationDBManager.browseReservation(keyword, tmp)));
+            List<Reservation> list = new ArrayList(Arrays.asList(reservationDBManager.browseReservation(keyword, tmp, reservationCode)));
             req.setAttribute("list", list);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/reservationBrowse.jsp");
-            dispatcher.forward(req,resp);
+            if(reservationCode.equals("예약")) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/reservationBrowse.jsp");
+                dispatcher.forward(req, resp);
+            } else {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/reservationCancelBrowse.jsp");
+                dispatcher.forward(req, resp);
+            }
+
         } catch (Exception e){
             e.printStackTrace();
         }

@@ -1,5 +1,5 @@
 package OOSE.db;
-import OOSE.model.*;
+import OOSE.model.Facility;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

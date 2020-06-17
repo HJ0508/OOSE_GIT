@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "modifyProduct", urlPatterns = {"/view/modifyProduct"})
+@WebServlet(name = "modifyProduct", urlPatterns = {"/view/productPackage/modifyProduct"})
 public class modifyController extends HttpServlet {
     ProductPackageDBManager dbManager = new ProductPackageDBManager();
 
@@ -26,7 +26,7 @@ public class modifyController extends HttpServlet {
                 ProductPackage[] pp = dbManager.browseProductInfo();
                 req.setAttribute("productList", pp);
 
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/modifyProductPackage.jsp"); //돌려주는 방식은 좀 다르게 해야할 듯
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/modifyProductPackage.jsp"); //돌려주는 방식은 좀 다르게 해야할 듯
                 dispatcher.forward(req, resp);
             }else{
                 resp.setContentType("application/json;charset=UTF-8");

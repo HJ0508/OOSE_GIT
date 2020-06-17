@@ -18,7 +18,7 @@ public class ModifyReservation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            Reservation[] reservations = reservationDBManager.browseReservation(req.getParameter("reservation"), 3);
+            Reservation[] reservations = reservationDBManager.browseReservation(req.getParameter("reservation"), 3,req.getParameter("condition"));
             req.setAttribute("reservations", reservations[0]);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/modifyReservationPopup.jsp");
             dispatcher.forward(req, resp);
@@ -33,10 +33,12 @@ public class ModifyReservation extends HttpServlet {
             System.out.println("->"+req.getParameter("reservationId"));
             Reservation reservation = new Reservation(Integer.parseInt(req.getParameter("reservationId")), Integer.parseInt(req.getParameter("accommodation")),
                     Integer.parseInt(req.getParameter("roomNumber")), req.getParameter("name"), req.getParameter("tel"), req.getParameter("carNumber"),
-                    req.getParameter("checkIn"), req.getParameter("checkOut"), 0, "예약", Integer.parseInt(req.getParameter("headCount")));
+                    req.getParameter("checkIn"), req.getParameter("checkOut"), 0, null, Integer.parseInt(req.getParameter("headCount")));
             boolean result = reservationDBManager.modifyReservation(reservation);
-            if(result)
-                htmlPrint(resp,"수정 완료");
+            if(result) {
+                htmlPrint(resp, "수정 완료");
+                resp.getWriter().print("<script>self.close()</script>");
+            }
             else
                 htmlPrint(resp,"수정 실패");
         } catch (Exception e){
