@@ -24,9 +24,22 @@ public class registerController extends HttpServlet {
         //System.out.println(new String(req.getParameter("name").getBytes("8859-1"), "euc-kr"));
 
         String name = req.getParameter("name");
-        int price = Integer.parseInt(req.getParameter("price"));
+        Object tempPrice = req.getParameter("price");
+        int price;
+        if(tempPrice.equals("")){
+            price = -1;
+        }else{
+            System.out.println(tempPrice);
+            price = Integer.parseInt((String) tempPrice);
+        }
         String state = req.getParameter("state");
-        int stock = Integer.parseInt(req.getParameter("stock"));
+        Object tempStock = req.getParameter("stock");
+        int stock;
+        if(tempStock.equals("")){
+            stock = -1;
+        }else{
+            stock = Integer.parseInt((String) tempStock);
+        }
         String note = req.getParameter("note");
 
         resp.setContentType("application/json;charset=UTF-8");
@@ -41,18 +54,23 @@ public class registerController extends HttpServlet {
         pp.setNote(note);
 
         try{
-            boolean result = dbManager.registerProductInfo(pp);
-
-            if(result){
-                req.setAttribute("result", "1");
+            if(pp.getName() == null || pp.getPrice() == -1 || pp.getStock() == -1){
+                req.setAttribute("result", 2);
             }else{
-                req.setAttribute("result", "0");
+                boolean result = dbManager.registerProductInfo(pp);
+                if(result){
+                    req.setAttribute("result", 1);
+                }else{
+                    req.setAttribute("result", 3);
+                }
             }
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/registerProductPackage.jsp");
-            dispatcher.forward(req, resp);
+
         }catch(SQLException e){
             e.printStackTrace();
-            //예외 발생 시 처리
+           req.setAttribute("result", 0);
+        }finally {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/registerProductPackage.jsp");
+            dispatcher.forward(req, resp);
         }
     }
 }

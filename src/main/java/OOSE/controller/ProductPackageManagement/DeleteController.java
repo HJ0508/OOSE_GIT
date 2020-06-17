@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "deleteProduct", urlPatterns = {"/view/deleteProduct"})
+@WebServlet(name = "deleteProduct", urlPatterns = {"/view/productPackage/deleteProduct"})
 public class DeleteController extends HttpServlet {
 
     @Override
@@ -24,7 +24,7 @@ public class DeleteController extends HttpServlet {
                 ProductPackage[] pp = dbManager.browseProductInfo();
                 req.setAttribute("productList", pp);
 
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/deleteProductPackage.jsp"); //돌려주는 방식은 좀 다르게 해야할 듯
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/deleteProductPackage.jsp"); //돌려주는 방식은 좀 다르게 해야할 듯
                 dispatcher.forward(req, resp);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -36,17 +36,18 @@ public class DeleteController extends HttpServlet {
 
 
             ProductPackage pp = new ProductPackage();
-           // pp.setName(req.getParameter("selected"));
+            pp.setName(req.getParameter("name"));
+            System.out.println(pp.getName());
 
             try {
-                boolean result = dbManager.modifyProductInfo(pp);
+                boolean result = dbManager.deleteProductInfo(pp);
 
                 if (result) {
                     req.setAttribute("result", "1");
                 } else {
                     req.setAttribute("result", "0");
                 }
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/deleteProductPackage.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/deleteProductPackage.jsp");
                 dispatcher.forward(req, resp);
             } catch (SQLException e) {
                 e.printStackTrace();
