@@ -11,36 +11,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/FacilityInformationManagement.css"/>
+    <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/FacilityInformationManagement.css"/>--%>
+    <title>시설정보관리</title>
     <script language="javascript">
-        let registerurl = "${pageContext.request.contextPath}/view/facility/";
-        let modifyurl = "${pageContext.request.contextPath}/view/facility/";
-        let deleteurl = "${pageContext.request.contextPath}/view/facility/";
+        var radiocheck;
+        let registerUrl = "${pageContext.request.contextPath}/view/facility/";
+        let modifyUrl = "${pageContext.request.contextPath}/view/facility/";
+        let deleteUrl = "${pageContext.request.contextPath}/view/facility/";
         function register() {
-            checkTableRow();
-            registerurl = "${pageContext.request.contextPath}/view/facility/FacilityInformationRegister.jsp?name=" + encodeURI(document.getElementsByName("name")[radioSelectedRow].innerHTML);
-            console.log(registerurl);
-            window.open(registerurl, "register", "width=500, height=400, left=200, top=100");
+            var check = document.getElementsByName("radio");
+            for(var i=0;i<check.length;i++)
+            {
+                if(check[i].checked)
+                {
+                    radiocheck=i;
+                    console.log(check[i].value);
+                    registerUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationRegister.jsp?name=" + check[i].value;
+                }
+            }
+            window.open(registerUrl, "register", "width=500, height=400, left=200, top=100");
         }
 
         function modify() {
-            checkTableRow();
-            modifyurl = "${pageContext.request.contextPath}/view/facility/FacilityInformationModify.jsp?name=" + encodeURI(document.getElementsByName("name")[radioSelectedRow].innerHTML) +
-                "&workspaceId=" + encodeURI(document.getElementsByName("workspaceId")[radioSelectedRow].innerHTML) + "&fee=" + encodeURI(document.getElementsByName("fee")[radioSelectedRow].innerHTML) +
-                    "&openTime=" + encodeURI(document.getElementsByName("openTime")[radioSelectedRow].innerHTML) + "&closeTime" + encodeURI(document.getElementsByName("closeTime")[radioSelectedRow].innerHTML) +
-                        "&manager=" + encodeURI(document.getElementsByName("manager")[radioSelectedRow].innerHTML) + "&capacity=" + encodeURI(document.getElementsByName("capacity")[radioSelectedRow].innerHTML);
-            console.log(modifyurl);
-            window.open(modifyurl, "modify", "width=500, height=400, left=200, top=100");
+            var check = document.getElementsByName("radio");
+            for(var i=0;i<check.length;i++)
+            {
+                if(check[i].checked)
+                {
+                    radiocheck=i;
+                }
+            }
+            modifyUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationModify.jsp?name=" + document.getElementsByName("name")[radiocheck].innerHTML +
+                "&workPlaceId=" + document.getElementsByName("workPlaceId")[radiocheck].innerHTML + "&facilityState=" + document.getElementsByName("facilityState")[radiocheck].innerHTML +
+                "&fee=" + document.getElementsByName("fee")[radiocheck].innerHTML + "&openTime=" + document.getElementsByName("openTime")[radiocheck].innerHTML +
+                "&closeTime=" + document.getElementsByName("closeTime")[radiocheck].innerHTML +
+                "&manager=" + document.getElementsByName("manager")[radiocheck].innerHTML + "&capacity=" + document.getElementsByName("capacity")[radiocheck].innerHTML;
+            window.open(modifyUrl, "modify", "width=500, height=400, left=200, top=100");
         }
 
         function remove() {
-            checkTableRow();
-            deleteurl = "${pageContext.request.contextPath}/view/facility/FacilityInformationDelete.jsp?name=" + encodeURI(document.getElementsByName("name")[radioSelectedRow].innerHTML);
-            console.log(deleteurl);
-            window.open(deleteurl, "remove", "width=500, height=400, left=200, top=100");
+            var check = document.getElementsByName("radio");
+            for(var i=0;i<check.length;i++)
+            {
+                if(check[i].checked)
+                {
+                    radiocheck=i;
+                }
+            }
+            deleteUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationDelete.jsp?name=" + document.getElementsByName("name")[radiocheck].innerHTML;
+            console.log(deleteUrl);
+            window.open(deleteUrl, "remove", "width=500, height=400, left=200, top=100");
         }
     </script>
-    <title>시설정보관리</title>
+
 </head>
 <body>
     <%--<%@include file="../default/header.jsp"%>--%>
@@ -79,15 +102,15 @@
                             pageContext.setAttribute("facility", facility);
                 %>
                 <tr>
-                    <td id = "id">${facility.id}</td>
-                    <td id = "name">${facility.name}</td>
-                    <td id = "workPlaceId">${facility.workPlaceId}</td>
-                    <td id = "facilityState">${facility.facilityState}</td>
-                    <td id = "fee">${facility.fee}</td>
-                    <td id = "openTime">${facility.openTime}</td>
-                    <td id = "closeTime">${facility.closeTime}</td>
-                    <td id = "manager">${facility.manager}</td>
-                    <td id = "capacity">${facility.capacity}</td>
+                    <td name = "id" value = "${facility.id}">${facility.id}</td>
+                    <td name = "name" value = "${facility.name}">${facility.name}</td>
+                    <td name = "workPlaceId" value = "${facility.workPlaceId}"> ${facility.workPlaceId}</td>
+                    <td name = "facilityState" value = "${facility.facilityState}"> ${facility.facilityState}</td>
+                    <td name = "fee" value = "${facility.fee}"> ${facility.fee}</td>
+                    <td name = "openTime" value = "${facility.openTime}"> ${facility.openTime}</td>
+                    <td name = "closeTime" value = "${facility.closeTime}"> ${facility.closeTime}</td>
+                    <td name = "manager" value = "${facility.manager}"> ${facility.manager}</td>
+                    <td name = "capacity" value = "${facility.capacity}"> ${facility.capacity}</td>
                     <td><input type="radio" name = "radio" value = "${facility.name}"></td>
                 </tr>
                 <%
@@ -95,13 +118,14 @@
                     }
                 %>
             </table>
-            <form action="/browseFacilityInformationManagement" method="POST">
-                <input type="submit" value="조회">
-            </form>
+
             <input type="button" value="등록" onclick="register()">
             <input type="button" value="수정" onclick="modify()">
             <input type="button" value="삭제" onclick="remove()">
         </div>
+    </form>
+    <form action="/browseFacilityInformationManagement" method="POST">
+        <input type="submit" value="조회">
     </form>
 </div>
 
