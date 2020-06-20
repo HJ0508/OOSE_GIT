@@ -11,9 +11,10 @@
 <head>
     <title>회원 정보</title>
     <link href="${pageContext.request.contextPath}/css/memberControl.css" rel="stylesheet" type="text/css">
+<%--    <link href="../css/main_member.css" rel="stylesheet" type="text/css">--%>
 </head>
 <body>
-<%--회원용 메인화면 include 해줄것--%>
+<%@include file="../default/main_member.jsp"%>
 <div>
     <table id="browseTable">
         <thead>
