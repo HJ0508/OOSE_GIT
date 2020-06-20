@@ -1,0 +1,112 @@
+/*
+작성 일자: 2020.06.01
+작성자: 박재희
+내용: 회원 관리 메뉴 화면
+산출물 기준: 없음
+*/
+.menuDiv
+{
+    /*border: 1px solid red;      !*걍 공간볼라고 넣은거임*!*/
+    width:10rem;
+    height:100%;
+    margin-top: 27rem;
+}
+.menuDiv ul
+{
+    list-style:none;
+}
+.menuDiv ul li
+{
+    margin-bottom:20px;
+}
+.aLink
+{
+    border:1px solid rgba(52, 152, 219, 0.8);
+    text-decoration: none;
+    background-color: rgba(52,152,219,0.8);
+    font-size:1.5rem;
+    padding:5px;
+    border-radius:5px;
+    color:#ffffff;
+}
+
+/*----------------------------------------------------------------------*/
+/*회원등록 관련 css*/
+.contentDiv
+{
+    position:absolute;
+    left:10.65rem;
+    /*border:1px solid red;*/
+    top:27rem;
+    text-align:center;
+    width:100%; /*화면 크기에 따라 넓이 조절하려고*/
+}
+.contentDiv table
+{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+}
+.contentDiv table span
+{
+    font-size:25px;
+}
+.contentDiv table tr
+{
+    padding-bottom:5px;
+}
+.contentDiv table th
+{
+    padding-left:20px;
+}
+
+.contentDiv table td
+{
+    padding-left:20px;
+}
+.contentDiv table input
+{
+    height:25px;
+    width:200px;
+}
+#submitBtn
+{
+    background:rgba(52, 152, 219, 0.8);
+    font-size:25px;
+    text-decoration:none;
+    margin-top:15px;
+    margin-bottom:20px;
+    color:white;
+    border:none;
+    border-radius:5px; /*버튼 둥글게*/
+}
+/*----------------------------------------------------------------------*/
+/*회원조회 관련 css*/
+.buttonForm
+{
+    /*pdding:0px;*/
+    /*margin:0px;*/
+    height:0px;
+}
+.buttonForm input
+{
+    right:-20rem;
+}
+#browseTable
+{
+    border:1px solid black;
+    top:0;
+}
+#browseTable th
+{
+    padding:10px;
+}
+#browseTable td
+{
+    text-align:center;
+}
+.modify_delete_div
+{
+    bottom:0;
+    margin-top:20px;
+}
