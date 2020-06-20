@@ -7,74 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/DeleteFacilityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/DeleteFacilityInformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/ModifyFacilityInformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/RegisterFacilityInformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityDelete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationCancelPopup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/LoginManagement/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/HtmlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/LoginDBManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/default/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/modifyReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/modifyReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationNavigationBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationNavigationBar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/BrowseFacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/BrowseFacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/BrowseFacilityInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/BrowseFacilityInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/ModifyFacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/ModifyFacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/RegisterFacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/RegisterFacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/MemberController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrouseControllerForMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrouseControllerForMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/DeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/DeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/modifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/modifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/registerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/registerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/CharacterEncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/CharacterEncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoBrowseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoBrowseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/BrowseReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/BrowseReservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/DeleteReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/DeleteReservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/ModifyReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/ModifyReservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/RegisterReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/RegisterReservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/FacilityDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/FacilityDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/FacilityInformationDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/FacilityInformationDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackageDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackageDBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/WorkplaceDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/WorkplaceDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/FacilityInformationManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/FacilityInformationManagement.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView_member.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberMenuView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberMenuView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberSideMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberSideMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/modifyMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/modifyMemberView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/registerMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/registerMemberView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationModify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationRegister.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityModify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityRegister.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductForMember.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductForMember.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductPackage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductPackage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/productPackage/deleteProductPackage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/deleteProductPackage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/productPackage/modifyProductPackage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/modifyProductPackage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/productPackage/registerProductPackage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/registerProductPackage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/modifyReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/modifyReservationPopup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationNavigationBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationNavigationBar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoBrowse.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,8 +49,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -154,6 +100,9 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="OOSE.controller.reservation" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\OOSE_GIT\src\main\webapp\view" />
       <recent name="C:\Users\user\IdeaProjects\OOSE_GIT\src\main\webapp" />
@@ -335,7 +284,8 @@
       <workItem from="1591435220480" duration="6567000" />
       <workItem from="1591891484955" duration="723000" />
       <workItem from="1591965008461" duration="2021000" />
-      <workItem from="1592167768749" duration="18849000" />
+      <workItem from="1592167768749" duration="20094000" />
+      <workItem from="1592487410559" duration="19185000" />
     </task>
     <servers />
   </component>
@@ -394,65 +344,65 @@
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390073011" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590575683365" />
-    <state width="1877" height="128" key="GridCell.Tab.0.bottom" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.0.center" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.0.center" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.0.left" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.0.left" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.0.right" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.0.right" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.1.bottom" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.1.bottom" timestamp="1592643159112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159112" />
     <state width="1877" height="167" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.1.center" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.1.center" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.1.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.1.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.1.left" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.1.left" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.1.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.1.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.1.right" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.1.right" timestamp="1592643159111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.1.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.1.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159111" />
     <state width="1877" height="167" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
-    <state width="1877" height="128" key="GridCell.Tab.2.bottom" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.2.bottom" timestamp="1592643159112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159112" />
     <state width="1877" height="167" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
-    <state width="1877" height="128" key="GridCell.Tab.2.center" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.2.center" timestamp="1592643159112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.2.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.2.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159112" />
     <state width="1877" height="167" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
-    <state width="1877" height="128" key="GridCell.Tab.2.left" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.2.left" timestamp="1592643159112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.2.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.2.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159112" />
     <state width="1877" height="167" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
-    <state width="1877" height="128" key="GridCell.Tab.2.right" timestamp="1592390402289">
+    <state width="1877" height="283" key="GridCell.Tab.2.right" timestamp="1592643159112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="128" key="GridCell.Tab.2.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="283" key="GridCell.Tab.2.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592643159112" />
     <state width="1877" height="167" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
     <state x="619" y="217" width="770" height="606" key="NewModule_or_Project.wizard" timestamp="1592389281411">
       <screen x="0" y="0" width="1920" height="1040" />

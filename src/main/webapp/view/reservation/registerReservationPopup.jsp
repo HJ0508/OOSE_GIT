@@ -48,7 +48,7 @@
             <option value="102">102</option>
             <option value="103">103</option>
         </select><br>
-            <label>인원</label><input name = "headCount" type="number" placeholder="?명"><br>
+            <label>인원</label><input name = "headCount" type="number" placeholder="?명" min="0"><br>
             <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00"><br>
             <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00"><br>
             <br>

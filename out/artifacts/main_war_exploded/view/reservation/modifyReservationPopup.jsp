@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -26,6 +27,7 @@
         .cancel{float:right;}
         .save{float:right; background-color: rgb(52, 152, 219); border-radius: 4px; margin-right:0.3rem;}
     </style>
+
 </head>
 <body>
 <div class="register-contents">
@@ -35,22 +37,22 @@
             <label>회원이름</label><input name = "name" type="text" value = ${reservations.userId}><br>
             <label>전화번호</label><input name = "tel" type="tel" value = ${reservations.phoneNum}><br>
             <label>차량번호</label><input name = "carNumber" type="text" value = ${reservations.carNumber}><br>
-            <label>숙박시설</label><select name="accommodation" value = ${reservations.accommodationId}>
-            <option value="">선택</option>
-            <option value="">1동</option>
-            <option value="">2동</option>
-            <option value="">3동</option>
-            <option value="1111">test</option>
+            <label>숙박시설</label><select name="accommodation">
+<%--            <option value="">선택</option>--%>
+            <option value="1" <c:if test="${reservations.accommodationId==1}"/> selected>1동</option>
+            <option value="2" <c:if test="${reservations.accommodationId==2}"/> selected>2동</option>
+            <option value="3" <c:if test="${reservations.accommodationId==3}"/> selected>3동</option>
+            <option value="1111" <c:if test="${reservations.accommodationId==1111}"/> selected>test</option>
         </select><br>
             <label>호실</label><select name="roomNumber">
-            <option value="">선택</option>
-            <option value="101">101</option>
-            <option value="102">102</option>
-            <option value="103">103</option>
+            <option value=""></option>
+            <option value="101" <c:if test="${reservations.roomNumber==101}"/> selected>101</option>
+            <option value="102" <c:if test="${reservations.roomNumber==102}"/> selected>102</option>
+            <option value="103" <c:if test="${reservations.roomNumber==103}"/> selected>103</option>
         </select><br>
-            <label>인원</label><input name = "headCount" type="number" placeholder="?명"><br>
-            <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00"><br>
-            <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00"><br>
+            <label>인원</label><input name = "headCount" type="number" placeholder="?명" min="0" value=${reservations.headCount}><br>
+            <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00" value="${reservations.checkInDate}"><br>
+            <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00" value="${reservations.checkOutDate}"><br>
             <br>
             <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
