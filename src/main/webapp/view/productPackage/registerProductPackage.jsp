@@ -20,21 +20,22 @@
     <h2>상품 등록</h2>
 </div>
 <div class="register-body">
+
     <form action="registerProduct" method="post">
         <br><br><br>
         <label> 상품 명 <input name="name" type="text"></label> <br><br>
         <label> 가격 <input name="price" type="text"></label> <br><br>
         <label> 상품 상태
             <select name="state">
-                <option>On Sale</option>
-                <option>Sold Out</option>
-                <option>Preparing</option>
+                <option>판매 중</option>
+                <option>판매 완료</option>
+                <option>준비 중</option>
             </select>
         </label> <br><br>
         <label> 재고 <input name="stock" type="text"></label> <br><br>
         <label> 비고 <input name="note" type="text"></label>
         <div class="register-tail">
-            <input type="button" class="cancel-button" name="cancel" value="취소">
+            <input type="reset" class="cancel-button" name="cancel" value="취소">
             <input type="submit" class="sumbit-button" name="register" value="확인">
         </div>
     </form>
@@ -50,8 +51,9 @@
         {
             int result = (Integer)temp;
             if(result == 1){
-               %>
+    %>
     window.onload = alert("등록이 완료되었습니다.");
+    opener.location.reload();
     <%
             }else if(result == 0){
                 %>
@@ -65,10 +67,22 @@
                             %>
     window.onload = alert("이미 등록된 상품입니다.");
     <%
+            }else if(result == 4){
+                %>
+    window.onload = alert("입력 형식이 잘못되었습니다.");
+    <%
+            }else if(result == 6){
+                %>
+    window.onload = alert("권한이 없습니다.");
+    window.close();
+    <%
             }
         }
     %>
-
 </script>
 
 </html>
+
+
+
+

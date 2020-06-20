@@ -1,4 +1,4 @@
-package OOSE.controller.LoginManagement;
+package OOSE.controller.LogineManagement;
 
 import OOSE.db.LoginDBManager;
 import OOSE.db.WorkplaceDBManager;
@@ -38,6 +38,8 @@ public class LoginController extends HttpServlet {
             else if(userDivision.equals("회원")){ 
                 member = dbManager.getMember(id);
             }
+
+
 
             if(member==null){ //조회가 안돼서 null일 경우
                 System.out.println("로그인실패");

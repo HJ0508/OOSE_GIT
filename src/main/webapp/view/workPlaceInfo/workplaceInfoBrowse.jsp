@@ -75,7 +75,7 @@
     <input type="button" value="수정" onclick = modifyOpen()>
     <input type="button" value="삭제" onclick = deleteOpen()>
     <input type="button" value="조회" onclick = browseOpen()>
-    <%--    <button onclick = registerOpen()>등록</button>  formaction="/workplace/browseWorkplaceInfo"--%>
+<%--    <button onclick = registerOpen()>등록</button>  formaction="/workplace/browseWorkplaceInfo"--%>
 </form>
 
 </body>

@@ -12,6 +12,7 @@ import OOSE.model.ProductPackage;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.SQLSyntaxErrorException;
 import java.util.Vector;
 
 public class ProductPackageDBManager {
@@ -98,8 +99,7 @@ public class ProductPackageDBManager {
         }
     }
 
-    /*Model.ProductPackage.Model.*/
-    public ProductPackage[] browseProductInfo() throws SQLException {
+    public ProductPackage[] browseProductInfo() throws SQLException{
         ProductPackage productPackage;
         Vector<ProductPackage> vector = new Vector<>();
         conn = new DBConnector();

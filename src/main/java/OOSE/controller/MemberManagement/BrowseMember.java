@@ -20,7 +20,6 @@ public class BrowseMember extends HttpServlet
 //    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 //    {
 //        super.service(req, resp);
-//        System.out.println("작동은 하네?");
 //        boolean authorityCheckResult=dbManager.checkAuthority(id);
 //
 //        if(authorityCheckResult==true)        //권한검사를 통과하면
@@ -42,7 +41,7 @@ public class BrowseMember extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
         ArrayList<Member> memberList=new ArrayList<Member>();
-        memberList=dbManager.browseMemberList();        //여기까지는 값이 잘 넘어옴(db쪽 연동 및 select는 잘 작동함)
+        memberList=dbManager.browseMemberList();
         req.setAttribute("memberList",memberList);
         req.getRequestDispatcher("/view/MemberView/browseMemberView.jsp").forward(req,resp);
     }

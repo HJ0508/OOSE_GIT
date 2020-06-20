@@ -23,12 +23,13 @@ public class BrowseController extends HttpServlet {
             ProductPackage[] productPackages = dbManager.browseProductInfo();
             req.setAttribute("productPackages", productPackages);
             // ServletContext context = req.getServletContext();
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductPackage.jsp"); /*경로 변경*/
-
-            dispatcher.forward(req, resp);
             System.out.println("Success");
         }catch(SQLException e){
+            req.setAttribute("error", 1);
             e.printStackTrace();
+        }finally{
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductPackage.jsp"); /*경로 변경*/
+            dispatcher.forward(req, resp);
         }
     }
 }

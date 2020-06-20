@@ -97,6 +97,7 @@ public class WorkplaceDBManager {
             throwables.printStackTrace();
         }
     }
+
     public ArrayList<Workplace> browseWorkplace(){
         String query = "SELECT workplaceName FROM oose.workplace";
         try{

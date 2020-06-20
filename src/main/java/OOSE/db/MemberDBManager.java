@@ -3,6 +3,7 @@ package OOSE.db;
 import OOSE.model.Member;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class MemberDBManager extends DBConnector
 {
@@ -108,30 +109,6 @@ public class MemberDBManager extends DBConnector
             return false;
         }
     }
-
-    public boolean checkAuthority(String id)
-    {
-        try
-        {
-            String query="{call browseAuthority(?)}";       //저장 프로시저 사용
-            pstmt=conn.prepareStatement(query);
-            pstmt.setString(1,id);
-            res=pstmt.executeQuery();
-
-            int authority = res.getInt("authority");
-
-            if(authority>this.authority)          //권한 레벨에 대한 정보에 따라 검사 내용이 달라지기 때문에 아직 안적음.
-                return true;        //권한이 있다고 판정된 경우
-            else
-                return false;       //권한이 없다고 판정된 경우
-        }
-        catch(SQLException e)
-        {
-            e.getStackTrace();
-            return false;
-        }
-    }
-
     public ArrayList<Member> browseMemberList()
     {
         try
@@ -198,5 +175,21 @@ public class MemberDBManager extends DBConnector
         if(member.getPhoneNum().equals(null)||member.getPhoneNum().equals(""))
             return false;
         return true;
+    }
+    public boolean checkFormat(Member member)       //형식 체크
+    {
+        if(member.getId().length()>20)  //db에 20글자 이상 안들어감
+            return false;          //형식 안맞음
+        if(member.getName().length()>20)
+            return false;
+        if(member.getPassword().length()>20)
+            return false;
+        if(member.getPhoneNum().length()>20)
+            return false;
+        String regExp="(\\d{3})-(\\d{4})-(\\d{4})";        //전화번호 체크 정규식
+        if(!Pattern.matches(regExp,member.getPhoneNum()))    //형식에 안맞으면
+            return false;
+
+        return true;        //위의 형식을 모두 통과하면 true 반환
     }
 }

@@ -1,0 +1,31 @@
+.delete-head {
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.delete-body {
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.delete-bottom {
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.delete-bottom input {
+    width: 80px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgba(52, 152, 219, 0.8);
+    border: 0px;
+    outline: 0px;
+    color: white;
+}

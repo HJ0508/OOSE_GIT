@@ -65,7 +65,6 @@
     <div class="modify_delete_div">
         <a id="modify" class="aLink" href="#" onclick="parsingMember()">수정</a>
         <a id ="delete" class="aLink" href="#" onclick="deleteConfirm()">삭제</a>
-        <a id="browseMemberView" class="aLink" href="#" onclick="reqBrowseMember()">회원</a>
     </div>
 </div>
 
@@ -102,13 +101,6 @@
         }
     }
 
-    //테스트용임, 나중에 회원 페이지에 갖다넣을것
-    function reqBrowseMember()
-    {
-        checkTableRow();
-        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member?id="+document.getElementsByName("id")[radioSelectedRow].innerHTML);
-        //로그인된 사용자의 정보를 세션에서 가져옴, 로그인시 세션에 저장되어 있을것
-    }
 </script>
 </body>
 </html>
