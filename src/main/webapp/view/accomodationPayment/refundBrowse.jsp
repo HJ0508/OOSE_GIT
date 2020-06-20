@@ -27,32 +27,6 @@
         <div class="title"><strong>환불 정보 관리</strong><br><br></div>
         <div class="contents-option">
             <div class="contents-table">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>NO.</th>
-                        <th>총인원</th>
-                        <th>납부금액</th>
-                        <th>결제방법</th>
-                        <th>결제구분</th>
-                        <th>환불계좌</th>
-                        <th>결제일자</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${list}" var = "accomodationPayment">
-                        <tr>
-                            <td>${accomodationPayment.paymentId}</td>
-                            <td>${accomodationPayment.totalPeople}</td>
-                            <td>${accomodationPayment.money}</td>
-                            <td>${accomodationPayment.paymentWay}</td>
-                            <td>${accomodationPayment.refund}</td>
-                            <td>${accomodationPayment.division}</td>
-                            <td>${accomodationPayment.paidDate}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
                 <div>
                     <form method="post" action="/reqBrowseAccomodationPayment">
                         <input type="submit"value="조회">

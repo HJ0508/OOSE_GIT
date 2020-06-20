@@ -12,26 +12,24 @@ public class MemberDBManager extends DBConnector
     {
         try
         {
+            String query = "INSERT INTO oose.user(userId, userIdentify) values(?,?)";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, member.getId());
+            pstmt.setInt(2, 1);   //회원의 identify 임의로 1로 지정
+            pstmt.executeUpdate();
+
             //회원 테이블에 정보 입력
-            String query = "INSERT INTO oose.member(memberId,memberName,password,authority,phoneNumber) VALUES (?,?,?,?,?)";
+            query = "INSERT INTO oose.member(memberId,memberName,password,authority,phoneNumber) VALUES (?,?,?,?,?)";
             pstmt=conn.prepareStatement(query);
             pstmt.setString(1,member.getId());
             pstmt.setString(2,member.getName());
             pstmt.setString(3,member.getPassword());
-            pstmt.setInt(4,1);        //권한 레벨은 추후에 정해지면 고칠것, 일단 임의로 1레벨 줬음. string값으로 줘야되는지, int값으로 줘야되는지 잘 모르겠음
+            pstmt.setInt(4,1);        //1레벨
             pstmt.setString(5,member.getPhoneNum());
 
-            System.out.println(member.getName());
             pstmt.executeUpdate();
-            //오류는 안나는데 입력한 값이 실제 db에서 조회가 안됨, 즉 실제 디비에는 값이 안들어가있음 쉬바
 
             //사용자 테이블에 정보 입력
-            query = "INSERT INTO oose.user(userId, userIdentify) values(?,?)";
-            pstmt = conn.prepareStatement(query);
-            pstmt.setString(1, member.getId());
-            pstmt.setInt(2, 1);   //회원의 identify 임의로 1로 지정
-
-            pstmt.executeUpdate();       //executeUpdate()의 insert 반환값은 저장된 레코드 수 이다
         }
         catch(SQLException e)
         {
@@ -41,7 +39,29 @@ public class MemberDBManager extends DBConnector
         return true;    //오류가 안나면 true를 return
     }
 
-    public boolean modifyMember(Member member)
+    public boolean checkDuplicationInfo(String id)      //회원정보 중복 체크
+    {
+        try {
+            String query = "select memberId from oose.member where memberId=?";
+            pstmt = conn.prepareStatement(query);
+
+            pstmt.setString(1, id);
+            res = pstmt.executeQuery();
+
+            while (res.next())
+            {
+                if(res.getString("memberId").equals(id))
+                    return true;       //중복 있음
+            }
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+            return true;
+        }
+        return false;        //중복 없음
+    }
+    public boolean modifyMemberInfo(Member member)
     {
         try
         {
@@ -54,12 +74,37 @@ public class MemberDBManager extends DBConnector
             pstmt.setString(4, member.getPhoneNum());
             pstmt.setString(5, member.getId());
 
+            if(pstmt.executeUpdate()!=0)
+                return true;        //성공
+            else
+                return false;
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+            return false;
+        }
+    }
+
+    public boolean deleteMemberInfo(Member member)
+    {
+        try
+        {
+            String query = "delete from oose.member where memberId=?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, member.getId());
+            int result = pstmt.executeUpdate();
+
+            query = "delete from oose.user where userId=?";     //사용자 테이블에서도 정보 삭제
+            pstmt=conn.prepareStatement(query);
+            pstmt.setString(1, member.getId());
             pstmt.executeUpdate();
             return true;
         }
         catch(SQLException e)
         {
             e.getStackTrace();
+            System.out.println("error");
             return false;
         }
     }
@@ -79,7 +124,6 @@ public class MemberDBManager extends DBConnector
                 return true;        //권한이 있다고 판정된 경우
             else
                 return false;       //권한이 없다고 판정된 경우
-            //
         }
         catch(SQLException e)
         {
@@ -103,7 +147,6 @@ public class MemberDBManager extends DBConnector
                 Member member=new Member();
 
                 member.setId(res.getString("memberId"));
-                System.out.println(member.getId());
                 member.setPassword(res.getString("password"));
                 member.setName(res.getString("memberName"));
                 member.setAuthority(res.getInt("authority"));
@@ -118,5 +161,42 @@ public class MemberDBManager extends DBConnector
             e.getStackTrace();
             return null;
         }
+    }
+    public Member browseMemberInfo(Member member)
+    {
+        try
+        {
+            String query= "select * from oose.member where memberId=?";
+            pstmt=conn.prepareStatement(query);
+            pstmt.setString(1, member.getId());
+
+            res = pstmt.executeQuery();
+
+            while(res.next())
+            {
+                member.setName(res.getString("memberName"));
+                member.setAuthority(res.getInt("authority"));
+                member.setPassword(res.getString("password"));
+                member.setPhoneNum(res.getString("phoneNumber"));
+            }
+            return member;
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+            return null;
+        }
+    }
+    public boolean checkMissingInfo(Member member)      //입력값 빠진거 확인
+    {
+        if(member.getId().equals(null) ||member.getId().equals(""))
+            return false;
+        if(member.getName().equals(null)||member.getName().equals(""))
+            return false;
+        if(member.getPassword().equals(null)||member.getPassword().equals(""))
+            return false;
+        if(member.getPhoneNum().equals(null)||member.getPhoneNum().equals(""))
+            return false;
+        return true;
     }
 }

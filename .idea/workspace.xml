@@ -6,122 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/teee_ear_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/teee_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/WebSocket_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/OOSE_GIT.OOSE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/OOSE_GIT.OOSE.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/OOSE_GIT.OOSE.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/application.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/lib/c.tld" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/aggregate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/browseProduct.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/main_member.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/browseMemberView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/modifyMemberView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/facility/FacilityRegister.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/productPackage/browseProductPackage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/productPackage/main.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/productPackage/performanceAggregate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/productPackage/testFile.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoRegister.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workplaceInfoDelete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workplaceInfoModify.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/main/META-INF/main.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/AggregateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrowseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceDeleteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoBrowseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceModifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/BrowseAccomodationPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/DeleteAccomodationPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/ModifyAccomodationPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/RegisterAccomodationPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/DeleteReservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/RegisterReservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackageDBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackagePaymentDBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/c.tld" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/aggregate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/browseProduct.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/main_member.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/modifyMemberView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/default/main_member.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityRegister.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductPackage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/main.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/performanceAggregate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/testFile.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workPlaceInfoRegister.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoDelete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoModify.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/server-config.wsdd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___OOSE_war__exploded_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Gradle___OOSE_war__exploded_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___OOSE_war__exploded_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OOSE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OOSE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OOSE.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OOSE.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/OOSE.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OOSE.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/FacilityManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/FacilityManagement.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/memberControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/memberControl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/memberMenuView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/memberMenuView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/memberSideMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/memberSideMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/registerMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/registerMemberView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/facility/FacilityInformationManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/facility/FacilityInformationManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/facility/FacilityManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/facility/FacilityManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/CharacterEncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/CharacterEncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/BrowseReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/BrowseReservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/AccomodationPaymentDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AccomodationPaymentDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/FacilityDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/FacilityDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/WorkplaceDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/WorkplaceDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Workplace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Workplace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/FacilityManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/FacilityManagement.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/memberControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/memberControl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberMenuView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberMenuView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberSideMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberSideMenu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/registerMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/registerMemberView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentModify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentRegister.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundModify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundRegister.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityInformationManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/facility/FacilityManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workPlaceInfoBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workPlaceInfoBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,6 +42,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -165,7 +56,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1cUDhtKvhIHgQbysDjIluVjA1Ti" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -175,11 +66,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/OOSE_GIT-Jin-ProductPackage-Intergrated-" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -187,10 +82,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="project.structure.side.proportion" value="0.34367815" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -358,8 +253,13 @@
       <workItem from="1590990638989" duration="38616000" />
       <workItem from="1591107884740" duration="1847000" />
       <workItem from="1591185031091" duration="3464000" />
-      <workItem from="1591296368279" duration="3783000" />
-      <workItem from="1592652507229" duration="380000" />
+      <workItem from="1591296368279" duration="29521000" />
+      <workItem from="1591435220480" duration="6567000" />
+      <workItem from="1591891484955" duration="723000" />
+      <workItem from="1591965008461" duration="2021000" />
+      <workItem from="1592167768749" duration="18849000" />
+      <workItem from="1592653951815" duration="3772000" />
+      <workItem from="1592664368603" duration="647000" />
     </task>
     <servers />
   </component>
@@ -374,14 +274,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="324" key="#BuildArtifactsBeforeRunChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590575691552" />
-    <state x="552" y="178" key="#Project_Structure" timestamp="1592652878302">
+    <state x="552" y="178" key="#Project_Structure" timestamp="1591253181365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1592652878302" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591107863644">
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1591253181365" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592226176363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591107863644" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592226176363" />
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590751375151" />
     <state x="709" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590978993170">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -396,10 +296,15 @@
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591281166118" />
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591258942676" />
-    <state x="628" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590997704276">
+    <state x="628" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1591891517506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="628" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591891517506" />
     <state x="628" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590997704276" />
+    <state x="751" y="378" width="417" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591416804877">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="751" y="378" width="417" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591416804877" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591082593725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -408,88 +313,100 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591253100074" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1591321358762">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1592390073011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591321358762" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390073011" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590575683365" />
-    <state width="1877" height="289" key="GridCell.Tab.0.bottom" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.0.bottom" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885190" />
-    <state width="1877" height="289" key="GridCell.Tab.0.center" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.0.center" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885190" />
-    <state width="1877" height="289" key="GridCell.Tab.0.left" timestamp="1591297119006">
+    <state width="1877" height="128" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.0.left" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119006" />
-    <state width="1877" height="210" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885190" />
-    <state width="1877" height="289" key="GridCell.Tab.0.right" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.0.right" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885190" />
-    <state width="1877" height="289" key="GridCell.Tab.1.bottom" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.1.bottom" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state width="1877" height="289" key="GridCell.Tab.1.center" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.1.center" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.1.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state width="1877" height="289" key="GridCell.Tab.1.left" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.1.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.1.left" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.1.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885190" />
-    <state width="1877" height="289" key="GridCell.Tab.1.right" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.1.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.1.right" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.1.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state width="1877" height="289" key="GridCell.Tab.2.bottom" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.1.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961211" />
+    <state width="1877" height="128" key="GridCell.Tab.2.bottom" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state width="1877" height="289" key="GridCell.Tab.2.center" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
+    <state width="1877" height="128" key="GridCell.Tab.2.center" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.2.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state width="1877" height="289" key="GridCell.Tab.2.left" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.2.center/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
+    <state width="1877" height="128" key="GridCell.Tab.2.left" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.2.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state width="1877" height="289" key="GridCell.Tab.2.right" timestamp="1591297119007">
+    <state width="1877" height="128" key="GridCell.Tab.2.left/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
+    <state width="1877" height="128" key="GridCell.Tab.2.right" timestamp="1592390402289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="289" key="GridCell.Tab.2.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591297119007" />
-    <state width="1877" height="210" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591265885191" />
-    <state x="619" y="217" width="770" height="606" key="NewModule_or_Project.wizard" timestamp="1591225649204">
+    <state width="1877" height="128" key="GridCell.Tab.2.right/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592390402289" />
+    <state width="1877" height="167" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592191961212" />
+    <state x="619" y="217" width="770" height="606" key="NewModule_or_Project.wizard" timestamp="1592389281411">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="619" y="217" width="770" height="606" key="NewModule_or_Project.wizard/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591225649204" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1591253312061">
+    <state x="619" y="217" width="770" height="606" key="NewModule_or_Project.wizard/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592389281411" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1592664082842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1591104480339" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591253312061" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592224895888" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592664082842" />
+    <state x="665" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592664055911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="665" y="411" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1592664055911" />
     <state x="690" y="298" key="extract.method.dialog" timestamp="1591009524183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="298" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591009524183" />
-    <state x="653" y="251" width="613" height="538" key="find.popup" timestamp="1591091928776">
+    <state x="653" y="251" width="613" height="538" key="find.popup" timestamp="1592190532050">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="653" y="251" width="613" height="538" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591091928776" />
+    <state x="653" y="251" width="613" height="538" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592190532050" />
+    <state x="394" y="86" key="new project wizard" timestamp="1592664291901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="394" y="86" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1592664291901" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1592175692184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592175692184" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591281605124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

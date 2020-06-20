@@ -39,7 +39,6 @@
                 <th>상품 상태</th>
                 <th>재고</th>
                 <th>비고</th>
-                <th>선택</th>
             </tr>
 
             <% Object[] productPackages = (Object[]) request.getAttribute("productPackages");
@@ -58,17 +57,32 @@
             <td>${productPackage.state}</td>
             <td>${productPackage.stock}</td>
             <td>${productPackage.note}</td>
-            <td><input type="checkbox"></td>
         </tr>
         <%}%>
         </table>
         <%}%>
+
     </div>
     <div class="button-frame">
-        <button><a>등록</a></button>
-        <button><a>수정</a></button>
-        <button><a href="#">삭제</a></button>
+        <button onclick="showRegisterPopup()">등록</button>
+        <button onclick="showModifyPopup()"><a>수정</a></button>
+        <button onclick ="showDeletePopup()"><a>삭제</a></button>
     </div>
 </div>
 </body>
+
+<script language="javascript">
+    function showRegisterPopup() {
+        window.open("http://localhost:8080/view/productPackage/registerProductPackage.jsp", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    }
+
+    function showModifyPopup() {
+        window.open("/view/productPackage/modifyProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    }
+
+    function showDeletePopup(){
+        window.open("/view/productPackage/deleteProduct", "a", "width=500, height=300, left=100, top=50, resizable=no");
+    }
+</script>
+
 </html>

@@ -48,11 +48,21 @@ public class AccomodationPaymentDBManager extends OOSE.db.DBConnector{
             return false;
         }
     }
-    public boolean deleteAccomodationPayment(String paymentId) throws SQLException {
-        query = "DELETE FROM `oose`.`accomodationPayment` WHERE paymentId = ?";
-        pstmt = conn.prepareStatement(query);
-        pstmt.setInt(1, Integer.parseInt(paymentId));
-        return pstmt.executeUpdate()!=0;
+    public boolean deleteAccomodationPayment(AccomodationPayment accomodationPayment) throws SQLException {
+        try
+        {
+            String query = "delete from oose.accomodationPayment where paymentId=?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1, accomodationPayment.getPaymentId());
+            pstmt.executeUpdate();
+            return true;
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+            System.out.println("error");
+            return false;
+        }
     }
     public ArrayList<AccomodationPayment> browseAccomodationPaymentList()
     {

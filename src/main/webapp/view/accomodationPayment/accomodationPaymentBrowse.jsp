@@ -45,17 +45,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${list}" var = "accomodationPayment">
-                            <tr>
-                                <td>${accomodationPayment.paymentId}</td>
-                                <td>${accomodationPayment.totalPeople}</td>
-                                <td>${accomodationPayment.money}</td>
-                                <td>${accomodationPayment.paymentWay}</td>
-                                <td>${accomodationPayment.refund}</td>
-                                <td>${accomodationPayment.division}</td>
-                                <td>${accomodationPayment.paidDate}</td>
-                            </tr>
-                            </c:forEach>
                         <c:forEach items="${accomodationPayment}" var = "accomodationPaymentInfo">
                             <tr>
                                 <td>${accomodationPaymentInfo.paymentId}</td>

@@ -12,7 +12,7 @@
     <link href="${pageContext.request.contextPath}/css/memberControl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%@include file="../default/header.jsp"%>
-    <%@include file="memberSideMenu.jsp"%>
+<%@include file="../default/header.jsp"%>
+<%@include file="memberSideMenu.jsp"%>
 </body>
 </html>
