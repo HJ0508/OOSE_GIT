@@ -17,8 +17,13 @@
 <body>
 <%@ include file="../default/header.jsp"%>
 <div class = "contents-container">
-    <%@ include file="accomodationPaymentNaviBar.jsp"%>
     <div class="contents">
+        <div class="side-menu">
+            <ul>
+                <li><a href="${pageContext.request.contextPath}/view/accomodationPayment/accomodationPaymentBrowse.jsp">결제정보조회</a></li>
+                <li><a href="${pageContext.request.contextPath}/view/accomodationPayment/refundBrowse.jsp">환불정보조회</a></li>
+            </ul>
+        </div>
         <div class="title"><strong>환불 정보 관리</strong><br><br></div>
         <div class="contents-option">
             <div class="contents-table">
@@ -48,6 +53,38 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                <div>
+                    <form method="post" action="/reqBrowseAccomodationPayment">
+                        <input type="submit"value="조회">
+                    </form>
+                </div>
+                <div class="contents-table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>NO.</th>
+                            <th>총인원</th>
+                            <th>납부금액</th>
+                            <th>결제방법</th>
+                            <th>결제구분</th>
+                            <th>환불계좌</th>
+                            <th>결제일자</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${accomodationPayment}" var = "accomodationPaymentInfo">
+                            <tr>
+                                <td>${accomodationPaymentInfo.paymentId}</td>
+                                <td>${accomodationPaymentInfo.totalPeople}</td>
+                                <td>${accomodationPaymentInfo.money}</td>
+                                <td>${accomodationPaymentInfo.paymentWay}</td>
+                                <td>${accomodationPaymentInfo.division}</td>
+                                <td>${accomodationPaymentInfo.refund}</td>
+                                <td>${accomodationPaymentInfo.paidDate}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
                 <button onclick="showRR()" style="float: right">등록</button>
                 <button onclick="showRM()" style="float: right">수정</button>
                 <button onclick="showRD()" style="float: right">삭제</button>

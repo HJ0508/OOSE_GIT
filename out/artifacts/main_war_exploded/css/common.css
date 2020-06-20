@@ -249,6 +249,11 @@ a:link, a:visited, a:hover {
     margin-left: 3rem;
 }
 
+.contents-container .contents-option button,
+.contents-container .contents-option form{
+    display: inline-block;
+}
+
 .contents-container .contents select{
     height: 1.4rem;
     margin-left: 40rem;

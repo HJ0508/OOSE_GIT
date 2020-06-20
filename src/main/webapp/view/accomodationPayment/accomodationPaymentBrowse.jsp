@@ -17,10 +17,20 @@
 <body>
     <%@ include file="../default/header.jsp"%>
     <div class = "contents-container">
-        <%@ include file="accomodationPaymentNaviBar.jsp"%>
+        <div class="side-menu">
+            <ul>
+                <li><a href="${pageContext.request.contextPath}/view/accomodationPayment/accomodationPaymentBrowse.jsp">결제정보조회</a></li>
+                <li><a href="${pageContext.request.contextPath}/view/accomodationPayment/refundBrowse.jsp">환불정보조회</a></li>
+            </ul>
+        </div>
         <div class="contents">
             <div class="title"><strong>결제 정보 관리</strong><br><br></div>
             <div class="contents-option">
+                <div>
+                    <form method="post" action="/reqBrowseAccomodationPayment">
+                        <input type="submit"value="조회">
+                    </form>
+                </div>
                 <div class="contents-table">
                     <table>
                         <thead>
@@ -46,6 +56,17 @@
                                 <td>${accomodationPayment.paidDate}</td>
                             </tr>
                             </c:forEach>
+                        <c:forEach items="${accomodationPayment}" var = "accomodationPaymentInfo">
+                            <tr>
+                                <td>${accomodationPaymentInfo.paymentId}</td>
+                                <td>${accomodationPaymentInfo.totalPeople}</td>
+                                <td>${accomodationPaymentInfo.money}</td>
+                                <td>${accomodationPaymentInfo.paymentWay}</td>
+                                <td>${accomodationPaymentInfo.division}</td>
+                                <td>${accomodationPaymentInfo.refund}</td>
+                                <td>${accomodationPaymentInfo.paidDate}</td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                     <button onclick="showPR()" style="float: right">등록</button>
