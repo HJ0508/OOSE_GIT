@@ -29,50 +29,11 @@ public class WorkplaceInfoModifyView extends HttpServlet {
             int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
-            String[] checkedList = req.getParameterValues("workplaceInfo");
-            String[] modifyEditable = new String[11];
-            for(int i = 0; i<11; i++){ modifyEditable[i] = "hidden"; }
 
-            for(int i = 0; i<checkedList.length; i++){
-                switch(checkedList[i]){
-                    case "workplaceId":
-                        modifyEditable[0] = "text";
-                        break;
-                    case "workplaceName":
-                        modifyEditable[1] = "text";
-                        break;
-                    case "manager":
-                        modifyEditable[2] = "text";
-                        break;
-                    case "address":
-                        modifyEditable[3] = "text";
-                        break;
-                    case "phoneNumber":
-                        modifyEditable[4] = "text";
-                        break;
-                    case "workplaceStatus":
-                        modifyEditable[5] = "text";
-                        break;
-                    case "fee":
-                        modifyEditable[6] = "text";
-                        break;
-                    case "openingTime":
-                        modifyEditable[7] = "text";
-                        break;
-                    case "closingTime":
-                        modifyEditable[8] = "text";
-                        break;
-                    case "squareMeasure":
-                        modifyEditable[9] = "text";
-                        break;
-                    case "otherInfo":
-                        modifyEditable[10] = "text";
-                        break;
+            String[] isVisible = new String[11];
+            isVisible = setVisible(req,isVisible);
 
-                }
-            }
-
-            req.setAttribute("modifyEditable", modifyEditable);
+            req.setAttribute("isVisible", isVisible);
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
@@ -86,5 +47,50 @@ public class WorkplaceInfoModifyView extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
+    }
+
+    public String[] setVisible(HttpServletRequest req, String[] isVisible){
+        String[] checkedList = req.getParameterValues("workplaceInfo");
+        for(int i = 0; i<11; i++){ isVisible[i] = "style=display:none"; }
+
+        for(int i = 0; i<checkedList.length; i++){
+            switch(checkedList[i]){
+                case "workplaceId":
+                    isVisible[0] = "style=display:block";
+                    break;
+                case "workplaceName":
+                    isVisible[1] = "style=display:block";
+                    break;
+                case "manager":
+                    isVisible[2] = "style=display:block";
+                    break;
+                case "address":
+                    isVisible[3] = "style=display:block";
+                    break;
+                case "phoneNumber":
+                    isVisible[4] = "style=display:block";
+                    break;
+                case "workplaceStatus":
+                    isVisible[5] = "style=display:block";
+                    break;
+                case "fee":
+                    isVisible[6] = "style=display:block";
+                    break;
+                case "openingTime":
+                    isVisible[7] = "style=display:block";
+                    break;
+                case "closingTime":
+                    isVisible[8] = "style=display:block";
+                    break;
+                case "squareMeasure":
+                    isVisible[9] = "style=display:block";
+                    break;
+                case "otherInfo":
+                    isVisible[10] = "style=display:block";
+                    break;
+
+            }
+        }
+        return isVisible;
     }
 }

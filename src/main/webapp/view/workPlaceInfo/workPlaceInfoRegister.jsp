@@ -23,8 +23,8 @@
     Workplace workplace = (Workplace)request.getAttribute("content");
     pageContext.setAttribute("workplace", workplace); //이렇게 해야 ${}해서 쓸수있는듯!
 
-    String[] modifyEditable = (String[])request.getAttribute("modifyEditable");
-    pageContext.setAttribute("modifyEditable", modifyEditable);
+    String[] isVisible = (String[])request.getAttribute("isVisible");
+    pageContext.setAttribute("isVisible", isVisible);
 
 %>
 
@@ -32,39 +32,60 @@
 
 <form method = "POST">
     <fieldset>
-        <label>사업장 id : </label>
-        <input class="inputText" type=${modifyEditable[0]} name="workplaceId"   value=${workplace.getId()}>value=123
-        <br>
-        <label>사업장 이름 : </label>
-        <input class="inputText" type=${modifyEditable[1]} name="workplaceName"  value="${workplace.getName()}" >내용
-        <br>
-        <label>사업장 관리자 : </label>
-        <input class="inputText" type=${modifyEditable[2]}  name="manager"  value="${workplace.getManager()}">내용
-        <br>
-        <label>사업장 주소 : </label>
-        <input class="inputText" type=${modifyEditable[3]}  name="address"  value="${workplace.getAddress()}">내용
-        <br>
-        <label>사업장 전화번호 : </label>
-        <input class="inputText" type=${modifyEditable[4]} name="phoneNumber"  value="${workplace.getPhoneNumber()}">내용
-        <br>
-        <label>사업장 상태 : </label>
-        <input class="inputText" type=${modifyEditable[5]} name="workplaceStatus"  value="${workplace.getStatus()}">내용
-        <br>
-        <label>사업장 요금 : </label>
-        <input class="inputText" type=${modifyEditable[6]} name="fee"  value="${workplace.getFee()}">내용
-        <br>
-        <label>사업장 시작시간 : </label>
-        <input class="inputText" type=${modifyEditable[7]} name="openingTime"  value="${workplace.getOpeningTime()}">내용
-        <br>
-        <label>사업장 종료시간 : </label>
-        <input class="inputText" type=${modifyEditable[8]} name="closingTime"  value="${workplace.getClosingTime()}">내용
-        <br>
-        <label>사업장 면적 : </label>
-        <input class="inputText" type=${modifyEditable[9]} name="squareMeasure"  value="${workplace.getSquare()}">내용
-        <br>
-        <label>사업장 기타정보 : </label>
-        <input class="inputText" type=${modifyEditable[10]} name="otherInfo"  value="">내용
-
+        <div ${isVisible[0]}>
+            <label >사업장 id : </label>
+            <input class="inputText" type=text name="workplaceId"   value=${workplace.getId()}>
+            <br>
+        </div>
+        <div ${isVisible[1]}>
+            <label>사업장 이름 : </label>
+            <input class="inputText" type=text name="workplaceName"  value="${workplace.getName()}" >
+            <br>
+        </div>
+        <div ${isVisible[2]}>
+            <label>사업장 관리자 : </label>
+            <input class="inputText" type=text  name="manager"  value="${workplace.getManager()}">
+            <br>
+        </div>
+        <div ${isVisible[3]}>
+            <label>사업장 주소 : </label>
+            <input class="inputText" type=text  name="address"  value="${workplace.getAddress()}">
+            <br>
+        </div>
+        <div ${isVisible[4]}>
+            <label>사업장 전화번호 : </label>
+            <input class="inputText" type=text name="phoneNumber"  value="${workplace.getPhoneNumber()}">
+            <br>
+        </div>
+        <div ${isVisible[5]}>
+            <label>사업장 상태 : </label>
+            <input class="inputText" type=text name="workplaceStatus"  value="${workplace.getStatus()}">
+            <br>
+        </div>
+        <div ${isVisible[6]}>
+            <label>사업장 요금 : </label>
+            <input class="inputText" type=text name="fee"  value="${workplace.getFee()}">
+            <br>
+        </div>
+        <div ${isVisible[7]}>
+            <label>사업장 시작시간 : </label>
+            <input class="inputText" type=text name="openingTime"  value="${workplace.getOpeningTime()}">
+            <br>
+        </div>
+        <div ${isVisible[8]}>
+            <label>사업장 종료시간 : </label>
+            <input class="inputText" type=text name="closingTime"  value="${workplace.getClosingTime()}">
+            <br>
+        </div>
+        <div ${isVisible[9]}>
+            <label>사업장 면적 : </label>
+            <input class="inputText" type=text name="squareMeasure"  value="${workplace.getSquare()}">
+            <br>
+        </div>
+        <div ${isVisible[10]}>
+            <label>사업장 기타정보 : </label>
+            <input class="inputText" type=text name="otherInfo"  value="">
+        </div>
 
     </fieldset>
 

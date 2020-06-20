@@ -26,49 +26,16 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
             String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
             System.out.println(reqWorkplaceId);
 
-            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
+            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
 
-            String[] modifyEditable = new String[11];
-            for(int i = 0; i<11; i++){ modifyEditable[i] = "hidden"; }
-
-            if(req.getParameter("workplaceId").equals("") || req.getParameter("workplaceId")==null){
-                modifyEditable[0] = "text";
-            }
-            else if(req.getParameter("workplaceName").equals("") || req.getParameter("workplaceName")==null){
-                modifyEditable[1] = "text";
-            }
-            else if(req.getParameter("manager").equals("") || req.getParameter("manager")==null){
-                modifyEditable[2] = "text";
-            }
-            else if(req.getParameter("address").equals("") || req.getParameter("address")==null){
-                modifyEditable[3] = "text";
-            }
-            else if(req.getParameter("phoneNumber").equals("") || req.getParameter("phoneNumber")==null){
-                modifyEditable[4] = "text";
-            }
-            else if(req.getParameter("workplaceStatus").equals("") || req.getParameter("workspaceStatus")==null){
-                modifyEditable[5] = "text";
-            }
-            else if(req.getParameter("fee").equals("") || req.getParameter("fee").equals("0") || req.getParameter("fee")==null){
-                modifyEditable[6] = "text";
-            }
-            else if(req.getParameter("openingTime").equals("") || req.getParameter("openingTime")==null){
-                modifyEditable[7] = "text";
-            }
-            else if(req.getParameter("closingTime").equals("") || req.getParameter("closingTime")==null){
-                modifyEditable[8] = "text";
-            }
-            else if(req.getParameter("squareMeasure").equals("")|| req.getParameter("squareMeasure").equals("0") || req.getParameter("squareMeasure")==null){
-                modifyEditable[9] = "text";
-            }
-            else if(req.getParameter("otherInfo").equals("") || req.getParameter("otherInfo")==null){
-                modifyEditable[10] = "text";
-            }
+            String[] isVisible = new String[11];
+            isVisible = setIsVisible(req, isVisible);
 
 
-            req.setAttribute("modifyEditable", modifyEditable);
+
+            req.setAttribute("isVisible", isVisible);
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
@@ -82,5 +49,75 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
+    }
+
+    public String[] setIsVisible(HttpServletRequest req, String[] isVisible){
+        String[] checkedList = req.getParameterValues("workplaceInfo");
+        for(int i = 0; i<11; i++){ isVisible[i] = "style=display:none"; }
+
+
+
+        for(int i = 0; i<checkedList.length; i++){
+            switch(checkedList[i]){
+                case "workplaceId":
+                    if(req.getParameter("workplaceId").equals("") || req.getParameter("workplaceId")==null){
+                        isVisible[0] = "style=display:block";
+                    }
+                    break;
+                case "workplaceName":
+                    if(req.getParameter("workplaceName").equals("") || req.getParameter("workplaceName")==null){
+                        isVisible[1] = "style=display:block";
+                    }
+                    break;
+                case "manager":
+                    if(req.getParameter("manager").equals("") || req.getParameter("manager")==null){
+                        isVisible[2] = "style=display:block";
+                    }
+                    break;
+                case "address":
+                    if(req.getParameter("address").equals("") || req.getParameter("address")==null){
+                        isVisible[3] = "style=display:block";
+                    }
+                    break;
+                case "phoneNumber":
+                    if(req.getParameter("phoneNumber").equals("") || req.getParameter("phoneNumber")==null){
+                        isVisible[4] = "style=display:block";
+                    }
+                    break;
+                case "workplaceStatus":
+                    if(req.getParameter("workplaceStatus").equals("") || req.getParameter("workspaceStatus")==null){
+                        isVisible[5] = "style=display:block";
+                    }
+                    break;
+                case "fee":
+                    if(req.getParameter("fee").equals("") || req.getParameter("fee").equals("0") || req.getParameter("fee")==null){
+                        isVisible[6] = "style=display:block";
+                    }
+                    break;
+                case "openingTime":
+                    if(req.getParameter("openingTime").equals("") || req.getParameter("openingTime")==null){
+                        isVisible[7] = "style=display:block";
+                    }
+                    break;
+                case "closingTime":
+                    if(req.getParameter("closingTime").equals("") || req.getParameter("closingTime")==null){
+                        isVisible[8] = "style=display:block";
+                    }
+                    break;
+                case "squareMeasure":
+                    if(req.getParameter("squareMeasure").equals("")|| req.getParameter("squareMeasure").equals("0") || req.getParameter("squareMeasure")==null){
+                        isVisible[9] = "style=display:block";
+                    }
+                    break;
+                case "otherInfo":
+                    if(req.getParameter("otherInfo").equals("") || req.getParameter("otherInfo")==null){
+                        isVisible[10] = "style=display:block";
+                    }
+                    break;
+
+            }
+        }
+
+        return isVisible;
     }
 }
