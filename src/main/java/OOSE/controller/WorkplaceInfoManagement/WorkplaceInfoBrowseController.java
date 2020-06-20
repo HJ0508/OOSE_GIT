@@ -29,21 +29,26 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
             String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
             System.out.println(reqWorkplaceId);
 
-            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
+            int intWorkplaceId;
+            if(reqWorkplaceId == null || reqWorkplaceId.equals(""))
+                intWorkplaceId = -1;
+            else
+                intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
             if(workplace == null){
                 System.out.println("조회결과없음");
                 String message = "조회결과없음. 다시 시도해 주십시오";
                 htmlPrint(resp,message);
+
             }
+            else {
+                System.out.println(workplace.getName());
+                req.setAttribute("content", workplace);
 
-
-            System.out.println(workplace.getName());
-            req.setAttribute("content", workplace);
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoBrowse.jsp");
-            dispatcher.forward(req, resp);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoBrowse.jsp");
+                dispatcher.forward(req, resp);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,7 +65,7 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
         out.println("<script>");
         out.println("alert('" + message + "');");
 //        out.println("history.back(-1);");
-        out.println("window.onload = closeWindow();");
+        out.println("window.close();");
         out.println("</script>");
     }
 }
