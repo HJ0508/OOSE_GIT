@@ -19,7 +19,6 @@
             <a class="aLink" href="browseMemberView.jsp">회원 조회</a>
         </li>
     </ul>
-
 </div>
 </body>
 </html>

@@ -19,12 +19,11 @@ public class DeleteMember extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
-        //로그인 구현 쪽 병합시 테스트해볼 예정
-//        if (checkAuthority((int) req.getSession().getAttribute("authority")))
-//        {
-//            printAlert("권한이 없습니다",resp);
-//            return;
-//        }
+        if(!checkAuthority((int) req.getSession().getAttribute("authority")))
+        {
+            printAlert("권한이 없습니다",resp);
+            return;
+        }
         Member member = new Member();
         member.setId(req.getParameter("id"));
         if(!dbManager.deleteMemberInfo(member)) //삭제 실패한 경우
