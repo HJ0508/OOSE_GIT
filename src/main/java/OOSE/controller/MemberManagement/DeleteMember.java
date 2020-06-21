@@ -31,7 +31,10 @@ public class DeleteMember extends HttpServlet
             printAlert("서버 오류로 정보 입력 실패했습니다",resp);
             return;
         }
-        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
+        PrintWriter out = resp.getWriter();
+        out.println("<script>");
+        out.println("history.back(-1);");
+        out.println("</script>");
     }
     public boolean checkAuthority(int authority)
     {
