@@ -38,7 +38,7 @@
                         <a id="browseMemberView" href="#" onclick="reqBrowseMember()">회원</a>
                     </li>
                     <li>
-                        <a href="#" class="selected">판매상품</a>
+                        <a href="#">판매상품</a>
                     </li>
                 </ul>
             </div>
@@ -48,8 +48,7 @@
 <script>
     function reqBrowseMember()
     {
-        checkTableRow();
-        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member?id="+document.getElementsByName("id")[radioSelectedRow].innerHTML);
+        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member");
         //로그인된 사용자의 정보를 세션에서 가져옴, 로그인시 세션에 저장되어 있을것
     }
 </script>
