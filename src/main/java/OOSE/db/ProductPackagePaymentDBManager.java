@@ -23,9 +23,55 @@ public class ProductPackagePaymentDBManager {
         autority = 2;
     }
 
-//    boolean registerProductPackagePaymentInfo(Model.ProductPackage.Model.ProductPackage info){
-//
-//    }
+      public boolean registerProductPackagePaymentInfo(ProductPackagePayment info) throws SQLException{
+          ProductPackagePayment pp = new ProductPackagePayment();
+
+          String sql = "select productName, price, stock from productpackage where productName = '" + info.getProductName() + "';";
+          conn.setRes((conn.getConn().prepareStatement(sql)).executeQuery());
+          ResultSet res = conn.getRes();
+          int price = 0; //상품 가격
+          int stock = 0; //상품 재고
+
+          while (res.next()) {
+              pp.setProductName(res.getString(1));
+              price = res.getInt(2);
+              stock = res.getInt(3);
+          }
+
+          int amount = info.getAmount();
+          if(stock >= amount){
+              String productName = info.getProductName();
+
+              info.setPaidAmount(price * amount);
+              int paidAmount = info.getPaidAmount();
+              String paymentOption = info.getPaymentOption();
+              String refundAccount = info.getRefundAccount();
+              String userId = "user"; //나중에 처리하기. 일단 임의로 이렇게 두었다.
+
+              sql = "UPDATE productpackage \n" +
+                      "SET stock = stock-"+amount+" WHERE (productName = ?);";
+
+              conn.pstmt = conn.getConn().prepareStatement(sql);
+              conn.pstmt.setString(1, productName);
+              conn.pstmt.executeUpdate();
+
+              sql = "INSERT INTO productpackagepayment \n" +
+                      "(paymentId, userId, productName, amount, paidAmount, paymentOption, refundAccount, paidDate) \n" +
+                      "VALUES (NULL, ? , ?, ?, ?, ?, ?, now());\n";
+              conn.pstmt = conn.getConn().prepareStatement(sql);
+              conn.pstmt.setString(1, userId);
+              conn.pstmt.setString(2, productName);
+              conn.pstmt.setInt(3, amount);
+              conn.pstmt.setInt(4, paidAmount);
+              conn.pstmt.setString(5, paymentOption);
+              conn.pstmt.setString(6, refundAccount);
+              conn.pstmt.executeUpdate();
+
+              return true;
+          }
+
+          return false;
+      }
 
     public ProductPackagePayment[] browseProductPaymentInfo(String date) throws SQLException {
         System.out.println(date);
@@ -33,7 +79,7 @@ public class ProductPackagePaymentDBManager {
         Vector<ProductPackagePayment> vector = new Vector<>();
         String sql = "SELECT productpackage.productName, sum(productpackagepayment.amount), sum(productpackage.price)  \n" +
                 "FROM productpackage, productpackagepayment \n" +
-                "where productpackage.productId = productpackagepayment.productid and productpackagepayment.paidDate > '"+ date + "'\n" +
+                "where productpackage.productName = productpackagepayment.productName and productpackagepayment.paidDate > '"+ date + "'\n" +
                 "group by productName;";
         conn.setRes((conn.getConn().prepareStatement(sql)).executeQuery());
 

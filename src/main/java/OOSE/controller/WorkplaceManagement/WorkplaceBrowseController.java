@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet("/browseWorkplace")
+@WebServlet("/browseWorkplaceManagement")
 public class WorkplaceBrowseController extends HttpServlet {
     WorkplaceDBManager dbManager = new WorkplaceDBManager();
 
@@ -26,7 +26,7 @@ public class WorkplaceBrowseController extends HttpServlet {
             ArrayList<Workplace> workplace;
             workplace = dbManager.browseWorkplace();
             req.setAttribute("workplace", workplace);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/workplace/workplaceBrowse.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("view/workplace/WorkplaceManagement.jsp");
             dispatcher.forward(req, resp);
         } catch(Exception e) {
             e.printStackTrace();

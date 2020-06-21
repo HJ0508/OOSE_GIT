@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/main_member.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/css/main_member.css" rel="stylesheet" type="text/css">
 
     <title>소공도 관광지</title>
 </head>
@@ -35,7 +35,7 @@
             <div id="top-menu">
                 <ul class="navbar-nav">
                     <li>
-                        <a href="#">회원</a>
+                        <a id="browseMemberView" href="#" onclick="reqBrowseMember()">회원</a>
                     </li>
                     <li>
                         <a href="#" class="selected">판매상품</a>
@@ -45,19 +45,13 @@
         </div>
     </div>
 </div>
-<div class="sub-top">
-    <div class="sub-visual-wrapper">
-        <img src="../../Image/sightseeing.jpg">
-    </div>
-</div>
-
-<div class = "sub-body">
-    <div class="side-menu">
-        <ul>
-            <li><a href="#" class="selected">목록</a></li>
-            <li><a href="#">상품 구입</a></li>
-        </ul>
-    </div>
-</div>
+<script>
+    function reqBrowseMember()
+    {
+        checkTableRow();
+        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member?id="+document.getElementsByName("id")[radioSelectedRow].innerHTML);
+        //로그인된 사용자의 정보를 세션에서 가져옴, 로그인시 세션에 저장되어 있을것
+    }
+</script>
 </body>
 </html>

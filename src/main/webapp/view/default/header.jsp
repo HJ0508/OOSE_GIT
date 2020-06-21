@@ -7,11 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+    String id = (String)session.getAttribute("id") ; //세션에 저장된 id, 권한정보 받아오기
+    int authority = (Integer)session.getAttribute("authority");
+%>
 <body>
     <div class="main header" id="header">
         <div class="header-blank">
             <ul class="user-bar">
-                <li><a href="#"><strong>로그인</strong></a></li>
+                <li><a href="#"><strong><%= id%> 님 환영합니다. 권한: <%=authority%></strong></a></li>
             </ul>
         </div>
         <div class="navbar">
@@ -32,7 +36,7 @@
                             <a href="#">권한</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/view/workplace/workplaceBrowse.jsp">사업장</a>
+                            <a href="${pageContext.request.contextPath}/view/workplace/WorkplaceManagement.jsp">사업장</a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설</a>

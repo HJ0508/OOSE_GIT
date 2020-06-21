@@ -19,6 +19,12 @@ public class Workplace {
     private int square;
     private String otherInfo;
 
+    //승환 수정 6/21
+    public Workplace() {
+        id = -1;
+        name = null;
+    }
+
     public int getId() {
         return id;
     }
@@ -99,6 +105,14 @@ public class Workplace {
         this.square = square;
     }
 
+    public String getOtherInfo() {
+        return otherInfo;
+    }
+
+    public void setOtherInfo(String otherInfo) {
+        this.otherInfo = otherInfo;
+    }
+
     public Workplace(int id, String name, String manager, String address, String phoneNumber, String status, int fee, String openingTime, String closingTime, int square, String otherInfo) {
         this.id = id;
         this.name = name;
@@ -113,6 +127,4 @@ public class Workplace {
         this.otherInfo = otherInfo;
     }
 
-    public Workplace() {
-    }
 }

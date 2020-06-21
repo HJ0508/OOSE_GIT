@@ -12,35 +12,94 @@ import OOSE.model.ProductPackage;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.SQLSyntaxErrorException;
 import java.util.Vector;
 
 public class ProductPackageDBManager {
     private DBConnector conn;
     private int autority;
 
-    /*public boolean*/ public void registerProductInfo(ProductPackage info){
-        info.getId();
-        info.getName();
-        info.getPrice();
-        info.getState();
-        info.getStock();
-        info.getNote();
-
+    /*boolean*/
+    public boolean registerProductInfo(ProductPackage info) throws SQLException {
+        System.out.println("entry");
         conn = new DBConnector();
-        String sql = "";
-        //아이디에 auto increment 적용?
+
+        String sql;
+        sql = "SELECT * FROM productpackage WHERE productpackage.productName = ?;";
+        System.out.println(sql);
+        conn.pstmt = conn.getConn().prepareStatement(sql);
+        conn.pstmt.setString(1, info.getName());
+        ResultSet res = conn.pstmt.executeQuery();
+        if(res.next()){
+            return false;
+        }
+
+        sql = "INSERT INTO oose.productpackage (productName, price, productState, stock, note) \n" +
+                "VALUES (?, ?, ?, ?, ?);";
+
+        conn.pstmt = conn.getConn().prepareStatement(sql);
+
+        conn.pstmt.setString(1, info.getName());
+        conn.pstmt.setInt(2, info.getPrice());
+        conn.pstmt.setString(3, info.getState());
+        conn.pstmt.setInt(4, info.getStock());
+        conn.pstmt.setString(5, info.getNote());
+
+        conn.pstmt.executeUpdate();
+        return true;
     }
-    //
-//    boolean modifyProductInfo(Model.ProductPackage.Model.ProductPackage info){
-//
-//    }
-//
-//    boolean deleteProductInfo(Model.ProductPackage.Model.ProductPackage info){
-//
-//    }
-//
-    /*Model.ProductPackage.Model.*/
-    public ProductPackage[] browseProductInfo() throws SQLException {
+
+    public boolean modifyProductInfo(ProductPackage info) throws SQLException {
+        conn = new DBConnector();
+        String sql = "UPDATE productpackage \n" +
+                "SET price = ?, productState = ?, stock = ?, note = ? \n" +
+                "WHERE (productName = ?);\n";
+
+        conn.pstmt = conn.getConn().prepareStatement(sql);
+
+        conn.pstmt.setInt(1, info.getPrice());
+        conn.pstmt.setString(2, info.getState());
+        conn.pstmt.setInt(3, info.getStock());
+        conn.pstmt.setString(4, info.getNote());
+        conn.pstmt.setString(5, info.getName());
+
+        int tmp = conn.pstmt.executeUpdate();
+
+        if (tmp == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public boolean deleteProductInfo(ProductPackage info) throws SQLException{
+        conn = new DBConnector();
+        String sql = "DELETE FROM productpackage where productName = ?;";
+
+        conn.pstmt = conn.getConn().prepareStatement(sql);
+        conn.pstmt.setString(1, info.getName());
+
+        int tmp = conn.pstmt.executeUpdate();
+
+        if (tmp == 1) {
+            sql = "select @cnt:=49999999;";
+            conn.pstmt = conn.getConn().prepareStatement(sql);
+            conn.pstmt.executeQuery();
+            sql = "UPDATE productPackage SET productId = @cnt:=@cnt+1;";
+            conn.pstmt = conn.getConn().prepareStatement(sql);
+            int startPoint = conn.pstmt.executeUpdate();
+            sql = "ALTER TABLE productPackage AUTO_INCREMENT=" + startPoint;
+            conn.pstmt = conn.getConn().prepareStatement(sql);
+            conn.pstmt.executeUpdate();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public ProductPackage[] browseProductInfo() throws SQLException{
         ProductPackage productPackage;
         Vector<ProductPackage> vector = new Vector<>();
         conn = new DBConnector();

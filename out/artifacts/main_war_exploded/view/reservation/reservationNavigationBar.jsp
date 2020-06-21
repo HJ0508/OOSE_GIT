@@ -12,10 +12,10 @@
         <ul class="sub-nav-list">
             <li class="title"><span>예약 관리</span></li>
             <li>
-                <a title="학과소개" href="#">예약 정보 조회</a>
+                <a title="예약 정보 조회" href="${pageContext.request.contextPath}/view/reservation/reservationBrowse.jsp">예약 정보 조회</a>
             </li>
             <li>
-                <a title="교육목표" href="#">예약 취소정보 조회</a>
+                <a title="예약 취소정보 조회" href="${pageContext.request.contextPath}/view/reservation/reservationCancelBrowse.jsp">예약 취소정보 조회</a>
             </li>
         </ul>
     </div>
