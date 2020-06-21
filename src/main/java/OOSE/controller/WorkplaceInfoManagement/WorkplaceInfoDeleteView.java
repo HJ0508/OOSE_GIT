@@ -33,7 +33,10 @@ public class WorkplaceInfoDeleteView extends HttpServlet {
             String[] isVisible = new String[11];
 
             //화면에 보여줄 기존의 정보
-            String[] pastInfo = {};
+            String[] pastInfo = {Integer.toString(workplace.getId()), workplace.getName(), workplace.getManager(), workplace.getAddress(), workplace.getPhoneNumber(), workplace.getStatus(), Integer.toString(workplace.getFee()), workplace.getOpeningTime(), workplace.getClosingTime(), Integer.toString(workplace.getSquare()), workplace.getOtherInfo()};
+            for(int i = 0; i<11; i++){
+                System.out.println(pastInfo[i]);
+            }
 
             isVisible = setVisible(req,workplace,isVisible);
 

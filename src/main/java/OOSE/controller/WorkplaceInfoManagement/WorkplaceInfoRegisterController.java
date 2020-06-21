@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/workplace/registerWorkplaceInfo")
 public class WorkplaceInfoRegisterController extends HttpServlet {
@@ -30,16 +31,16 @@ public class WorkplaceInfoRegisterController extends HttpServlet {
             int fee = Integer.parseInt(req.getParameter("fee"));
             String openTime = req.getParameter("openingTime");
             String closeTime = req.getParameter("closingTime");
-            String square = req.getParameter("sqareMeasure");
+            String square = req.getParameter("squareMeasure");
             String otherInfo = req.getParameter("otherInfo");
 
             dbManager.updateWorkplaceInfo(workplaceId, workplaceName, manager, address, phoneNumber, status, fee, openTime, closeTime, square, otherInfo);
 
+            htmlPrint(resp, "등록 성공");
 
 
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoRegister.jsp");
-            dispatcher.forward(req, resp);
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoRegister.jsp");
+//            dispatcher.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,5 +49,15 @@ public class WorkplaceInfoRegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
+    }
+    private void htmlPrint(HttpServletResponse res, String message)
+            throws IOException {
+        res.setContentType("text/html; charset=euc-kr");
+        PrintWriter out = res.getWriter();
+        out.println("<script>");
+        out.println("alert('" + message + "');");
+        out.println("window.opener.location.reload();"); //부모 페이지 새로고침 -> 반영된 결과 새로 조회
+        out.println("window.close();"); //팝업은 닫기
+        out.println("</script>");
     }
 }

@@ -4,29 +4,28 @@ import OOSE.model.Member;
 
 import java.sql.SQLException;
 
-public class LoginDBManager {
-    DBConnector dbConnector;
+public class LoginDBManager extends DBConnector{
+    
 
     public LoginDBManager() {
-        dbConnector = new DBConnector();
-//        authorityLevel = 0;
+        super();
     }
 
     public Member getManager(String id){
         try {
-        dbConnector.pstmt = dbConnector.conn.prepareStatement("SELECT * FROM oose.manager where managerId = ?;");
+        pstmt = conn.prepareStatement("SELECT * FROM oose.manager where managerId = ?;");
 
-        dbConnector.pstmt.setString(1, id);
+        pstmt.setString(1, id);
 
-        dbConnector.res = dbConnector.pstmt.executeQuery();
+        res = pstmt.executeQuery();
 
-        dbConnector.res.next();
+        res.next();
         Member member = new Member();
-        member.setId(dbConnector.res.getString(1));
-        member.setName(dbConnector.res.getString(2));
-        member.setPassword(dbConnector.res.getString(3));
-        member.setAuthority(dbConnector.res.getInt(4));
-        member.setPhoneNum(dbConnector.res.getString(5));
+        member.setId(res.getString(1));
+        member.setName(res.getString(2));
+        member.setPassword(res.getString(3));
+        member.setAuthority(res.getInt(4));
+        member.setPhoneNum(res.getString(5));
         return member;
 
         } catch (SQLException throwables) {
@@ -38,19 +37,19 @@ public class LoginDBManager {
 
     public Member getEmployee(String id){
         try {
-            dbConnector.pstmt = dbConnector.conn.prepareStatement("SELECT * FROM oose.employee where employeeId = ?;");
+            pstmt = conn.prepareStatement("SELECT * FROM oose.employee where employeeId = ?;");
 
-            dbConnector.pstmt.setString(1, id);
+            pstmt.setString(1, id);
 
-            dbConnector.res = dbConnector.pstmt.executeQuery();
+            res = pstmt.executeQuery();
 
-            dbConnector.res.next();
+            res.next();
             Member member = new Member();
-            member.setId(dbConnector.res.getString(1));
-            member.setName(dbConnector.res.getString(2));
-            member.setPassword(dbConnector.res.getString(3));
-            member.setAuthority(dbConnector.res.getInt(4));
-            member.setPhoneNum(dbConnector.res.getString(5));
+            member.setId(res.getString(1));
+            member.setName(res.getString(2));
+            member.setPassword(res.getString(3));
+            member.setAuthority(res.getInt(4));
+            member.setPhoneNum(res.getString(5));
             return member;
 
         } catch (SQLException throwables) {
@@ -62,19 +61,19 @@ public class LoginDBManager {
 
     public Member getMember(String id){
         try {
-            dbConnector.pstmt = dbConnector.conn.prepareStatement("SELECT * FROM oose.member where memberId = ?;");
+            pstmt = conn.prepareStatement("SELECT * FROM oose.member where memberId = ?;");
 
-            dbConnector.pstmt.setString(1, id);
+            pstmt.setString(1, id);
 
-            dbConnector.res = dbConnector.pstmt.executeQuery();
+            res = pstmt.executeQuery();
 
-            dbConnector.res.next();
+            res.next();
             Member member = new Member();
-            member.setId(dbConnector.res.getString(1));
-            member.setName(dbConnector.res.getString(2));
-            member.setPassword(dbConnector.res.getString(3));
-            member.setAuthority(dbConnector.res.getInt(4));
-            member.setPhoneNum(dbConnector.res.getString(5));
+            member.setId(res.getString(1));
+            member.setName(res.getString(2));
+            member.setPassword(res.getString(3));
+            member.setAuthority(res.getInt(4));
+            member.setPhoneNum(res.getString(5));
             return member;
 
         } catch (SQLException throwables) {

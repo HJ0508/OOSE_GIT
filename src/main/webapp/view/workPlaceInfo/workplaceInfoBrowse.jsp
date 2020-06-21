@@ -65,7 +65,7 @@
         <input class="inputText" type="text" name="squareMeasure" readonly value="${workplace.getSquare()}">내용
         <input type="checkbox" name="workplaceInfo" id="squareMeasureCheck" value="squareMeasure"><br>
         <label>사업장 기타정보 : </label>
-        <input class="inputText" type="text" name="otherInfo" readonly value="">내용
+        <input class="inputText" type="text" name="otherInfo" readonly value="${workplace.getOtherInfo()}">내용
         <input type="checkbox" name="workplaceInfo" id="otherInfoCheck" value="otherInfo"><br>
 
     </fieldset>
@@ -119,7 +119,7 @@
     }
     function browseOpen(){
         var formDatas = document.formData;
-        const popUrl = "${pageContext.request.contextPath}/view/workPlaceInfo/workplaceInfoRegister.jsp";	//팝업창에 출력될 페이지 URL
+        <%--const popUrl = "${pageContext.request.contextPath}/view/workPlaceInfo/workplaceInfoRegister.jsp";	//팝업창에 출력될 페이지 URL--%>
         const leftPosition = (window.screen.width-500)/2;
         const topPosition = (window.screen.height-400)/2;
         const popOption = "width=1000, height=800, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
