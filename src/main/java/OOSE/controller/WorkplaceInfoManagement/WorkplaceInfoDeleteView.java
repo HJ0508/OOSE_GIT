@@ -26,16 +26,21 @@ public class WorkplaceInfoDeleteView extends HttpServlet {
             String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
             System.out.println(reqWorkplaceId);
 
-            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);// 나중엔 세션에서 받아오는걸로 교체할예정
+            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
-            String[] checkedList = req.getParameterValues("workplaceInfo");
+            String[] checkedList = req.getParameterValues("workplaceInfo"); //체크된목록
             String[] isVisible = new String[11];
+
+            //화면에 보여줄 기존의 정보
+            String[] pastInfo = {};
+
             isVisible = setVisible(req,workplace,isVisible);
 
             req.setAttribute("isVisible", isVisible);
-            System.out.println(workplace.getName());
+            req.setAttribute("pastInfo",pastInfo);
             req.setAttribute("content", workplace);
+            
 
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoDelete.jsp");
             dispatcher.forward(req, resp);
@@ -55,47 +60,47 @@ public class WorkplaceInfoDeleteView extends HttpServlet {
         for(int i = 0; i<checkedList.length; i++){
             switch(checkedList[i]){
                 case "workplaceId":
-                    isVisible[0] = "text";
+                    isVisible[0] = "";
                     workplace.setId(0);
                     break;
                 case "workplaceName":
-                    isVisible[1] = "text";
+                    isVisible[1] = "";
                     workplace.setName("");
                     break;
                 case "manager":
-                    isVisible[2] = "text";
+                    isVisible[2] = "";
                     workplace.setManager("");
                     break;
                 case "address":
-                    isVisible[3] = "text";
+                    isVisible[3] = "";
                     workplace.setAddress("");
                     break;
                 case "phoneNumber":
-                    isVisible[4] = "text";
+                    isVisible[4] = "";
                     workplace.setPhoneNumber("");
                     break;
                 case "workplaceStatus":
-                    isVisible[5] = "text";
+                    isVisible[5] = "";
                     workplace.setStatus("");
                     break;
                 case "fee":
-                    isVisible[6] = "text";
+                    isVisible[6] = "";
                     workplace.setFee(0);
                     break;
                 case "openingTime":
-                    isVisible[7] = "text";
+                    isVisible[7] = "";
                     workplace.setOpeningTime("");
                     break;
                 case "closingTime":
-                    isVisible[8] = "text";
+                    isVisible[8] = "";
                     workplace.setClosingTime("");
                     break;
                 case "squareMeasure":
-                    isVisible[9] = "text";
+                    isVisible[9] = "";
                     workplace.setSquare(0);
                     break;
                 case "otherInfo":
-                    isVisible[10] = "text";
+                    isVisible[10] = "";
                     workplace.setOtherInfo("");
                     break;
 

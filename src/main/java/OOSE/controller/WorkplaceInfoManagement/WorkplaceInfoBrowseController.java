@@ -26,6 +26,7 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
             resp.setCharacterEncoding("UTF-8");
             HttpSession session = req.getSession();
             int authority = (Integer)session.getAttribute("authority");
+            //권한 검사
             if(authority < 3){
                 String message = "권한이 없습니다.";
                 htmlPrint(resp,message);
