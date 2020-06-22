@@ -48,10 +48,21 @@
             var check = document.getElementsByName("radio");
             for(var i =0 ; i<check.length; i++){
                 if (check[i].checked){
-                    Info = "${pageContext.request.contextPath}/view/workPlaceInfo/workplaceInfoBrowse.jsp?name=" + encodeURI(check[i].value);
+                    Info = "${pageContext.request.contextPath}/view/workPlaceInfo/workplaceInfoBrowse.jsp?workplaceId=" + encodeURI(check[i].value);
                 }
             }
             window.open(Info, "workplaceInfo", "width=500, height=400, left=200, top=100, resizable = no");
+        }
+        function browseOpen(){
+            var formDatas = window.document.forms[0];
+            const leftPosition = (window.screen.width-1000)/2;
+            const topPosition = (window.screen.height-800)/2;
+            const popOption = "width=1000, height=800, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
+            window.open("","browsePop",popOption);
+
+            formDatas.target = "browsePop";
+            formDatas.action = "/workplace/browseWorkplaceInfo"
+            formDatas.submit();
         }
     </script>
 </head>
@@ -91,7 +102,7 @@
                 <tr>
                     <td id="id">${workplace.id}</td>
                     <td id="name">${workplace.name}</td>
-                    <td><input type="radio" name="radio" value="${workplace.name}"></td>
+                    <td><input type="radio" name="workplaceId" value="${workplace.id}"></td>
                 </tr>
                 <%
                         }
@@ -99,7 +110,7 @@
                 %>
             </table>
         </div>
-        <input type="button" value="상세정보" onclick="workplaceInfo();"/>
+        <input type="button" value="상세정보" onclick=browseOpen()>
         <input type="button" value="등록" onclick="register();"/>
         <input type="button" value="수정" onclick="modify();"/>
         <input type="button" value="삭제" onclick="deleteW();"/>
