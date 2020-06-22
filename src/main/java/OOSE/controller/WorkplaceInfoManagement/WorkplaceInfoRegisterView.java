@@ -24,7 +24,6 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
             Workplace workplace = new Workplace();
 
             String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
-            System.out.println(reqWorkplaceId);
 
             int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);

@@ -24,12 +24,14 @@ public class WorkplaceInfoDeleteView extends HttpServlet {
             Workplace workplace = new Workplace();
 
             String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
-            System.out.println(reqWorkplaceId);
 
             int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
             workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
 
             String[] checkedList = req.getParameterValues("workplaceInfo"); //체크된목록
+
+
+
             String[] isVisible = new String[11];
 
             //화면에 보여줄 기존의 정보

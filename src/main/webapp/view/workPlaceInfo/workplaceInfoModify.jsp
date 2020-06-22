@@ -84,7 +84,7 @@
         </div>
         <div ${isVisible[10]}>
         <label>사업장 기타정보 : </label>
-        <input class="inputText" type=text name="otherInfo"  value="">
+        <input class="inputText" type=text name="otherInfo"  value="${workplace.getOtherInfo()}">
         </div>
 
     </fieldset>

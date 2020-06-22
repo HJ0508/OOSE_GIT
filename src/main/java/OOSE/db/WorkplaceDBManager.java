@@ -29,13 +29,14 @@ public class WorkplaceDBManager extends DBConnector{
 
             return workplace;
 
-        } catch (Exception e){
-            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return null;
     }
 
-    public void updateWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, String square, String otherInfo){
+    public boolean updateWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, int square, String otherInfo){
+        boolean result = false;
         try {
             pstmt = conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
                     "fee = ?, openingTime=?, closingTime=?, squareMeasure=?, otherInfo=? WHERE workplaceId = ?;");
@@ -48,24 +49,19 @@ public class WorkplaceDBManager extends DBConnector{
             pstmt.setInt(6, fee);
             pstmt.setString(7, openTime);
             pstmt.setString(8, closeTime);
-            pstmt.setString(9, square);
+            pstmt.setInt(9, square);
             pstmt.setString(10, otherInfo);
             pstmt.setInt(11, workplaceId);
-            pstmt.executeUpdate();
-            if(res!=null){
-                System.out.println("수정성공");
-            }
-            else{
-                System.out.println("뭔가잘못됨");
-            }
-
-
+            int row = pstmt.executeUpdate();
+            if(row > 0){ result = true; }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
-    public void deleteWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, String square, String otherInfo){
+    public boolean deleteWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, int square, String otherInfo){
+        boolean result = false;
         try {
             pstmt = conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
                     "fee = ?, openingTime=?, closingTime=?, squareMeasure=?, otherInfo=? WHERE workplaceId = ?;");
@@ -78,23 +74,18 @@ public class WorkplaceDBManager extends DBConnector{
             pstmt.setInt(6, fee);
             pstmt.setString(7, openTime);
             pstmt.setString(8, closeTime);
-            pstmt.setString(9, square);
+            pstmt.setInt(9, square);
             pstmt.setString(10, otherInfo);
             pstmt.setInt(11, workplaceId);
 //        res = pstmt.executeQuery();
-            pstmt.executeUpdate();
-            if(res!=null){
-                System.out.println("삭제성공");
-            }
-            else{
-                System.out.println("뭔가잘못됨");
-            }
+            int row = pstmt.executeUpdate();
 
-
+            if(row > 0){ result = true; }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
 
     public ArrayList<Workplace> browseWorkplace(){

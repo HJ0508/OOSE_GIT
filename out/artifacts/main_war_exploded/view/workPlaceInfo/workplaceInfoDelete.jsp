@@ -98,7 +98,7 @@
         <div ${isVisible[10]}>
             <label>사업장 기타정보 : </label>
             <input type = text value = "${pastInfo[10]}">
-            <input class="inputText" type=hidden name="otherInfo"  value="">
+            <input class="inputText" type=hidden name="otherInfo"  value="${workplace.getOtherInfo()}">
         </div>
 
     </fieldset>
