@@ -16,27 +16,6 @@ public class BrowseMember extends HttpServlet
 {
     MemberDBManager dbManager= new MemberDBManager();
 
-    //    @Override
-//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
-//    {
-//        super.service(req, resp);
-//        boolean authorityCheckResult=dbManager.checkAuthority(id);
-//
-//        if(authorityCheckResult==true)        //권한검사를 통과하면
-//        {
-//            List<Member> memberList;
-//            memberList=dbManager.browseMemberList();
-//            req.setAttribute("List",memberList);
-//        }
-//        else if(authorityCheckResult==false)       //권한검사를 통과하지 못하면
-//        {
-//           req.setAttribute("String", "권한이 없습니다");
-//        }
-//
-//        ArrayList<Member> memberList;
-//        memberList=dbManager.browseMemberList();
-//        req.setAttribute("memberList",memberList);
-//    }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
