@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/workplace/viewRegisterWorkplaceInfo")
 public class WorkplaceInfoRegisterView  extends HttpServlet {
@@ -18,37 +20,52 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            resp.setCharacterEncoding("UTF-8");
 
-            Workplace workplace = new Workplace();
+        checkAuthority(req, resp);
+        isChecked(req, resp);
+        viewWorkplaceInfoRegister(req, resp);
 
-            String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
-            System.out.println(reqWorkplaceId);
-
-            int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
-            workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
-
-
-            String[] isVisible = new String[11];
-            isVisible = setIsVisible(req, isVisible);
-
-
-
-            req.setAttribute("isVisible", isVisible);
-            System.out.println(workplace.getName());
-            req.setAttribute("content", workplace);
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoRegister.jsp");
-            dispatcher.forward(req, resp);
-        } catch (Exception e) {
-            e.printStackTrace();
+    }
+    private void checkAuthority(HttpServletRequest req, HttpServletResponse resp){
+        HttpSession session = req.getSession();
+        int authority = (Integer)session.getAttribute("authority");
+        int menuAuthority = dbManager.selectAuthority("%사업장속성등록%");
+        if(menuAuthority == -1){
+            htmlPrint(resp, "메뉴의 접근권한을 확인해주십시오.");
+        }
+        //권한 검사
+        if(authority < menuAuthority){
+            String message = "권한이 없습니다.";
+            htmlPrint(resp,message);
         }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
+    }
+    public void viewWorkplaceInfoRegister(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("UTF-8");
+
+        Workplace workplace = new Workplace();
+
+        String reqWorkplaceId = req.getParameter("workplaceId"); // req에서 id받아옴
+
+        int intWorkplaceId = Integer.parseInt(reqWorkplaceId);
+        workplace = dbManager.selectWorkplaceInfo(intWorkplaceId);
+
+
+        String[] isVisible = new String[11];
+        isVisible = setIsVisible(req, isVisible);
+
+
+
+        req.setAttribute("isVisible", isVisible);
+        System.out.println(workplace.getName());
+        req.setAttribute("content", workplace);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workplaceInfoRegister.jsp");
+        dispatcher.forward(req, resp);
     }
 
     public String[] setIsVisible(HttpServletRequest req, String[] isVisible){
@@ -119,5 +136,24 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
         }
 
         return isVisible;
+    }
+    private void isChecked(HttpServletRequest req, HttpServletResponse resp){
+        if(req.getParameterValues("workplaceInfo") == null){ //체크된 것이 없다면
+            htmlPrint(resp,"하나 이상 항목을 선택해주세요");
+        }
+    }
+    private void htmlPrint(HttpServletResponse res, String message){
+        try {
+            res.setContentType("text/html; charset=euc-kr");
+            PrintWriter out = null;
+            out = res.getWriter();
+            out.println("<script>");
+            out.println("alert('" + message + "');");
+            out.println("window.opener.location.reload();"); //부모 페이지 새로고침 -> 반영된 결과 새로 조회
+            out.println("window.close();"); //팝업은 닫기
+            out.println("</script>");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

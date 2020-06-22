@@ -10,7 +10,6 @@
 <head>
     <title>회원 정보 수정</title>
     <link href="${pageContext.request.contextPath}/css/memberControl.css" rel="stylesheet" type="text/css">
-<%--    <link href="../css/main_member.css" rel="stylesheet" type="text/css">--%>
 </head>
 <body>
 <div>

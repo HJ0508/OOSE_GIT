@@ -3,6 +3,8 @@ package OOSE.controller.MemberManagement;
 import OOSE.db.MemberDBManager;
 import OOSE.model.Member;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,14 +19,13 @@ public class DeleteMember extends HttpServlet
     int authority=3;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
-        //로그인 구현 쪽 병합시 테스트해볼 예정
-//        if (checkAuthority((int) req.getSession().getAttribute("authority")))
-//        {
-//            printAlert("권한이 없습니다",resp);
-//            return;
-//        }
+        if(!checkAuthority((int) req.getSession().getAttribute("authority")))
+        {
+            printAlert("권한이 없습니다",resp);
+            return;
+        }
         Member member = new Member();
         member.setId(req.getParameter("id"));
         if(!dbManager.deleteMemberInfo(member)) //삭제 실패한 경우
@@ -32,7 +33,17 @@ public class DeleteMember extends HttpServlet
             printAlert("서버 오류로 정보 입력 실패했습니다",resp);
             return;
         }
-        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
+        if((int)req.getSession().getAttribute("authority")==1)      //요청자가 회원일 경우 로그인 페이지로 감
+        {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/login.jsp");
+            dispatcher.forward(req, resp);
+            return;
+        }
+        PrintWriter out = resp.getWriter();
+        out.println("<script>");
+        out.println("history.back(-1);");
+        out.println("</script>");
+
     }
     public boolean checkAuthority(int authority)
     {

@@ -49,4 +49,4 @@
 //    public BrowseReservation() {
 //        this.reservationDBManager = new ReservationDBManager();
 //    }
-//} 의도를 몰라 전체 주석
+//} 전체 주석처리 0622 김해준

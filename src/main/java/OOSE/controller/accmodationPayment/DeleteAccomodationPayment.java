@@ -12,15 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-
-/* 수정사항 (읽고 삭제바람)
-* 클래스 이름 다름 (delete가 아닌 Delete)
-* HttpServlet 상속하지 않음
-* 변수이름 다름 (accommodationPayment -> payment)
-* SQLException 처리
-* */
 @WebServlet("/view/accomodationPayment/reqDeleteMember")
-public class DeleteAccomodationPayment extends HttpServlet{
+public class DeleteAccomodationPayment extends HttpServlet {
     private AccomodationPaymentDBManager dbManager = new AccomodationPaymentDBManager();
 
     @Override
@@ -31,8 +24,6 @@ public class DeleteAccomodationPayment extends HttpServlet{
             dbManager.deleteAccomodationPayment(payment);
 
             resp.sendRedirect("/view/accomodationPayment/accomodationPaymentbrowse.jsp");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        } catch (SQLException e) {e.printStackTrace();}
     }
 }

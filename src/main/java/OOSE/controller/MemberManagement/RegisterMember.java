@@ -20,12 +20,11 @@ public class RegisterMember extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
-        //로그인쪽 내용이 아직 없는 상태라 다음 병합시 테스트 해 볼 예정
-//        if(checkAuthority((int)req.getSession().getAttribute("authority"))) //권한이 없다면
-//        {
-//            printAlert("권한이 없습니다",resp);
-//            return;
-//        }
+        if(checkAuthority((int)req.getSession().getAttribute("authority"))==false) //권한이 없다면
+        {
+            printAlert("권한이 없습니다",resp);
+            return;
+        }
         Member member = new Member();
         member.setId(req.getParameter("id"));
         member.setPassword(req.getParameter("password"));

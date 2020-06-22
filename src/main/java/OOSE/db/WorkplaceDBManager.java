@@ -6,110 +6,114 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class WorkplaceDBManager {
-    DBConnector dbConnector;
+public class WorkplaceDBManager extends DBConnector{
     int authorityLevel;
 
     public WorkplaceDBManager() {
-        dbConnector = new DBConnector();
-//        authorityLevel = 0;
+        super();
+        authorityLevel = -1;
+    }
+
+    public int selectAuthority(String menu){
+        try {
+            pstmt = conn.prepareStatement("select authorityId from oose.authority where accessRange like ?"); //%상품등록% 이렇게
+            pstmt.setString(1,menu);
+            res = pstmt.executeQuery();
+            while(res.next()){
+                authorityLevel = res.getInt(1);
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return authorityLevel;
     }
 
     public Workplace selectWorkplaceInfo(int workplaceId)  {
         try {
 
-            dbConnector.pstmt = dbConnector.conn.prepareStatement("SELECT * FROM oose.workplace where workplaceId = ?;");
-            dbConnector.pstmt.setInt(1, workplaceId);
-            dbConnector.res = dbConnector.pstmt.executeQuery();
+            pstmt = conn.prepareStatement("SELECT * FROM oose.workplace where workplaceId = ?;");
+            pstmt.setInt(1, workplaceId);
+            res = pstmt.executeQuery();
 
             Workplace workplace = null;
-            while(dbConnector.res.next()) {
-                workplace = new Workplace(dbConnector.res.getInt(1), dbConnector.res.getString(2), dbConnector.res.getString(3), dbConnector.res.getString(4), dbConnector.res.getString(5), dbConnector.res.getString(6), dbConnector.res.getInt(7), dbConnector.res.getString(8), dbConnector.res.getString(9), dbConnector.res.getInt(10), null);
+            while(res.next()) {
+                workplace = new Workplace(res.getInt(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getInt(7), res.getString(8), res.getString(9), res.getInt(10), res.getString(11));
             }
 
             return workplace;
 
-        } catch (Exception e){
-            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return null;
     }
 
-    public void updateWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, String square, String otherInfo){
+    public boolean updateWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, int square, String otherInfo){
+        boolean result = false;
         try {
-            dbConnector.pstmt = dbConnector.conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
+            pstmt = conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
                     "fee = ?, openingTime=?, closingTime=?, squareMeasure=?, otherInfo=? WHERE workplaceId = ?;");
 
-            dbConnector.pstmt.setString(1, workplaceName);
-            dbConnector.pstmt.setString(2, manager);
-            dbConnector.pstmt.setString(3, address);
-            dbConnector.pstmt.setString(4, phoneNumber);
-            dbConnector.pstmt.setString(5, status);
-            dbConnector.pstmt.setInt(6, fee);
-            dbConnector.pstmt.setString(7, openTime);
-            dbConnector.pstmt.setString(8, closeTime);
-            dbConnector.pstmt.setString(9, square);
-            dbConnector.pstmt.setString(10, otherInfo);
-            dbConnector.pstmt.setInt(11, workplaceId);
-//        dbConnector.res = dbConnector.pstmt.executeQuery();
-            dbConnector.pstmt.executeUpdate();
-            if(dbConnector.res!=null){
-                System.out.println("수정성공");
-            }
-            else{
-                System.out.println("뭔가잘못됨");
-            }
-
-
+            pstmt.setString(1, workplaceName);
+            pstmt.setString(2, manager);
+            pstmt.setString(3, address);
+            pstmt.setString(4, phoneNumber);
+            pstmt.setString(5, status);
+            pstmt.setInt(6, fee);
+            pstmt.setString(7, openTime);
+            pstmt.setString(8, closeTime);
+            pstmt.setInt(9, square);
+            pstmt.setString(10, otherInfo);
+            pstmt.setInt(11, workplaceId);
+            int row = pstmt.executeUpdate();
+            if(row > 0){ result = true; }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
-    public void deleteWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, String square, String otherInfo){
+    public boolean deleteWorkplaceInfo(int workplaceId, String workplaceName, String manager, String address, String phoneNumber, String status, int fee, String openTime, String closeTime, int square, String otherInfo){
+        boolean result = false;
         try {
-            dbConnector.pstmt = dbConnector.conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
+            pstmt = conn.prepareStatement("UPDATE oose.workplace SET workplaceName=?, personInCharge=?, address=?, phoneNumber=?, workplaceStatus=?, " +
                     "fee = ?, openingTime=?, closingTime=?, squareMeasure=?, otherInfo=? WHERE workplaceId = ?;");
 
-            dbConnector.pstmt.setString(1, workplaceName);
-            dbConnector.pstmt.setString(2, manager);
-            dbConnector.pstmt.setString(3, address);
-            dbConnector.pstmt.setString(4, phoneNumber);
-            dbConnector.pstmt.setString(5, status);
-            dbConnector.pstmt.setInt(6, fee);
-            dbConnector.pstmt.setString(7, openTime);
-            dbConnector.pstmt.setString(8, closeTime);
-            dbConnector.pstmt.setString(9, square);
-            dbConnector.pstmt.setString(10, otherInfo);
-            dbConnector.pstmt.setInt(11, workplaceId);
-//        dbConnector.res = dbConnector.pstmt.executeQuery();
-            dbConnector.pstmt.executeUpdate();
-            if(dbConnector.res!=null){
-                System.out.println("수정성공");
-            }
-            else{
-                System.out.println("뭔가잘못됨");
-            }
+            pstmt.setString(1, workplaceName);
+            pstmt.setString(2, manager);
+            pstmt.setString(3, address);
+            pstmt.setString(4, phoneNumber);
+            pstmt.setString(5, status);
+            pstmt.setInt(6, fee);
+            pstmt.setString(7, openTime);
+            pstmt.setString(8, closeTime);
+            pstmt.setInt(9, square);
+            pstmt.setString(10, otherInfo);
+            pstmt.setInt(11, workplaceId);
+//        res = pstmt.executeQuery();
+            int row = pstmt.executeUpdate();
 
-
+            if(row > 0){ result = true; }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
 
     public ArrayList<Workplace> browseWorkplace(){
-        String query = "SELECT workplaceName FROM oose.workplace";
+        String query = "SELECT workplaceId,workplaceName FROM oose.workplace";
         try{
-            dbConnector.pstmt = dbConnector.conn.prepareStatement(query);
-            dbConnector.res = dbConnector.pstmt.executeQuery();
+            pstmt = conn.prepareStatement(query);
+            res = pstmt.executeQuery();
 
             ArrayList<Workplace> info = new ArrayList<Workplace>();
 
-            while(dbConnector.res.next()){
+            while(res.next()){
                 Workplace w = new Workplace();
-                w.setId(dbConnector.res.getInt(1));
-                w.setName(dbConnector.res.getString(2));
+                w.setId(res.getInt(1));
+                w.setName(res.getString(2));
                 info.add(w);
             }
             return info;
@@ -118,4 +122,91 @@ public class WorkplaceDBManager {
             return null;
         }
     }
+
+    public boolean registerWorkplace(String s1,String s2) {
+        if (checkDuplicateInfo(s2)) return false;
+        try {
+            String query = "INSERT INTO oose.workplace (`workplaceId`,`workplaceName`) VALUES (?,?)";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, s1);
+            pstmt.setString(2, s2);
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean modifyWorkplace(String oldName, String name) {
+        String query = "UPDATE oose.workplace SET workplaceName=? WHERE workplaceName = ?";
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, name);
+            pstmt.setString(2, oldName);
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean deleteWorkplace(String s) {
+        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, s);
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    //권한체크
+    public boolean checkAuthority(String s) {
+        //이부분 좀 이상한데.. managerName=? 형식으로 해야되는건가
+        String query = "SELECT authority FROM manager WHERE managerName";
+        try {
+            pstmt = conn.prepareStatement(query);
+
+            return pstmt.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
+    //중복체크
+    public boolean checkDuplicateInfo(String s) {
+        String query = "SELECT workplaceName FROM oose.workplace WHERE workplaceName = ?";
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, s);
+            res = pstmt.executeQuery();
+
+            if (res.next()) {
+                return true;
+            }
+            return false;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
 }
