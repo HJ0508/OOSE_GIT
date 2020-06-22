@@ -7,12 +7,27 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class WorkplaceDBManager extends DBConnector{
-//    DBConnector dbConnector;
+
     int authorityLevel;
 
     public WorkplaceDBManager() {
         super();
-//        authorityLevel = 0;
+        authorityLevel = -1;
+    }
+
+    public int selectAuthority(String menu){
+        try {
+            pstmt = conn.prepareStatement("select authorityId from oose.authority where accessRange like ?"); //%상품등록% 이렇게
+            pstmt.setString(1,menu);
+            res = pstmt.executeQuery();
+            while(res.next()){
+                authorityLevel = res.getInt(1);
+            }
+
+       } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return authorityLevel;
     }
 
     public Workplace selectWorkplaceInfo(int workplaceId)  {

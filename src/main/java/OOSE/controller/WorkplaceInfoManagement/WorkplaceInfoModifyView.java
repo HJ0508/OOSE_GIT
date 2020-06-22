@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,6 +23,8 @@ public class WorkplaceInfoModifyView extends HttpServlet {
 
             resp.setCharacterEncoding("UTF-8");
 
+            checkAuthority(req, resp);
+
             isChecked(req, resp);
 
             viewWorkplaceModify(req, resp);
@@ -31,6 +34,19 @@ public class WorkplaceInfoModifyView extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req,resp);
+    }
+    private void checkAuthority(HttpServletRequest req, HttpServletResponse resp){
+        HttpSession session = req.getSession();
+        int authority = (Integer)session.getAttribute("authority");
+        int menuAuthority = dbManager.selectAuthority("%사업장속성수정%");
+        if(menuAuthority == -1){
+            htmlPrint(resp, "메뉴의 접근권한을 확인해주십시오.");
+        }
+        //권한 검사
+        if(authority < menuAuthority){
+            String message = "권한이 없습니다.";
+            htmlPrint(resp,message);
+        }
     }
 
     private void  viewWorkplaceModify(HttpServletRequest req, HttpServletResponse resp){

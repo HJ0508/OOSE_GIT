@@ -43,12 +43,19 @@ public class WorkplaceInfoBrowseController extends HttpServlet {
         HttpSession session = req.getSession();
         int authority = (Integer)session.getAttribute("authority");
         boolean result = false;
-        if(authority >= 3){
-            result = true;
+
+        int menuAuthority = dbManager.selectAuthority("%사업장속성조회%");
+        System.out.println(menuAuthority);
+        if(menuAuthority == -1){
+            htmlPrint(resp, "메뉴의 접근권한을 확인해주십시오.");
         }
-        else{
-            String message = "권한이 없습니다.";
-            htmlPrint(resp,message);
+        else {
+            if (authority >= menuAuthority) {
+                result = true;
+            } else {
+                String message = "권한이 없습니다.";
+                htmlPrint(resp, message);
+            }
         }
         return result;
     }

@@ -8,26 +8,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
 <body>
-<form method="post">
-    <div id = "inputText">
+<div class = centerBox>
+    <h3>로그인</h3>
+<form method="post" id = "form">
+    <div id = "inputLabel">
     <label>ID      : </label>
-    <input type="text" name="id">
     <br>
     <label>비밀번호 : </label>
-    <input type="password" name="passwd">
     <br>
+    </div>
+    <div id="inputText">
+        <input type="text" name="id">
+        <br>
+        <input type="password" name="passwd">
+        <br>
     </div>
     <input id="loginSubmit" type="submit" value="로그인" formaction="/login">
 
-
+    <div id="radio">
     <input type="radio" name="userDivision" value="회원" checked = "checked">회원
     <input type="radio" name="userDivision" value="직원">직원
     <input type="radio" name="userDivision" value="관리자">관리자
     <input type="radio" name="userDivision" value="비회원">비회원으로 계속
-
+    </div>
 
     <br><br>
 <%--    <input type="submit" value="비회원으로 계속">--%>
@@ -41,6 +50,7 @@
         loginMessage
     %>
 </form>
+</div>
 
 </body>
 </html>

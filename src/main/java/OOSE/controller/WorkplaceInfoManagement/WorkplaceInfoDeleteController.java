@@ -29,7 +29,7 @@ public class WorkplaceInfoDeleteController extends HttpServlet {
             workplaceInfoDelete(req, resp);
         }
         else{
-            htmlPrint(resp, "사업장 이름은 삭제할 수 없습니다. 다시시도해주세요");
+            htmlPrint(resp, "필수 항목은 삭제할 수 없습니다. 다시시도해주세요");
         }
             
 
@@ -62,9 +62,13 @@ public class WorkplaceInfoDeleteController extends HttpServlet {
     }
     private void checkAuthority(HttpServletRequest req, HttpServletResponse resp){
         HttpSession session = req.getSession();
-        int authority = (Integer)session.getAttribute("authority");
+        int authority = (Integer)session.getAttribute("authority"); //유저의 권한
+        int menuAuthority = dbManager.selectAuthority("%사업장속성삭제%"); //디비에서 메뉴의 권한 조회
+        if(menuAuthority == -1){
+            htmlPrint(resp, "메뉴의 접근권한을 확인해주십시오.");
+        }
         //권한 검사
-        if(authority < 3){
+        if(authority < menuAuthority){
             String message = "권한이 없습니다.";
             htmlPrint(resp,message);
         }

@@ -64,8 +64,12 @@ public class WorkplaceInfoModifyController extends HttpServlet {
     private void checkAuthority(HttpServletRequest req, HttpServletResponse resp){
         HttpSession session = req.getSession();
         int authority = (Integer)session.getAttribute("authority");
+        int menuAuthority = dbManager.selectAuthority("%사업장속성수정%");
+        if(menuAuthority == -1){
+            htmlPrint(resp, "메뉴의 접근권한을 확인해주십시오.");
+        }
         //권한 검사
-        if(authority < 3){
+        if(authority < menuAuthority){
             String message = "권한이 없습니다.";
             htmlPrint(resp,message);
         }
