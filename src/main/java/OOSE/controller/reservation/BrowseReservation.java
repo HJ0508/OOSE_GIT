@@ -64,9 +64,14 @@ public class BrowseReservation extends HttpServlet {
     }
 
     private void checkAuthority(HttpServletRequest req) throws ExceptionOnAuthority{
+        try {
         HttpSession httpSession = req.getSession();
-        int authority = (int)httpSession.getAttribute("authority");
-        if(authority<2) throw new ExceptionOnAuthority("권한 없음");
+        int userAuthority = (int)httpSession.getAttribute("authority");
+        if(!reservationDBManager.checkAuthority(userAuthority))
+            throw new ExceptionOnAuthority("권한 없음");
+        } catch(SQLException e) {
+            throw new ExceptionOnAuthority("해당 기능에 대한 권한명이 없음");
+        }
     }
 
 }

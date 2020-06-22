@@ -71,4 +71,19 @@ public class Accommodation {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public Accommodation(int id, String name, int roomNumber, int roomPrice, int capacity, String usableDate, String gender) {
+        this.id = id;
+        this.name = name;
+        this.roomNumber = roomNumber;
+        this.roomPrice = roomPrice;
+        this.capacity = capacity;
+        this.usableDate = usableDate;
+        this.gender = gender;
+    }
+
+    public Accommodation(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

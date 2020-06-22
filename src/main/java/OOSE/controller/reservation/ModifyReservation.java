@@ -1,6 +1,8 @@
 package OOSE.controller.reservation;
 
+import OOSE.db.AccommodationInfoDBManager;
 import OOSE.db.ReservationDBManager;
+import OOSE.model.Accommodation;
 import OOSE.model.Reservation;
 
 import javax.servlet.RequestDispatcher;
@@ -13,9 +15,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModifyReservation extends HttpServlet {
     ReservationDBManager reservationDBManager;
+    AccommodationInfoDBManager accommodationInfoDBManager;
     HtmlUtil util;
 
     @Override
@@ -23,6 +28,10 @@ public class ModifyReservation extends HttpServlet {
         try {
             checkAuthority(req);
             Reservation[] reservations = reservationDBManager.browseReservation(req.getParameter("reservation"), 3,req.getParameter("condition"));
+            Accommodation[] accommodations = accommodationInfoDBManager.browseAccommodationInfo();
+            Accommodation[] roomInfos = accommodationInfoDBManager.browseRoomInfo();
+            req.setAttribute("accommodations", accommodations);
+            req.setAttribute("roomInfos", roomInfos);
             req.setAttribute("reservations", reservations[0]);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/modifyReservationPopup.jsp");
             dispatcher.forward(req, resp);
@@ -57,13 +66,19 @@ public class ModifyReservation extends HttpServlet {
     }
 
     public ModifyReservation() {
-        reservationDBManager = new ReservationDBManager();
+        this.reservationDBManager = new ReservationDBManager();
+        this.accommodationInfoDBManager = new AccommodationInfoDBManager();
         util = new HtmlUtil();
     }
 
     private void checkAuthority(HttpServletRequest req) throws ExceptionOnAuthority{
-        HttpSession httpSession = req.getSession();
-        int authority = (int)httpSession.getAttribute("authority");
-        if(authority<2) throw new ExceptionOnAuthority("권한 없음");
+        try {
+            HttpSession httpSession = req.getSession();
+            int userAuthority = (int)httpSession.getAttribute("authority");
+            if(!reservationDBManager.checkAuthority(userAuthority))
+                throw new ExceptionOnAuthority("권한 없음");
+        } catch(SQLException e) {
+            throw new ExceptionOnAuthority("해당 기능에 대한 권한명이 없음");
+        }
     }
 }

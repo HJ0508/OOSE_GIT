@@ -37,19 +37,20 @@
             <label>회원이름</label><input name = "name" type="text" value = ${reservations.userId}><br>
             <label>전화번호</label><input name = "tel" type="tel" value = ${reservations.phoneNum}><br>
             <label>차량번호</label><input name = "carNumber" type="text" value = ${reservations.carNumber}><br>
-            <label>숙박시설</label><select name="accommodation">
-<%--            <option value="">선택</option>--%>
-            <option value="1" <c:if test="${reservations.accommodationId==1}"/> selected>1동</option>
-            <option value="2" <c:if test="${reservations.accommodationId==2}"/> selected>2동</option>
-            <option value="3" <c:if test="${reservations.accommodationId==3}"/> selected>3동</option>
-            <option value="1111" <c:if test="${reservations.accommodationId==1111}"/> selected>test</option>
-        </select><br>
-            <label>호실</label><select name="roomNumber">
-            <option value=""></option>
-            <option value="101" <c:if test="${reservations.roomNumber==101}"/> selected>101</option>
-            <option value="102" <c:if test="${reservations.roomNumber==102}"/> selected>102</option>
-            <option value="103" <c:if test="${reservations.roomNumber==103}"/> selected>103</option>
-        </select><br>
+
+            <label>숙박시설</label><select id = "accommodationList" name="accommodation" >
+                <option value="">선택</option>
+                <c:forEach items="${accommodations}" var = "accommodation">
+                    <option value = "${accommodation.id}" <c:if test="${reservations.accommodationId==accommodation.id}">selected</c:if>>${accommodation.name}</option>
+                </c:forEach>
+            </select><br>
+
+            <label>호실</label><select name="roomNumber" id = "roomList" onclick="accommodationChange()" >
+                <option value="">선택</option>
+                <c:forEach items="${roomInfos}" var = "roomInfo">
+                    <option class="${roomInfo.id}" value = "${roomInfo.roomNumber}">${roomInfo.roomNumber}</option>
+                </c:forEach>
+            </select><br>
             <label>인원</label><input name = "headCount" type="number" placeholder="?명" min="0" value=${reservations.headCount}><br>
             <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00" value="${reservations.checkInDate}"><br>
             <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00" value="${reservations.checkOutDate}"><br>
@@ -61,7 +62,18 @@
     </form>
 </div>
 <script>
+    accommodationChange();
     function popupClose() { self.close();}
+    function accommodationChange() {
+        var selectedAccommodation = document.getElementById("accommodationList").value;
+
+        var roomList = document.getElementById("roomList").children;
+        for(var i=1;i<roomList.length; i++)
+            if(roomList[i].className!=selectedAccommodation)
+                roomList[i].style.display = "none";
+            else
+                roomList[i].style.display = "block";
+    }
 </script>
 </body>
 </html>

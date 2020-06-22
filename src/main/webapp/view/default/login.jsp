@@ -23,12 +23,13 @@
     <input type="radio" name="userDivision" value="회원" checked = "checked">회원
     <input type="radio" name="userDivision" value="직원">직원
     <input type="radio" name="userDivision" value="관리자">관리자
+    <input type="radio" name="userDivision" value="비회원">비회원으로 계속
 
 
 
     <input type="submit" value="로그인" formaction="/login">
     <br><br>
-    <input type="submit" value="비회원으로 계속">
+<%--    <input type="submit" value="비회원으로 계속">--%>
     <br><br>
     <%
         String loginMessage = (String)request.getAttribute("loginMessage");

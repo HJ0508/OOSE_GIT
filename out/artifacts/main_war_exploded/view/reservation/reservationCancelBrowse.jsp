@@ -24,6 +24,13 @@
                 const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
                 window.open(popUrl,"",popOption);
             });
+            $('.register').on('click', function () {
+                const popUrl = "${pageContext.request.contextPath}/reservation/registerReservation?condition=취소";
+                const leftPosition = (window.screen.width-500)/2;
+                const topPosition = (window.screen.height-400)/2;
+                const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
+                window.open(popUrl,"",popOption);
+            });
         })
     </script>
     <title>소공도 관광지</title>
@@ -37,7 +44,7 @@
     <div class="contents">
         <div class="title"><strong>예약 취소정보 관리</strong><br><br></div>
         <div class="contents-option">
-            <button onclick = registerOpen()>등록</button>
+            <button class="register">등록</button>
             <button id = "deleteButton" onclick = deleteReservationInfo()>삭제</button>
             <form method="POST">
                 <select name="option-category", id="selectBox">

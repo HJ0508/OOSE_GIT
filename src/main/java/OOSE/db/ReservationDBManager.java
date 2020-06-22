@@ -113,7 +113,13 @@ public class ReservationDBManager extends DBConnector {
         return false;
     }
 
-    public boolean checkAuthority(){ // 구현하지 않음
+    public boolean checkAuthority(int userAuthority) throws SQLException{
+        query = "SELECT authorityId FROM oose.authority where accessRange like \"%숙박예약%\" order by authorityId asc";
+        pstmt = conn.prepareStatement(query);
+        res = pstmt.executeQuery();
+        res.next();
+        if(userAuthority>=res.getInt(1))
+            return true;
         return false;
     }
 
