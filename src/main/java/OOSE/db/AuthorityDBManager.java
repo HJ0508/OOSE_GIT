@@ -32,4 +32,21 @@ public class AuthorityDBManager extends DBConnector
             return null;
         }
     }
+
+    public boolean deleteAuthority(int authorityId)
+    {
+        try
+        {
+            String query="call deleteAuthority(?)";
+            pstmt=conn.prepareStatement(query);
+            pstmt.setString(1, Integer.toString(authorityId));
+            pstmt.executeQuery();
+            return true;
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+            return false;   //삭제 실패
+        }
+    }
 }
