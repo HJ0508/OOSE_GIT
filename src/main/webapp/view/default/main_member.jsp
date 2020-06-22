@@ -16,11 +16,16 @@
     <title>소공도 관광지</title>
 </head>
 
+<%
+    String id = (String)session.getAttribute("id") ; //세션에 저장된 id, 권한정보 받아오기
+    int authority = (Integer)session.getAttribute("authority");
+%>
+
 <body>
 <div class="main header" id="header">
     <div class="header-blank">
         <ul class="user-bar">
-            <li><a href="#"><strong>로그인</strong></a></li>
+            <li><a href="#"><strong><%= id%> 님 환영합니다. 권한: <%=authority%></strong></a></li>
         </ul>
     </div>
     <div class="navbar">

@@ -23,7 +23,24 @@ public class ProductPackagePaymentDBManager {
         autority = 2;
     }
 
-      public boolean registerProductPackagePaymentInfo(ProductPackagePayment info) throws SQLException{
+    public boolean checkAuthority(int myAuthority, String useCase) throws SQLException{
+        String sql = "SELECT authorityId FROM oose.authority WHERE accessRange LIKE '%"+ useCase +"%'";
+        System.out.println(sql);
+        conn = new DBConnector();
+        conn.setRes((conn.getConn().prepareStatement(sql)).executeQuery());
+        ResultSet res = conn.getRes();
+
+        while(res.next()){
+            int authority = res.getInt(1);
+            if(myAuthority == authority){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+      public boolean registerProductPackagePaymentInfo(ProductPackagePayment info, String user) throws SQLException{
           ProductPackagePayment pp = new ProductPackagePayment();
 
           String sql = "select productName, price, stock from productpackage where productName = '" + info.getProductName() + "';";
@@ -46,7 +63,7 @@ public class ProductPackagePaymentDBManager {
               int paidAmount = info.getPaidAmount();
               String paymentOption = info.getPaymentOption();
               String refundAccount = info.getRefundAccount();
-              String userId = "user"; //나중에 처리하기. 일단 임의로 이렇게 두었다.
+              String userId = user; //나중에 처리하기. 일단 임의로 이렇게 두었다.
 
               sql = "UPDATE productpackage \n" +
                       "SET stock = stock-"+amount+" WHERE (productName = ?);";

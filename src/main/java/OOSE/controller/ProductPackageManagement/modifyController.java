@@ -16,12 +16,14 @@ import java.sql.SQLException;
 
 @WebServlet(name = "modifyProduct", urlPatterns = {"/view/productPackage/modifyProduct"})
 public class modifyController extends HttpServlet {
-    ProductPackageDBManager dbManager = new ProductPackageDBManager();
+    ProductPackageDBManager dbManager;
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
+            //doPost(req, resp);
             checkAuthority(req);
+            dbManager = new ProductPackageDBManager();
             String name = req.getParameter("name");
             if (name != null) {
                 try {
@@ -86,11 +88,16 @@ public class modifyController extends HttpServlet {
     }
 
     private void checkAuthority(HttpServletRequest req) throws ExceptionOnProductPackage{
-        //HttpSession httpSession = req.getSession();
-        //int autority = (int)httpSession.getAttribute("autority");
-
-        //아직은 세션에 담고있는 권한이 없어 위의 두 줄은 주석처리하고 임의로 권한을 주어 검사
-        int autority = 3;
-        if(autority < 3) throw new ExceptionOnProductPackage("권한 없음");
+        try{
+            HttpSession httpSession = req.getSession();
+            int authority = (int)httpSession.getAttribute("authority");
+            System.out.println("authority : " + authority);
+            dbManager = new ProductPackageDBManager();
+            if(!dbManager.checkAuthority(authority, "상품수정")){
+                throw new ExceptionOnProductPackage("권한 없음");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }
