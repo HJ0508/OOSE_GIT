@@ -10,16 +10,16 @@
     <link href="${pageContext.request.contextPath}/css/memberControl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="menuDiv">
-        <ul>
-            <li>
-                <a class="aLink" href="registerMemberView.jsp">회원 등록</a>
-            </li>
-            <li>
-                <a class="aLink" href="browseMemberView.jsp">회원 조회</a>
-            </li>
-        </ul>
+<div class="menuDiv">
+    <ul>
+        <li>
+            <a class="aLink" href="registerMemberView.jsp">회원 등록</a>
+        </li>
+        <li>
+            <a class="aLink" href="browseMemberView.jsp">회원 조회</a>
+        </li>
+    </ul>
 
-    </div>
+</div>
 </body>
 </html>

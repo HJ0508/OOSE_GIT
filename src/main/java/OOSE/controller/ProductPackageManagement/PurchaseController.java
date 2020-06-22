@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -29,21 +30,30 @@ public class PurchaseController extends HttpServlet {
                 int amount;
                 if(!tempAmount.equals("")){
                     amount = Integer.parseInt((String)tempAmount);
-                }else{
+                }else {
                     amount = -1;
                 }
+
                 String paymentOption = req.getParameter("paymentOption");
                 String refundAccount = req.getParameter("refundAccount");
+                for(int i =0; i < refundAccount.length(); i++){
+                    char tempChar = refundAccount.charAt(i);
+                    if((tempChar != '=') && ('0' >= tempChar || tempChar >= '9')){
+                        throw new NumberFormatException();
+                    }
+                }
 
                 if(amount == -1 || refundAccount.equals("")){
                     req.setAttribute("result", 2); //누락
                 }else {
+                    HttpSession httpSession = req.getSession();
+                    String id = (String)httpSession.getAttribute("id");
                     pp.setProductName(productName);
                     pp.setAmount(amount);
                     pp.setPaymentOption(paymentOption);
                     pp.setRefundAccount(refundAccount);
                     productPackagePaymentDBManager = new ProductPackagePaymentDBManager();
-                    boolean tmp = productPackagePaymentDBManager.registerProductPackagePaymentInfo(pp);
+                    boolean tmp = productPackagePaymentDBManager.registerProductPackagePaymentInfo(pp, id);
                     if (tmp) {
                         req.setAttribute("result", 1);
                     } else {

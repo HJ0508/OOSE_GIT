@@ -25,7 +25,7 @@ public class BrouseControllerForMember extends HttpServlet {
         }catch(SQLException e){
             e.printStackTrace();
         }finally {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/browseProductForMember.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductForMember.jsp");
             dispatcher.forward(req, resp);
         }
     }

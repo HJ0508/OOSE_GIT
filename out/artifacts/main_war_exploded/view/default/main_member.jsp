@@ -1,0 +1,57 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: samsung
+  Date: 2020-06-04
+  Time: 오전 2:03
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="${pageContext.request.contextPath}/css/main_member.css" rel="stylesheet" type="text/css">
+
+    <title>소공도 관광지</title>
+</head>
+
+<body>
+<div class="main header" id="header">
+    <div class="header-blank">
+        <ul class="user-bar">
+            <li><a href="#"><strong>로그인</strong></a></li>
+        </ul>
+    </div>
+    <div class="navbar">
+        <div class="container">
+            <h1 class="navbar-brand">
+                <a href="#">
+                    <img src="../../Image/sightseeing.jpg" alt>
+                    <div class = "brand-logo">소공도 관광지</div>
+                    <!-- <div>통합관리시스템</div> -->
+                </a>
+            </h1>
+            <div id="top-menu">
+                <ul class="navbar-nav">
+                    <li>
+                        <a id="browseMemberView" href="#" onclick="reqBrowseMember()">회원</a>
+                    </li>
+                    <li>
+                        <a href="#" class="selected">판매상품</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function reqBrowseMember()
+    {
+        checkTableRow();
+        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member?id="+document.getElementsByName("id")[radioSelectedRow].innerHTML);
+        //로그인된 사용자의 정보를 세션에서 가져옴, 로그인시 세션에 저장되어 있을것
+    }
+</script>
+</body>
+</html>

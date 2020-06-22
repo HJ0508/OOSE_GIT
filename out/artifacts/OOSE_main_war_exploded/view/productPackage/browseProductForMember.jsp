@@ -18,7 +18,7 @@
 <div class="sub-body">
     <div class="side-menu">
         <ul>
-            <li><a href="#">상품 구입</a></li>
+            <li><a href="#" onclick="showPurchasePopup()">상품 구입</a></li>
         </ul>
     </div>
     <div class="table">
@@ -70,4 +70,9 @@
     </div>
 </div>
 </body>
+<script>
+    function showPurchasePopup(){
+        window.open("/view/productPackage/purchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    }
+</script>
 </html>

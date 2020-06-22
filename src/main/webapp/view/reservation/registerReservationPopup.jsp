@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="register-contents">
-    <div class="title"><strong>예약 등록</strong></div><br>
+    <div class="title"><strong>예약 정보 등록</strong></div><br>
     <form action="/reservation/registerReservation" method="POST">
         <div class="input-info">
             <label>회원이름</label><input name = "name" type="text" placeholder="이름을 입력하시오"><br>
@@ -41,25 +41,26 @@
             <option value="">2동</option>
             <option value="">3동</option>
             <option value="1111">test</option>
-        </select><br>
+            </select><br>
             <label>호실</label><select name="roomNumber">
             <option value="">선택</option>
             <option value="101">101</option>
             <option value="102">102</option>
             <option value="103">103</option>
         </select><br>
-            <label>인원</label><input name = "headCount" type="number" placeholder="?명"><br>
+            <label>인원</label><input name = "headCount" type="number" placeholder="?명" min="0"><br>
             <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00"><br>
             <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00"><br>
             <br>
-            <input class="cancel" type="button" value="취소">
+            <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
+            <input name="condition" value="예약" style="visibility: hidden">
         </div>
     </form>
 </div>
 <script>
-
-
+    function popupClose() { self.close();}
 </script>
 </body>
 </html>
+

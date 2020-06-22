@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -82,11 +83,16 @@ public class registerController extends HttpServlet {
     }
 
     private void checkAuthority(HttpServletRequest req) throws ExceptionOnProductPackage{
-        //HttpSession httpSession = req.getSession();
-        //int autority = (int)httpSession.getAttribute("autority");
-
-        //아직은 세션에 담고있는 권한이 없어 위의 두 줄은 주석처리하고 임의로 권한을 주어 검사
-        int autority = 3;
-        if(autority < 3) throw new ExceptionOnProductPackage("권한 없음");
+        try{
+            HttpSession httpSession = req.getSession();
+            int authority = (int)httpSession.getAttribute("authority");
+            System.out.println("authority : " + authority);
+            dbManager = new ProductPackageDBManager();
+            if(!dbManager.checkAuthority(authority, "상품등록")){
+                throw new ExceptionOnProductPackage("권한 없음");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

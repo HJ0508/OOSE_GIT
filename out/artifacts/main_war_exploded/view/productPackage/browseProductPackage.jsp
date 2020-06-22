@@ -17,7 +17,6 @@
     <title>소공도 관광지</title>
 </head>
 <body>
-<%--jsp파일 그대로도 작동하긴 하지만 url 패턴은 /browseProductPackage로 적용--%>
 <%@include file="../default/header.jsp"%>
 
 <!-- 절  취  선 -->
@@ -27,9 +26,10 @@
         <ul>
             <li><a href="#" class="selected">관리</a></li>
             <li><a href="${pageContext.request.contextPath}/view/productPackage/performanceAggregate.jsp">판매 실적</a></li>
-            <li><a href="#">상품 구입</a></li>
+            <li><a href="#" onclick="showPurchasePopup()">상품 구입</a></li>
         </ul>
     </div>
+
     <div class="table">
         <table>
             <tr>
@@ -39,7 +39,6 @@
                 <th>상품 상태</th>
                 <th>재고</th>
                 <th>비고</th>
-                <th>선택</th>
             </tr>
 
             <% Object[] productPackages = (Object[]) request.getAttribute("productPackages");
@@ -58,17 +57,45 @@
             <td>${productPackage.state}</td>
             <td>${productPackage.stock}</td>
             <td>${productPackage.note}</td>
-            <td><input type="checkbox"></td>
         </tr>
         <%}%>
         </table>
         <%}%>
+
     </div>
     <div class="button-frame">
-        <button><a>등록</a></button>
-        <button><a>수정</a></button>
-        <button><a href="#">삭제</a></button>
+        <button onclick="showRegisterPopup()">등록</button>
+        <button onclick="showModifyPopup()"><a>수정</a></button>
+        <button onclick ="showDeletePopup()"><a>삭제</a></button>
     </div>
 </div>
 </body>
+
+<script language="javascript">
+    <%
+    Object checkError = request.getAttribute("error");
+    if(checkError != null){
+    %>
+    alert("조회 중 오류가 발생했습니다.");
+    <%}
+    %>
+    function showRegisterPopup() {
+        window.open("/view/productPackage/registerProduct", "a", "width=500, height=500, left=100, top=50, resizable=no"); <!--★jsp 대신 url-->
+    }
+
+    function showModifyPopup() {
+        window.open("/view/productPackage/modifyProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    }
+
+    function showDeletePopup(){
+        window.open("/view/productPackage/deleteProduct", "a", "width=500, height=300, left=100, top=50, resizable=no");
+    }
+
+    function showPurchasePopup(){
+        window.open("/view/productPackage/purchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    }
+
+    <%-- ★등록 수정 삭제 구매 팝업 추가 및 경로 수정 --%>
+</script>
+
 </html>

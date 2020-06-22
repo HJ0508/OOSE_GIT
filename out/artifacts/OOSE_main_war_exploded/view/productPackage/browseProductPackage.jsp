@@ -17,7 +17,6 @@
     <title>소공도 관광지</title>
 </head>
 <body>
-<%--jsp파일 그대로도 작동하긴 하지만 url 패턴은 /browseProductPackage로 적용--%>
 <%@include file="../default/header.jsp"%>
 
 <!-- 절  취  선 -->
@@ -81,7 +80,7 @@
     <%}
     %>
     function showRegisterPopup() {
-        window.open("/view/productPackage/registerProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+        window.open("/view/productPackage/registerProduct", "a", "width=500, height=500, left=100, top=50, resizable=no"); <!--★jsp 대신 url-->
     }
 
     function showModifyPopup() {
