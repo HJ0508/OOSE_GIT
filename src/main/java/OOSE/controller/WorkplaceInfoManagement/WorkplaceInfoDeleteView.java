@@ -23,6 +23,7 @@ public class WorkplaceInfoDeleteView extends HttpServlet {
         try {
             resp.setCharacterEncoding("UTF-8");
             checkAuthority(req, resp);
+            isChecked(req,resp);
             viewWorkplaceDelete(req, resp);
 
         } catch (Exception e) {
@@ -132,6 +133,11 @@ public class WorkplaceInfoDeleteView extends HttpServlet {
             }
         }
         return isVisible;
+    }
+    private void isChecked(HttpServletRequest req, HttpServletResponse resp){
+        if(req.getParameterValues("workplaceInfo") == null){ //체크된 것이 없다면
+            htmlPrint(resp,"하나 이상 항목을 선택해주세요");
+        }
     }
     private void htmlPrint(HttpServletResponse res, String message){
         try {

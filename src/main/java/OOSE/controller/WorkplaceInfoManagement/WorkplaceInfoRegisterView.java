@@ -22,7 +22,7 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         checkAuthority(req, resp);
-        
+        isChecked(req, resp);
         viewWorkplaceInfoRegister(req, resp);
 
     }
@@ -136,6 +136,11 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
         }
 
         return isVisible;
+    }
+    private void isChecked(HttpServletRequest req, HttpServletResponse resp){
+        if(req.getParameterValues("workplaceInfo") == null){ //체크된 것이 없다면
+            htmlPrint(resp,"하나 이상 항목을 선택해주세요");
+        }
     }
     private void htmlPrint(HttpServletResponse res, String message){
         try {
