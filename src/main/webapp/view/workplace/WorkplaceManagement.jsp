@@ -18,6 +18,9 @@
         let modi = "${pageContext.request.contextPath}/view/workplace/";
         let url = "${pageContext.request.contextPath}/view/workplace/";
         let deleteU = "${pageContext.request.contextPath}/view/workplace/";
+
+        let Info = "${pageContext.request.contextPath}/view/workPlaceInfo/";
+
         function register() {
             window.open(url + "workplaceRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
@@ -39,10 +42,21 @@
             }
             window.open(deleteU, "deleteW", "width=500, height=400, left=200, top=100, resizable = no");
         }
+
+        // 이 부분을 건드리시면 될거 같아요!
+        function workplaceInfo() {
+            var check = document.getElementsByName("radio");
+            for(var i =0 ; i<check.length; i++){
+                if (check[i].checked){
+                    Info = "${pageContext.request.contextPath}/view/workPlaceInfo/workplaceInfoBrowse.jsp?name=" + encodeURI(check[i].value);
+                }
+            }
+            window.open(Info, "workplaceInfo", "width=500, height=400, left=200, top=100, resizable = no");
+        }
     </script>
 </head>
 <body>
-<%--<%@include file="../default/header.jsp" %>--%>
+<%@include file="../default/header.jsp" %>
 
 <div class="sidebar">
     <div>
@@ -60,7 +74,6 @@
     <br>
     <br>
     <br>
-
     <form>
         <div class="content">
             <table border="1">
@@ -86,7 +99,7 @@
                 %>
             </table>
         </div>
-
+        <input type="button" value="상세정보" onclick="workplaceInfo();"/>
         <input type="button" value="등록" onclick="register();"/>
         <input type="button" value="수정" onclick="modify();"/>
         <input type="button" value="삭제" onclick="deleteW();"/>
@@ -94,8 +107,6 @@
     <form action="/browseWorkplaceManagement" method="POST">
         <input type="submit" value="조회">
     </form>
-
 </div>
-
 </body>
 </html>
