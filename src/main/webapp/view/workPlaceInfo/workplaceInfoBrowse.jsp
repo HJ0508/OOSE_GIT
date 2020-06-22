@@ -117,10 +117,9 @@
         window.open("","browsePop",popOption);
 
         formDatas.target = "browsePop";
-        formDatas.action = "/workplace/browseWorkplaceInfo"
+        formDatas.action = "/workplace/browseWorkplaceInfo";
         formDatas.submit();
     }
-
 
 </script>
 

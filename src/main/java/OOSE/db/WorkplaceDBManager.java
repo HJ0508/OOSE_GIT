@@ -103,8 +103,9 @@ public class WorkplaceDBManager extends DBConnector{
         return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
 
+    //승환 - 수정 6/21
     public ArrayList<Workplace> browseWorkplace(){
-        String query = "SELECT workplaceName FROM oose.workplace";
+        String query = "SELECT workplaceId,workplaceName FROM oose.workplace";
         try{
             pstmt = conn.prepareStatement(query);
             res = pstmt.executeQuery();
@@ -123,4 +124,92 @@ public class WorkplaceDBManager extends DBConnector{
             return null;
         }
     }
+
+    //승환-추가 6/21
+    public boolean registerWorkplace(String s1,String s2) {
+        if (checkDuplicateInfo(s2)) return false;
+        try {
+            String query = "INSERT INTO oose.workplace (`workplaceId`,`workplaceName`) VALUES (?,?)";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, s1);
+            pstmt.setString(2, s2);
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean modifyWorkplace(String oldName, String name) {
+        String query = "UPDATE oose.workplace SET workplaceName=? WHERE workplaceName = ?";
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, name);
+            pstmt.setString(2, oldName);
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean deleteWorkplace(String s) {
+        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, s);
+            int result = pstmt.executeUpdate();
+            if (result > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    //권한체크
+    public boolean checkAuthority(String s) {
+        //이부분 좀 이상한데.. managerName=? 형식으로 해야되는건가
+        String query = "SELECT authority FROM manager WHERE managerName";
+        try {
+            pstmt = conn.prepareStatement(query);
+
+            return pstmt.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
+    //중복체크
+    public boolean checkDuplicateInfo(String s) {
+        String query = "SELECT workplaceName FROM oose.workplace WHERE workplaceName = ?";
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, s);
+            res = pstmt.executeQuery();
+
+            if (res.next()) {
+                return true;
+            }
+            return false;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+    //승환 - 추가 끝
 }
