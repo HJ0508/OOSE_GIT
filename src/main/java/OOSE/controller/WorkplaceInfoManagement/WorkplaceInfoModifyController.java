@@ -25,12 +25,16 @@ public class WorkplaceInfoModifyController extends HttpServlet {
 
             checkAuthority(req, resp);//권한 검사
             
-            if(checkFormat(req)) { // 형식 검사
-                workplaceInfoModify(req, resp);
-            }
-            else{
+            if(!checkFormat(req)) { // 형식 검사
                 htmlPrint(resp, "잘못된 입력입니다. 다시시도해주십시오");
             }
+            else if(!checkEssential(req)){
+                htmlPrint(resp, "필수 항목이 비어있습니다. 다시시도해주십시오");
+            }
+            else{
+                workplaceInfoModify(req, resp);
+            }
+                
 
 
     }
@@ -121,6 +125,14 @@ public class WorkplaceInfoModifyController extends HttpServlet {
                 return false;
 
         }
+
+        return true;
+    }
+    public boolean checkEssential(HttpServletRequest req){ //형식 검사
+        String workplaceName = req.getParameter("workplaceName");
+
+        if(workplaceName.length() <= 0)
+                return false;
 
         return true;
     }

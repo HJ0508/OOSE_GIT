@@ -25,11 +25,11 @@ public class WorkplaceInfoDeleteController extends HttpServlet {
         
         checkAuthority(req, resp);
         
-        if(checkFormat(req)){
+        if(checkEssential(req)){
             workplaceInfoDelete(req, resp);
         }
         else{
-            htmlPrint(resp, "잘못된 입력입니다, 다시시도해주세요");
+            htmlPrint(resp, "사업장 이름은 삭제할 수 없습니다. 다시시도해주세요");
         }
             
 
@@ -70,45 +70,11 @@ public class WorkplaceInfoDeleteController extends HttpServlet {
         }
     }
 
-    public boolean checkFormat(HttpServletRequest req){ //형식 검사
-        int workplaceId = Integer.parseInt(req.getParameter("workplaceId"));
+    public boolean checkEssential(HttpServletRequest req){ //형식 검사
         String workplaceName = req.getParameter("workplaceName");
-        String manager = req.getParameter("manager");
-        String address = req.getParameter("address");
-        String phoneNumber = req.getParameter("phoneNumber");
-        String status = req.getParameter("workplaceStatus");
-        String fee = req.getParameter("fee");
-        String openTime = req.getParameter("openingTime");
-        String closeTime = req.getParameter("closingTime");
-        String square = req.getParameter("squareMeasure");
-        String otherInfo = req.getParameter("otherInfo");
 
-        if(isNumber(fee) == false || isNumber(square) == false){ //숫자인지 검사
+        if(workplaceName.length() <= 0)
             return false;
-        }
-        else{ // 길이검사
-            if(workplaceName.length() > 20)
-                return false;
-            if(manager.length() > 20)
-                return false;
-            if(address.length() > 100)
-                return false;
-            if(phoneNumber.length() > 13)
-                return false;
-            if(status.length() > 5)
-                return false;
-            if(fee.length() > 13)
-                return false;
-            if(openTime.length() > 20) // time은 애매해서 20으로 놔둠
-                return false;
-            if(closeTime.length() > 20)
-                return false;
-            if(square.length() > 13)
-                return false;
-            if(otherInfo.length() > 65535)
-                return false;
-
-        }
 
         return true;
     }

@@ -12,13 +12,16 @@
 </head>
 <body>
 <form method="post">
-    <label>ID : </label>
+    <div id = "inputText">
+    <label>ID      : </label>
     <input type="text" name="id">
     <br>
-
     <label>비밀번호 : </label>
     <input type="password" name="passwd">
     <br>
+    </div>
+    <input id="loginSubmit" type="submit" value="로그인" formaction="/login">
+
 
     <input type="radio" name="userDivision" value="회원" checked = "checked">회원
     <input type="radio" name="userDivision" value="직원">직원
@@ -26,8 +29,6 @@
     <input type="radio" name="userDivision" value="비회원">비회원으로 계속
 
 
-
-    <input type="submit" value="로그인" formaction="/login">
     <br><br>
 <%--    <input type="submit" value="비회원으로 계속">--%>
     <br><br>
