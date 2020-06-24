@@ -100,7 +100,6 @@
             document.getElementById("delete").setAttribute("href", "/view/MemberView/reqDeleteMember?id=" + document.getElementsByName("id")[radioSelectedRow].innerHTML);       //서버에 삭제 요청
         }
     }
-
 </script>
 </body>
 </html>

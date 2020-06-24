@@ -20,10 +20,9 @@ public class RegisterMember extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
-        if(!checkAuthority((int)req.getSession().getAttribute("authority"))) //권한이 없다면
+        if(checkAuthority((int)req.getSession().getAttribute("authority"))==false) //권한이 없다면
         {
             printAlert("권한이 없습니다",resp);
-            System.out.println("asdfasdf");
             return;
         }
         Member member = new Member();
@@ -57,7 +56,6 @@ public class RegisterMember extends HttpServlet
     }
     public boolean checkAuthority(int authority)
     {
-        System.out.println("asdf");
         if(dbManager.findAuthority("회원등록")>authority)        //권한이 없다면
             return false;
         return true;
