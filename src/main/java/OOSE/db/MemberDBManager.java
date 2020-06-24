@@ -192,4 +192,25 @@ public class MemberDBManager extends DBConnector
 
         return true;        //위의 형식을 모두 통과하면 true 반환
     }
+    public int findAuthority(String range)
+    {
+        try
+        {
+            String query = "select max(authorityId) from oose.authority where accessRange=?";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, "%" + range + "%");
+            res= pstmt.executeQuery();
+
+            while(res.next())
+            {
+                System.out.println(res.getInt("authorityId" + "asdf"));
+                return res.getInt("authorityId");
+            }
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+        }
+        return -1;
+    }
 }
