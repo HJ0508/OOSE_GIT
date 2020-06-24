@@ -33,7 +33,7 @@
                             <a href="${pageContext.request.contextPath}/view/MemberView/memberMenuView.jsp">회원</a>
                         </li>
                         <li>
-                            <a href="#">권한</a>
+                            <a href="${pageContext.request.contextPath}/authority">권한</a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath}/view/workplace/workplaceBrowse.jsp">사업장</a>
