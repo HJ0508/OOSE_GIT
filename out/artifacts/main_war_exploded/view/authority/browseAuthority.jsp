@@ -38,7 +38,7 @@
         <tr>
             <td name="id">${authority.id}</td>
             <td name="name">${authority.name}</td>
-            <td name="accessRange">${authority.accessRange}</td>
+            <td name="accessRange" style="width:300px;">${authority.accessRange}</td>
             <td><input type="radio" name="selected"></td>
         </tr>
         <%
