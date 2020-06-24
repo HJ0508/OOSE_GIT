@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accomodationPayment/paymentBrowse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/BrowseAccomodationPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/BrowseAccomodationPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/DeleteAccomodationPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/DeleteAccomodationPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/ModifyAccomodationPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/ModifyAccomodationPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/RegisterAccomodationPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/RegisterAccomodationPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/AccomodationPaymentDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AccomodationPaymentDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentModify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/accomodationPaymentRegister.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundModify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/accomodationPayment/refundRegister.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +63,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -253,18 +239,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -291,6 +265,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
