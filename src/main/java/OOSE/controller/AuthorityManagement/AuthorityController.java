@@ -5,7 +5,6 @@ import OOSE.db.AuthorityDBManager;
 import OOSE.model.Authority;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,11 +24,11 @@ public class AuthorityController extends HttpServlet
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
-        if((int)req.getSession().getAttribute("authority")<this.authority)  //권한이 없는 경우 main화면으로 돌아감
+        if((int)req.getSession().getAttribute("authority")<dbManager.findAuthority())  //권한이 없는 경우 main화면으로 돌아감
         {
-            printAlert("권한이 없습니다",resp);    //이거는 왜 작동 안하지
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/main.jsp");
-            dispatcher.forward(req, resp);
+            printAlert("권한이 없습니다",resp);
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/main.jsp");
+//            dispatcher.forward(req, resp);
             return;
         }
         ArrayList<Authority> list= dbManager.browseAuthority();

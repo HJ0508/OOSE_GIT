@@ -4,6 +4,7 @@ import OOSE.model.Authority;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class AuthorityDBManager extends DBConnector
 {
@@ -48,5 +49,32 @@ public class AuthorityDBManager extends DBConnector
             e.getStackTrace();
             return false;   //삭제 실패
         }
+    }
+    public int findAuthority()
+    {
+        try
+        {
+            String query = "select authorityId from oose.authority where accessRange like '%권한관리%'";
+            pstmt = conn.prepareStatement(query);
+            res= pstmt.executeQuery();
+
+            ArrayList<Integer> authorityArray =new ArrayList<Integer>();
+
+            while(res.next())
+            {
+                authorityArray.add(res.getInt("authorityId"));
+            }
+            return maxAuthority(authorityArray);
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+        }
+        return -1;
+    }
+    public int maxAuthority(ArrayList<Integer> list)
+    {
+        Collections.sort(list);  //정렬
+        return list.get(list.size()-1);   //가장 마지막 값이
     }
 }
