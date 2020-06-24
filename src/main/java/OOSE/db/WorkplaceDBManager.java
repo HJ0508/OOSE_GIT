@@ -146,12 +146,13 @@ public class WorkplaceDBManager {
         }
     }
 
-    public boolean modifyWorkplace(String oldName, String name) {
-        String query = "UPDATE oose.workplace SET workplaceName=? WHERE workplaceName = ?";
+    // 승환 수정 6/24
+    public boolean modifyWorkplace(String oldId, String newId) {
+        String query = "UPDATE oose.workplace SET workplaceId=? WHERE workplaceId = ?";
         try {
             dbConnector.pstmt = dbConnector.conn.prepareStatement(query);
-            dbConnector.pstmt.setString(1, name);
-            dbConnector.pstmt.setString(2, oldName);
+            dbConnector.pstmt.setString(1, newId);
+            dbConnector.pstmt.setString(2, oldId);
             int result = dbConnector.pstmt.executeUpdate();
             if (result > 0) {
                 return true;
@@ -164,6 +165,7 @@ public class WorkplaceDBManager {
         }
     }
 
+    // 승환 6/24 삭제 다시만듬
     public boolean deleteWorkplace(String s) {
         String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
         try {
@@ -180,6 +182,23 @@ public class WorkplaceDBManager {
             return false;
         }
     }
+
+//    public boolean deleteWorkplace(String s) {
+//        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+//        try {
+//            dbConnector.pstmt = dbConnector.conn.prepareStatement(query);
+//            dbConnector.pstmt.setString(1, s);
+//            int result = dbConnector.pstmt.executeUpdate();
+//            if (result > 0) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//            return false;
+//        }
+//    }
 
     //권한체크
     public boolean checkAuthority(String s) {

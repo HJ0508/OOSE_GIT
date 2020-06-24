@@ -22,12 +22,13 @@
 <div class="content-container">
     <form action="/deleteWorkplaceManagement" method="POST">
         <%
-            String check = request.getParameter("name");
+            Integer check = Integer.parseInt(request.getParameter("workplaceId"));
+         //   String check = (String) request.getParameter("id");
             if(check != null) {
                 pageContext.setAttribute("check", check);
         %>
-        사업장명
-        <input type="text" name = "name" value = ${check}><br>
+        사업장 ID
+        <input type="text" name = "workplaceId" value = ${check}><br>
         <%
             }
         %>
