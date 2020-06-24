@@ -14,16 +14,14 @@ import java.io.PrintWriter;
 public class ModifyMember extends HttpServlet
 {
     private MemberDBManager dbManager=new MemberDBManager();
-    int authority=3;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
-        //로그인 구현 쪽 병합시 테스트해볼 예정
-//        if (checkAuthority((int) req.getSession().getAttribute("authority")))
-//        {
-//            printAlert("권한이 없습니다",resp);
-//            return;
-//        }
+       if (!checkAuthority((int) req.getSession().getAttribute("authority")))
+        {
+            printAlert("권한이 없습니다",resp);
+            return;
+        }
         Member member = new Member();
         member.setId(req.getParameter("id"));
         member.setPassword(req.getParameter("password"));
@@ -49,7 +47,7 @@ public class ModifyMember extends HttpServlet
     }
     public boolean checkAuthority(int authority)
     {
-        if(authority>this.authority||authority==1)      //회원이거나 관리자일 경우
+        if(authority>dbManager.findAuthority("회원삭제")||authority==1)      //회원이거나 관리자일 경우
             return true;
         return false;       //권한 없음
     }
