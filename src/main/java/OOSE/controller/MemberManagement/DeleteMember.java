@@ -3,6 +3,8 @@ package OOSE.controller.MemberManagement;
 import OOSE.db.MemberDBManager;
 import OOSE.model.Member;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +18,7 @@ public class DeleteMember extends HttpServlet
     private MemberDBManager dbManager = new MemberDBManager();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
         if(!checkAuthority((int) req.getSession().getAttribute("authority")))
         {
@@ -30,7 +32,16 @@ public class DeleteMember extends HttpServlet
             printAlert("서버 오류로 정보 입력 실패했습니다",resp);
             return;
         }
-        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
+        if((int)req.getSession().getAttribute("authority")==1)      //요청자가 회원일 경우 로그인 페이지로 감
+        {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/login.jsp");
+            dispatcher.forward(req, resp);
+            return;
+        }
+        PrintWriter out = resp.getWriter();
+        out.println("<script>");
+        out.println("history.back(-1);");
+        out.println("</script>");
     }
     public boolean checkAuthority(int authority)
     {

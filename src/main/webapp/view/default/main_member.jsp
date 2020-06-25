@@ -50,26 +50,16 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 <div class="sub-top">
     <div class="sub-visual-wrapper">
         <img src="../../Image/sightseeing.jpg">
     </div>
 </div>
-
-
-<<<<<<< HEAD
-=======
-=======
 <script>
     function reqBrowseMember()
     {
-        checkTableRow();
-        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member?id="+document.getElementsByName("id")[radioSelectedRow].innerHTML);
-        //로그인된 사용자의 정보를 세션에서 가져옴, 로그인시 세션에 저장되어 있을것
+        document.getElementById("browseMemberView").setAttribute("href", "/view/MemberView/reqBrowseMemberView_member");
     }
 </script>
->>>>>>> master
 </body>
->>>>>>> master
 </html>

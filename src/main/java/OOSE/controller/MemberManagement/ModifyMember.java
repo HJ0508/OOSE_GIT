@@ -42,8 +42,12 @@ public class ModifyMember extends HttpServlet
         if(!dbManager.modifyMemberInfo(member)) //수정 실패시
         {
             printAlert("서버 오류로 정보수정 실패했습니다",resp);
+            return;
         }
-        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
+        PrintWriter out = resp.getWriter();
+        out.println("<script>");
+        out.println("history.back(-1);");
+        out.println("</script>");
     }
     public boolean checkAuthority(int authority)
     {

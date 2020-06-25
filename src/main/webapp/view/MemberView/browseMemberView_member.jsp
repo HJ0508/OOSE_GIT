@@ -15,7 +15,7 @@
 </head>
 <body>
 <%@include file="../default/main_member.jsp"%>
-<div>
+<div class="contentDiv">
     <table id="browseTable">
         <thead>
         <tr>

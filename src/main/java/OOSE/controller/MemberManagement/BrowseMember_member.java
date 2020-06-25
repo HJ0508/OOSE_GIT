@@ -16,7 +16,7 @@ public class BrowseMember_member extends HttpServlet
     MemberDBManager dbManager = new MemberDBManager();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException
     {
         try
         {
@@ -25,15 +25,11 @@ public class BrowseMember_member extends HttpServlet
             member = dbManager.browseMemberInfo(member);
 
             req.setAttribute("member", member);
-            req.getRequestDispatcher("/view/MemberView/browseMemberView_member.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/MemberView/browseMemberView_member.jsp").forward(req,resp);
         }
         catch(IOException e)
         {
             e.getStackTrace();
-        }
-        catch(ServletException e)
-        {
-            e. getStackTrace();
         }
     }
 }
