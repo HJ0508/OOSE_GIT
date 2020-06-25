@@ -31,11 +31,96 @@
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/authority.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/authority.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/browseMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/browseMemberView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/browseMemberView_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/MemberView/browseMemberView_member.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/authority/browseAuthority.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/authority/browseAuthority.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/authority/modifyAuthority.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/authority/modifyAuthority.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/authority/registerAuthority.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/authority/registerAuthority.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/main_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/main_member.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/productPackage/browseProductForMember.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/productPackage/browseProductForMember.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/modifyReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/modifyReservationPopup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationCancelPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationCancelPopup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationNavigationBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationNavigationBar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workPlaceInfoRegister.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workplaceInfoDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workplaceInfoDelete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workplaceInfoModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workPlaceInfo/workplaceInfoModify.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workplace/WorkplaceManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/workplace/WorkplaceManagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/DeleteAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/DeleteAuthority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/HtmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/HtmlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/ModifyAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/ModifyAuthority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/RegisterAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/RegisterAuthority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/FacilityManagement/FacilityInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/LoginManagement/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/LoginManagement/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember_member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember_member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/DeleteMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/DeleteMember.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrouseControllerForMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrouseControllerForMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrowseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/BrowseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/DeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/DeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/PurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/PurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/modifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/modifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/registerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/ProductPackageManagement/registerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoBrowseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoBrowseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoDeleteView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoModifyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/WorkplaceInfoManagement/WorkplaceInfoRegisterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/DeleteAccomodationPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accmodationPayment/DeleteAccomodationPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/accomodationPayment/paymentBrowse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/accomodationPayment/paymentBrowse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/BrowseReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/BrowseReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/DeleteReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/DeleteReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/ModifyReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/ModifyReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/RegisterReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/reservation/RegisterReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/AccommodationInfoDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AccommodationInfoDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/AuthorityDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AuthorityDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackageDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackageDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackagePaymentDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ProductPackagePaymentDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/WorkplaceDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/WorkplaceDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Accommodation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Accommodation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Workplace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Workplace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/authority.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/authority.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView_member.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/authority/browseAuthority.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/authority/browseAuthority.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/authority/modifyAuthority.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/authority/modifyAuthority.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/authority/registerAuthority.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/authority/registerAuthority.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/main_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/main_member.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductForMember.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/productPackage/browseProductForMember.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/modifyReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/modifyReservationPopup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationCancelPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationCancelPopup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationNavigationBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationNavigationBar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workPlaceInfoRegister.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workPlaceInfoRegister.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoBrowse.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoDelete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoModify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workPlaceInfo/workplaceInfoModify.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workplace/WorkplaceManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workplace/WorkplaceManagement.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,11 +377,12 @@
       <workItem from="1592167768749" duration="20094000" />
       <workItem from="1592487410559" duration="19185000" />
       <workItem from="1592999078634" duration="24676000" />
+      <workItem from="1593077450677" duration="3831000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
