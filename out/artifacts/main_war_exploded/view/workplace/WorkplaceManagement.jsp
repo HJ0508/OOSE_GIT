@@ -12,32 +12,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
+    <link href="../../css/workplace.css" rel="stylesheet" type="text/css">
     <title>사업장 관리</title>
-    <script language="javascript">
-        <%--var modi = "${pageContext.request.contextPath}/view/workplace/";--%>
-        var url = "${pageContext.request.contextPath}/view/workplace/";
-        var deleteU = "${pageContext.request.contextPath}/view/workplace/";
 
-        var Info = "${pageContext.request.contextPath}/view/workPlaceInfo/";
+    <script language="javascript">
+        let modi = "${pageContext.request.contextPath}/view/workplace/";
+        let url = "${pageContext.request.contextPath}/view/workplace/";
+        let deleteU = "${pageContext.request.contextPath}/view/workplace/";
+
+        let Info = "${pageContext.request.contextPath}/view/workPlaceInfo/";
 
         function register() {
             window.open(url + "workplaceRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
         function modify() {
-            var check = document.getElementsByName("radio");
+            var check = document.getElementsByName("workplaceId");
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
-                    var modi = url + "workplaceModify.jsp?name=" + encodeURI(check[i].value);
+                    modi = "${pageContext.request.contextPath}/view/workplace/workplaceModify.jsp?workplaceId=" + encodeURI(check[i].value);
                 }
             }
             window.open(modi, "modify", "width=500, height=400, left=200, top=100, resizable = no");
         }
         function deleteW() {
-            var check = document.getElementsByName("radio");
+            var check = document.getElementsByName("workplaceId");
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
-                    deleteU = "${pageContext.request.contextPath}/view/workplace/workplaceDelete.jsp?name=" + encodeURI(check[i].value);
+                    deleteU = "${pageContext.request.contextPath}/view/workplace/workplaceDelete.jsp?workplaceId=" + encodeURI(check[i].value);
                 }
             }
             window.open(deleteU, "deleteW", "width=500, height=400, left=200, top=100, resizable = no");
@@ -67,31 +68,26 @@
     </script>
 </head>
 <body>
-<%@include file="../default/header.jsp" %>
+<%@include file="../default/header.jsp"%>
 
-<div class="sidebar">
-    <div>
-        <ul class="sidebar-content">
-            <li><a href="${pageContext.request.contextPath}/view/workplace/WorkplaceManagement.jsp">사업장관리</a></li>
-            <li><a href="${pageContext.request.contextPath}/view/workPlaceInfo/WorkplaceInfoManagement.jsp">사업장정보관리</a>
-            </li>
+<!-- 절  취  선 -->
+
+<div class="sub-body">
+<%--    <div>--%>
+<%--        사업장 조회--%>
+<%--    </div>--%>
+    <div class="side-menu">
+        <ul>
+            <li><a href="#">사업장 관리</a></li>
         </ul>
     </div>
-</div>
-<div class="content-container">
-    <div id="content-name">
-        사업장 조회
-    </div>
-    <br>
-    <br>
-    <br>
     <form>
-        <div class="content">
+        <div class="table">
             <table border="1">
                 <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>선택</td>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>선택</th>
                 </tr>
                 <%
                     if (request.getAttribute("workplace") != null) {
@@ -110,13 +106,17 @@
                 %>
             </table>
         </div>
+        <div class = "button-frame">
         <input type="button" value="상세정보" onclick=browseOpen()>
         <input type="button" value="등록" onclick="register();"/>
         <input type="button" value="수정" onclick="modify();"/>
         <input type="button" value="삭제" onclick="deleteW();"/>
+        </div>
     </form>
     <form action="/browseWorkplaceManagement" method="POST">
+        <div class = "button-frame">
         <input type="submit" value="조회">
+        </div>
     </form>
 </div>
 </body>

@@ -22,8 +22,8 @@ public class WorkplaceDeleteController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             req.setCharacterEncoding("UTF-8");
-            String name = req.getParameter("name");
-            boolean check = dbManager.deleteWorkplace(name);
+            String workplaceId = req.getParameter("workplaceId");
+            boolean check = dbManager.deleteWorkplace(workplaceId);
             if(check) {
                 req.setAttribute("check", check);
                 resp.sendRedirect("view/workplace/workplaceDelete.jsp");
