@@ -19,6 +19,7 @@
 </head>
 <body>
 <div class = "content-name">사업장 등록</div>
+<br>
 <div class = "content-container">
     <form action="/registerWorkplaceManagement" method="POST">
         사업장ID
@@ -26,8 +27,9 @@
         사업장명
         <input type="text" name = "name"><br>
         <input type="submit" value="등록">
+        <input type="button" value="닫기" onclick="cl()">
     </form>
-    <input type="button" value="닫기" onclick="cl()">
+
 </div>
 </body>
 </html>
