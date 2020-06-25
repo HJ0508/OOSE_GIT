@@ -15,11 +15,11 @@
     <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
     <title>사업장 관리</title>
     <script language="javascript">
-        let modi = "${pageContext.request.contextPath}/view/workplace/";
-        let url = "${pageContext.request.contextPath}/view/workplace/";
-        let deleteU = "${pageContext.request.contextPath}/view/workplace/";
+        <%--var modi = "${pageContext.request.contextPath}/view/workplace/";--%>
+        var url = "${pageContext.request.contextPath}/view/workplace/";
+        var deleteU = "${pageContext.request.contextPath}/view/workplace/";
 
-        let Info = "${pageContext.request.contextPath}/view/workPlaceInfo/";
+        var Info = "${pageContext.request.contextPath}/view/workPlaceInfo/";
 
         function register() {
             window.open(url + "workplaceRegister.jsp", "register", "width=500, height=400, left=200, top=100");
@@ -28,7 +28,7 @@
             var check = document.getElementsByName("radio");
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
-                    modi = "${pageContext.request.contextPath}/view/workplace/workplaceModify.jsp?name=" + encodeURI(check[i].value);
+                    var modi = url + "workplaceModify.jsp?name=" + encodeURI(check[i].value);
                 }
             }
             window.open(modi, "modify", "width=500, height=400, left=200, top=100, resizable = no");
