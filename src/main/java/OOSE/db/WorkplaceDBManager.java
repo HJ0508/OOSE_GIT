@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class WorkplaceDBManager extends DBConnector{
+
     int authorityLevel;
 
     public WorkplaceDBManager() {
@@ -23,7 +24,7 @@ public class WorkplaceDBManager extends DBConnector{
                 authorityLevel = res.getInt(1);
             }
 
-        } catch (SQLException throwables) {
+       } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return authorityLevel;
@@ -102,6 +103,7 @@ public class WorkplaceDBManager extends DBConnector{
         return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
 
+    //승환 - 수정 6/21
     public ArrayList<Workplace> browseWorkplace(){
         String query = "SELECT workplaceId,workplaceName FROM oose.workplace";
         try{
@@ -123,6 +125,7 @@ public class WorkplaceDBManager extends DBConnector{
         }
     }
 
+    //승환-추가 6/21
     public boolean registerWorkplace(String s1,String s2) {
         if (checkDuplicateInfo(s2)) return false;
         try {
@@ -208,5 +211,5 @@ public class WorkplaceDBManager extends DBConnector{
         }
         return false;
     }
-
+    //승환 - 추가 끝
 }

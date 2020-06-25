@@ -24,9 +24,9 @@ public class WorkplaceModifyController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             req.setCharacterEncoding("UTF-8");
-            String name = req.getParameter("name");
-            String oldName = req.getParameter("oldName");
-            boolean check = dbManager.modifyWorkplace(oldName, name);
+            String newId = req.getParameter("newId");
+            String oldId = req.getParameter("oldId");
+            boolean check = dbManager.modifyWorkplace(oldId, newId);
             if(check) {
                 req.setAttribute("check", check);
                 resp.sendRedirect("view/workplace/workplaceModify.jsp");

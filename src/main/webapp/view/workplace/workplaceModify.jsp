@@ -22,17 +22,17 @@
 <div class="content-container">
     <form action="/modifyWorkplaceManagement" method="POST">
         <%
-            String check = request.getParameter("name");
+            String check = request.getParameter("workplaceId");
             if(check != null) {
                 pageContext.setAttribute("check", check);
         %>
-        기존 사업장명 :
-        <input type="text" name = "oldName" value = ${check}><br>
+        기존 사업장 ID
+        <input type="text" name = "oldId" readonly value = ${check}><br>
         <%
             }
         %>
-        사업장명
-        <input type="text" name = "name">
+        새 사업장 ID
+        <input type="text" name = "newId">
         <input type="submit" value="수정">
     </form>
     <input type="button" value="닫기" onclick="cl()">
