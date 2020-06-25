@@ -29,10 +29,14 @@
         <%!Member member =new Member();%>
         <%member = (Member)request.getAttribute("member");%>
         <tr>
-            <td id="name"><%=member.getName()%></td>
-            <td id="id"><%=member.getId()%></td>
-            <td id="password"><%=member.getPassword()%></td>
-            <td id="phoneNum"><%=member.getPhoneNum()%></td>
+<%--            <td id="name"><%=member.getName()%></td>--%>
+<%--            <td id="id"><%=member.getId()%></td>--%>
+<%--            <td id="password"><%=member.getPassword()%></td>--%>
+<%--            <td id="phoneNum"><%=member.getPhoneNum()%></td>--%>
+                 <td id="name">${member.name}</td>
+                <td id="id">${member.id}</td>
+                <td id="password">${member.password}</td>
+                <td id="phoneNum">${member.phoneNum}</td>
         </tr>
         </tbody>
     </table>

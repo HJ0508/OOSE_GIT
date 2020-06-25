@@ -21,13 +21,21 @@ public class BrowseMember_member extends HttpServlet
         try
         {
             Member member = new Member();
-            member.setId(req.getParameter("id"));
+            member.setId((String)req.getSession().getAttribute("id"));
+            System.out.println(member.getId());
             member = dbManager.browseMemberInfo(member);
+            System.out.println(member.getId());
+            System.out.println(member.getName());
+
 
             req.setAttribute("member", member);
             req.getRequestDispatcher("/view/MemberView/browseMemberView_member.jsp").forward(req,resp);
         }
         catch(IOException e)
+        {
+            e.getStackTrace();
+        }
+        catch(ServletException e)
         {
             e.getStackTrace();
         }

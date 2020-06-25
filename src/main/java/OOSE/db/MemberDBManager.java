@@ -158,6 +158,7 @@ public class MemberDBManager extends DBConnector
         catch(SQLException e)
         {
             e.getStackTrace();
+            System.out.println("asdf");
             return null;
         }
     }
