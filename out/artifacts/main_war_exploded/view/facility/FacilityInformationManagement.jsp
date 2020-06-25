@@ -28,7 +28,7 @@
                     registerUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationRegister.jsp?name=" + check[i].value;
                 }
             }
-            window.open(registerUrl, "register", "width=500, height=400, left=200, top=100");
+            window.open(registerUrl, "register", "width=500, height=500, left=200, top=100");
         }
 
         function modify() {
