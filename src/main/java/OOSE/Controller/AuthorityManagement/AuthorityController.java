@@ -26,13 +26,13 @@ public class AuthorityController extends HttpServlet
         if((int)req.getSession().getAttribute("authority")<dbManager.findAuthority())  //권한이 없는 경우 main화면으로 돌아감
         {
             printAlert("권한이 없습니다",resp);
-//            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/Main.jsp");
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Default/Main.jsp");
 //            dispatcher.forward(req, resp);
             return;
         }
         ArrayList<Authority> list= dbManager.browseAuthority();
         req.setAttribute("authorityList", list);
-        req.getRequestDispatcher("/view/authority/BrowseAuthority.jsp").forward(req,resp);
+        req.getRequestDispatcher("/view/Authority/BrowseAuthority.jsp").forward(req,resp);
     }
 public void printAlert(String msg, HttpServletResponse resp) throws IOException
 {

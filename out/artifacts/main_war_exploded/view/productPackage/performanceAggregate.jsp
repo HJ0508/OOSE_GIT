@@ -12,7 +12,7 @@
     <title>소공도 관광지 상품 판매 실적</title>
 </head>
 <body>
-<%@include file="../default/header.jsp"%>
+<%@include file="../Default/Header.jsp"%>
 
 
 <!-- 절  취  선 -->

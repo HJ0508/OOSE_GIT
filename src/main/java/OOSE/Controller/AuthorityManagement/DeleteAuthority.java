@@ -27,7 +27,7 @@ public class DeleteAuthority extends HttpServlet
         }
         ArrayList<Authority> list= dbManager.browseAuthority();
         req.setAttribute("authorityList", list);
-        req.getRequestDispatcher("/view/authority/BrowseAuthority.jsp").forward(req,resp);
+        req.getRequestDispatcher("/view/Authority/BrowseAuthority.jsp").forward(req,resp);
     }
     public void printAlert(String msg, HttpServletResponse resp) throws IOException
     {

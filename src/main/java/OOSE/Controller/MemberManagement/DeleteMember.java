@@ -34,7 +34,7 @@ public class DeleteMember extends HttpServlet
         }
         if((int)req.getSession().getAttribute("authority")==1)      //요청자가 회원일 경우 로그인 페이지로 감
         {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/Login.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Default/Login.jsp");
             dispatcher.forward(req, resp);
             return;
         }

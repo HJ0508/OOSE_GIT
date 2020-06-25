@@ -27,7 +27,7 @@ public class BrowseFacilityInformationController extends HttpServlet {
             ArrayList<Facility> facility;
             facility = dbManager.browseFacilityInforInfo();
             req.setAttribute("facility", facility);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/ManagementFacilityInformation.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("view/Facility/ManagementFacilityInformation.jsp");
             dispatcher.forward(req, resp);
         } catch(Exception e) {
             e.printStackTrace();

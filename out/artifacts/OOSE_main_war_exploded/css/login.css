@@ -1,0 +1,25 @@
+/* 06.23 추가 */
+
+h3{
+    text-align: center;
+}
+
+fieldset{
+    height: 10rem;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#inputLabel {
+    display : inline-block;
+}
+#inputText {
+    display : inline-block;
+}
+#radio {
+    display : block;
+}
+.centerBox {
+    margin: 150px;
+}
+

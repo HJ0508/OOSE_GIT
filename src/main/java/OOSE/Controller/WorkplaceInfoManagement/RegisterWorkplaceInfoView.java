@@ -62,7 +62,7 @@ public class RegisterWorkplaceInfoView extends HttpServlet {
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/RegisterWorkPlaceInfo.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/WorkPlaceInfo/RegisterWorkPlaceInfo.jsp");
             dispatcher.forward(req, resp);
         }
         else{

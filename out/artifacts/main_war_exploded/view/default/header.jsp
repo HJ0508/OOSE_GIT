@@ -30,7 +30,7 @@
                 <div id="top-menu">
                     <ul class="navbar-nav">
                         <li>
-                            <a href="${pageContext.request.contextPath}/view/MemberView/memberMenuView.jsp">회원</a>
+                            <a href="${pageContext.request.contextPath}/view/MemberView/MemberMenuView.jsp">회원</a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath}/authority">권한</a>

@@ -5,7 +5,7 @@
 산출물 기준: UI-047
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="OOSE.model.*" %>
+<%@ page import="OOSE.Model.*" %>
 <%@ page import="java.util.*" %>
 
 <html>
@@ -17,7 +17,7 @@
     <title>소공도 관광지</title>
 </head>
 <body>
-<%@include file="../default/header.jsp"%>
+<%@include file="../Default/Header.jsp"%>
 
 <!-- 절  취  선 -->
 

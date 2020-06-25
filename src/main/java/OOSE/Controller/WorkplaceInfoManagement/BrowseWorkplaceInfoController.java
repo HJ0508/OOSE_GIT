@@ -77,7 +77,7 @@ public class BrowseWorkplaceInfoController extends HttpServlet {
         } else {
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/BrowseWorkplaceInfo.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/WorkPlaceInfo/BrowseWorkplaceInfo.jsp");
             dispatcher.forward(req, resp);
         }
     }

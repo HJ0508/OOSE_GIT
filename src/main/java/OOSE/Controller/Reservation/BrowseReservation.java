@@ -38,10 +38,10 @@ public class BrowseReservation extends HttpServlet {
             List<Reservation> list = new ArrayList(Arrays.asList(reservationDBManager.browseReservation(keyword, tmp, reservationCode)));
             req.setAttribute("list", list);
             if(reservationCode.equals("예약")) {
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/BrowseReservation.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Reservation/BrowseReservation.jsp");
                 dispatcher.forward(req, resp);
             } else {
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/BrowseReservationForCancel.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Reservation/BrowseReservationForCancel.jsp");
                 dispatcher.forward(req, resp);
             }
 

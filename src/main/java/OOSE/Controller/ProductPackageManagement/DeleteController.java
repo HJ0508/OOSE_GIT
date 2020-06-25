@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "deleteProduct", urlPatterns = {"/view/productPackage/deleteProduct"})
+@WebServlet(name = "deleteProduct", urlPatterns = {"/view/ProductPackage/DeleteProduct"})
 public class DeleteController extends HttpServlet {
     ProductPackageDBManager dbManager;
 
@@ -51,7 +51,7 @@ public class DeleteController extends HttpServlet {
         }catch(ExceptionOnProductPackage e){
             req.setAttribute("result", 6);
         }finally {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/DeleteProductPackage.jsp"); //돌려주는 방식은 좀 다르게 해야할 듯
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/ProductPackage/DeleteProductPackage.jsp"); //돌려주는 방식은 좀 다르게 해야할 듯
             dispatcher.forward(req, resp);
         }
     }

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="OOSE.model.Authority" %>
+<%@ page import="OOSE.Model.Authority" %>
 <%@ page import="java.util.ArrayList" %>
 <html>
 <head>
@@ -15,7 +15,7 @@
     <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<%@include file="../default/header.jsp"%>
+<%@include file="../Default/Header.jsp"%>
 <div class="contentDiv">
     <table id="browseTable">
         <thead>
@@ -77,7 +77,7 @@
         }
     }
     function registerOpen(){
-        const popUrl = "${pageContext.request.contextPath}/view/authority/registerAuthority.jsp";	//팝업창에 출력될 페이지 URL
+        const popUrl = "${pageContext.request.contextPath}/view/authority/RegisterAuthority.jsp";	//팝업창에 출력될 페이지 URL
         const leftPosition = (window.screen.width-500)/2;
         const topPosition = (window.screen.height-400)/2;
         const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)

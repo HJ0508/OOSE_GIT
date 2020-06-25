@@ -28,9 +28,9 @@ public class RegisterReservation extends HttpServlet {
             req.setAttribute("roomInfos", roomInfos);
             RequestDispatcher dispatcher = null;
             if(req.getParameter("condition").equals("예약"))
-                dispatcher = req.getRequestDispatcher("/view/reservation/RegisterReservation.jsp");
+                dispatcher = req.getRequestDispatcher("/view/Reservation/RegisterReservation.jsp");
             else
-                dispatcher = req.getRequestDispatcher("/view/reservation/RegisterReservationForCancel.jsp");
+                dispatcher = req.getRequestDispatcher("/view/Reservation/RegisterReservationForCancel.jsp");
             dispatcher.forward(req, resp);
         } catch (SQLException e) {
             e.printStackTrace();

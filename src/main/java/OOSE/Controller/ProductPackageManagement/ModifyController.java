@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "modifyProduct", urlPatterns = {"/view/productPackage/modifyProduct"})
+@WebServlet(name = "modifyProduct", urlPatterns = {"/view/ProductPackage/ModifyProduct"})
 public class ModifyController extends HttpServlet {
     ProductPackageDBManager dbManager;
 
@@ -82,7 +82,7 @@ public class ModifyController extends HttpServlet {
         }catch (ExceptionOnProductPackage e){
             req.setAttribute("result" , 6); // 권한에 대한 예외 처리
         }finally {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/ModifyProductPackage.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/ProductPackage/ModifyProductPackage.jsp");
             dispatcher.forward(req, resp);
         }
     }

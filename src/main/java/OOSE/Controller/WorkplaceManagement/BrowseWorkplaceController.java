@@ -26,7 +26,7 @@ public class BrowseWorkplaceController extends HttpServlet {
             ArrayList<Workplace> workplace;
             workplace = dbManager.browseWorkplace();
             req.setAttribute("workplace", workplace);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/workplace/ManagementWorkplace.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("view/Workplace/ManagementWorkplace.jsp");
             dispatcher.forward(req, resp);
         } catch(Exception e) {
             e.printStackTrace();

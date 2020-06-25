@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "purchaseProduct", urlPatterns = {"/view/productPackage/purchaseProduct"})
+@WebServlet(name = "purchaseProduct", urlPatterns = {"/view/ProductPackage/PurchaseProduct"})
 public class PurchaseController extends HttpServlet {
     ProductPackageDBManager productPackageDBManager;
     ProductPackagePaymentDBManager productPackagePaymentDBManager;
@@ -75,7 +75,7 @@ public class PurchaseController extends HttpServlet {
         }catch (SQLException e){
             req.setAttribute("result", 4); //조회 오류
         }finally {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/PurchaseProduct.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/ProductPackage/PurchaseProduct.jsp");
             dispatcher.forward(req, resp);
         }
     }

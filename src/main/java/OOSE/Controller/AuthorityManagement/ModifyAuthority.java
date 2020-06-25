@@ -3,7 +3,6 @@ package OOSE.Controller.AuthorityManagement;
 import OOSE.Database.AuthorityDBManager;
 import OOSE.Model.Authority;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,7 @@ public class ModifyAuthority extends HttpServlet {
         try {
             Authority authority = authorityDBManager.browseSpecificAuthority(Integer.parseInt(req.getParameter("id")));
             req.setAttribute("authority",authority);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/authority/ModifyAuthority.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Authority/ModifyAuthority.jsp");
             dispatcher.forward(req, resp);
         } catch (SQLException e) {
             e.printStackTrace();

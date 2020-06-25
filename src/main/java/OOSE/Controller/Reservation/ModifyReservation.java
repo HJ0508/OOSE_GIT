@@ -29,7 +29,7 @@ public class ModifyReservation extends HttpServlet {
             req.setAttribute("accommodations", accommodations);
             req.setAttribute("roomInfos", roomInfos);
             req.setAttribute("reservations", reservations[0]);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/reservation/ModifyReservation.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Reservation/ModifyReservation.jsp");
             dispatcher.forward(req, resp);
         } catch (ExceptionOnAuthority e) { util.closeOnException(resp, "권한이 없습니다."); e.printStackTrace(); }
         catch (Exception e) {

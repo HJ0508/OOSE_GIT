@@ -30,19 +30,19 @@ public class LoginController extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("id","비회원"); // 비회원 id 설정해줘야하는지
                 session.setAttribute("authority", 0); // 권한 0으로 계속
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/Main_member.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Default/Main_member.jsp");
                 dispatcher.forward(req, resp);
             }
             else {
                 if (userDivision.equals("관리자")) {
                     member = dbManager.getManager(id);
-                    url = "/view/default/Main.jsp";
+                    url = "/view/Default/Main.jsp";
                 } else if (userDivision.equals("직원")) {
                     member = dbManager.getEmployee(id);
-                    url = "/view/default/Main.jsp";
+                    url = "/view/Default/Main.jsp";
                 } else if (userDivision.equals("회원")) {
                     member = dbManager.getMember(id);
-                    url = "/view/default/Main_member.jsp";
+                    url = "/view/Default/Main_member.jsp";
                 }
 
 
@@ -50,7 +50,7 @@ public class LoginController extends HttpServlet {
                     System.out.println("로그인실패");
                     req.setAttribute("loginMessage", "조회 실패. 일치하는 id가 없습니다.");
 
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/Login.jsp");
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Default/Login.jsp");
                     dispatcher.forward(req, resp);
                 } else if (member.getPassword().equals(passwd)) {
                     System.out.println("로그인성공");
@@ -64,7 +64,7 @@ public class LoginController extends HttpServlet {
                     System.out.println("로그인실패");
                     req.setAttribute("loginMessage", "로그인 실패. 다시 시도해 주십시오.");
 
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/Login.jsp");
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/view/Default/Login.jsp");
                     dispatcher.forward(req, resp);
                 }
             }

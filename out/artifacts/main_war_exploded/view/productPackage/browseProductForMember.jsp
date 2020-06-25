@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/view/default/main_member.jsp" %>
+<%@ include file="/view/Default/Main_member.jsp" %>
 <link href="../../css/browseProduct.css" rel="stylesheet" type="text/css">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 

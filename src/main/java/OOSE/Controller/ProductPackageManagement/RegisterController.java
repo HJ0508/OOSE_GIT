@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "registerProduct", urlPatterns = {"/view/productPackage/registerProduct"})
+@WebServlet(name = "registerProduct", urlPatterns = {"/view/ProductPackage/RegisterProduct"})
 public class RegisterController extends HttpServlet {
     ProductPackage pp;
     ProductPackageDBManager dbManager;
@@ -26,7 +26,7 @@ public class RegisterController extends HttpServlet {
         }catch(ExceptionOnProductPackage e){
             req.setAttribute("result", 6);
         }finally {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/RegisterProductPackage.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/ProductPackage/RegisterProductPackage.jsp");
             dispatcher.forward(req, resp);
         }
     }
@@ -77,7 +77,7 @@ public class RegisterController extends HttpServlet {
         } catch (NumberFormatException e) {
             req.setAttribute("result", 4);
         } finally {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/RegisterProductPackage.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/ProductPackage/RegisterProductPackage.jsp");
             dispatcher.forward(req, resp);
         }
     }

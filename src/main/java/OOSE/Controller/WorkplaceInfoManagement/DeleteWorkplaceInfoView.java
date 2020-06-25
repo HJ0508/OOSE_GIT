@@ -75,7 +75,7 @@ public class DeleteWorkplaceInfoView extends HttpServlet {
         req.setAttribute("content", workplace);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/DeleteWorkplaceInfo.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/view/WorkPlaceInfo/DeleteWorkplaceInfo.jsp");
         dispatcher.forward(req, resp);
     }
 

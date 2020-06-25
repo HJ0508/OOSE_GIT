@@ -66,7 +66,7 @@ public class ModifyWorkplaceInfoView extends HttpServlet {
             System.out.println(workplace.getName());
             req.setAttribute("content", workplace);
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/ModifyWorkplaceInfo.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/WorkPlaceInfo/ModifyWorkplaceInfo.jsp");
 
                 dispatcher.forward(req, resp);
         } catch (ServletException e) {
