@@ -25,7 +25,7 @@ public class BrowseMember_member extends HttpServlet
             member = dbManager.browseMemberInfo(member);
 
             req.setAttribute("member", member);
-            req.getRequestDispatcher("/view/MemberView/browseMemberView_member.jsp").forward(req, resp);
+            req.getRequestDispatcher("/view/MemberView/browseMemberView_member.jsp").forward(req,resp);
         }
         catch(IOException e)
         {
