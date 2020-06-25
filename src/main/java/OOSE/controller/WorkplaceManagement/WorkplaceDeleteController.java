@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/deleteWorkplaceManagement")
 public class WorkplaceDeleteController extends HttpServlet {
@@ -24,30 +23,16 @@ public class WorkplaceDeleteController extends HttpServlet {
         try {
             req.setCharacterEncoding("UTF-8");
             String workplaceId = req.getParameter("workplaceId");
-            int intWorkplaceId = Integer.parseInt(workplaceId);
-            boolean check = dbManager.deleteWorkplace(intWorkplaceId);
+            boolean check = dbManager.deleteWorkplace(workplaceId);
             if(check) {
-                htmlPrint(resp,"삭제 성공");
+                req.setAttribute("check", check);
+                resp.sendRedirect("view/workplace/workplaceDelete.jsp");
             }else {//실패
-                htmlPrint(resp, "삭제 실패, 시설에서 사용되고 있는지 확인해주세요");
+                req.setAttribute("check", check);
+                resp.sendRedirect("view/workplace/workplaceDelete.jsp");
             }
         } catch(Exception e) {
 
-        }
-    }
-
-    private void htmlPrint(HttpServletResponse res, String message){
-        try {
-            res.setContentType("text/html; charset=euc-kr");
-            PrintWriter out = null;
-            out = res.getWriter();
-            out.println("<script>");
-            out.println("alert('" + message + "');");
-            out.println("window.opener.location.reload();"); //부모 페이지 새로고침 -> 반영된 결과 새로 조회
-            out.println("window.close();"); //팝업은 닫기
-            out.println("</script>");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
