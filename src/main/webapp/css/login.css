@@ -1,4 +1,15 @@
 /* 06.23 추가 */
+
+h3{
+    text-align: center;
+}
+
+fieldset{
+    height: 10rem;
+    text-align: center;
+    padding-top: 5%;
+}
+
 #inputLabel {
     display : inline-block;
 }
@@ -9,17 +20,6 @@
     display : block;
 }
 .centerBox {
-    /*position : absolute;*/
-    /*!*width: 100%;*!*/
-    /*!*height: 100vh;*!*/
-    /*!*display: -webkit-box;*!*/
-    /*!*display: -ms-flexbox;*!*/
-    /*!*display: flex;*!*/
-    /*!*-webkit-box-align:  center;*!*/
-    /*!*-ms-flex-align: center;*!*/
-    /*!*align-items: center;*!*/
-    /*!*-webkit-box-pack: center;*!*/
-    /*!*-ms-flex-pack: center;*!*/
-    /*!*justify-content: center;*!*/
     margin: 150px;
 }
+

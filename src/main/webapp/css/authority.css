@@ -1,0 +1,51 @@
+.contentDiv
+{
+    position:absolute;
+    left:4rem;
+    /*border:1px solid red;*/
+    top:27rem;
+    text-align:center;
+    width:100%; /*화면 크기에 따라 넓이 조절하려고*/
+}
+.contentDiv table
+{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+.contentDiv table tr
+{
+    padding-bottom:5px;
+}
+.contentDiv table th
+{
+    padding-left:20px;
+    border-bottom:1px solid black;
+}
+.contentDiv table td
+{
+    padding-left:20px;
+    height:auto;
+    text-align:center;
+    word-break:break-all;
+    border-bottom:1px solid black;
+}
+.aLink
+{
+    border:1px solid rgba(52, 152, 219, 0.8);
+    text-decoration: none;
+    background-color: rgba(52,152,219,0.8);
+    font-size:1.5rem;
+    padding:5px;
+    border-radius:5px;
+    color:#ffffff;
+}
+
+.modify_delete_div
+{
+    bottom:0;
+    margin-top:20px;
+}

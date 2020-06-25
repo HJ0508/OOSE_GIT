@@ -100,18 +100,6 @@ public class ReservationDBManager extends DBConnector {
         return pstmt.executeUpdate()!=0;
     }
 
-    public Reservation[] browseReservationCancel(){
-        return null;
-    }
-    public boolean registerReservationCancle(){
-        return false;
-    }
-    public boolean modifyReservationCancle(){
-        return false;
-    }
-    public boolean deleteReservationCancle(){
-        return false;
-    }
 
     public boolean checkAuthority(int userAuthority) throws SQLException{
         query = "SELECT authorityId FROM oose.authority where accessRange like \"%숙박예약%\" order by authorityId asc";

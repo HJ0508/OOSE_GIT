@@ -52,15 +52,25 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
         <servlet-name>modifyReservation</servlet-name>
         <url-pattern>/reservation/modifyReservation</url-pattern>
     </servlet-mapping>
-<!--    <servlet>-->
-<!--        <servlet-name>browseWorkplaceInfo</servlet-name>-->
-<!--        <servlet-class>OOSE.controller.WorkplaceInfoManagement.WorkplaceInfoBrowseController</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>browseWorkplaceInfo</servlet-name>-->
-<!--        <url-pattern>/workplace/browseWorkplaceInfo</url-pattern>-->
-<!--    </servlet-mapping>-->
-    
+
+    <servlet>
+        <servlet-name>registerAuthority</servlet-name>
+        <servlet-class>OOSE.controller.AuthorityManagement.RegisterAuthority</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registerAuthority</servlet-name>
+        <url-pattern>/authority/registerAuthority</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>modifyAuthority</servlet-name>
+        <servlet-class>OOSE.controller.AuthorityManagement.ModifyAuthority</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>modifyAuthority</servlet-name>
+        <url-pattern>/authority/modifyAuthority</url-pattern>
+    </servlet-mapping>
+
     <resource-ref>
         <description>Connection</description>
         <res-ref-name>jdbc/OracleDB</res-ref-name>

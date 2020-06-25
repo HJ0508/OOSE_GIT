@@ -34,4 +34,12 @@ public class Authority {
     public void setAccessRange(String accessRange) {
         this.accessRange = accessRange;
     }
+
+    public Authority(int id, String name, String accessRange) {
+        this.id = id;
+        this.name = name;
+        this.accessRange = accessRange;
+    }
+
+    public Authority() { }
 }

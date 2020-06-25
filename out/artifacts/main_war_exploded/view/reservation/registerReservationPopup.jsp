@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
-  User: user
-  Date: 2020-06-02
+  User: haejun
+  Date: 2020-06-25
   Time: 오후 1:37
   To change this template use File | Settings | File Templates.
 --%>
@@ -13,6 +13,7 @@
     <style>
         strong{
             font-size:1.5rem;
+            margin-left: 1rem;
         }
         label{
             display: inline-block;

@@ -52,4 +52,11 @@ public class Member {
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+
+    public Member(String id, int authority) {
+        this.id = id;
+        this.authority = authority;
+    }
+
+    public Member() { }
 }
