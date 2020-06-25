@@ -3,33 +3,60 @@ package OOSE.controller.MemberManagement;
 import OOSE.db.MemberDBManager;
 import OOSE.model.Member;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet("/view/MemberView/reqDeleteMember")      //이렇게 연결하니까 되네..후
+@WebServlet("/view/MemberView/reqDeleteMember")
 public class DeleteMember extends HttpServlet
 {
     private MemberDBManager dbManager = new MemberDBManager();
+    int authority=3;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
     {
+        if(!checkAuthority((int) req.getSession().getAttribute("authority")))
+        {
+            printAlert("권한이 없습니다",resp);
+            return;
+        }
         Member member = new Member();
         member.setId(req.getParameter("id"));
-        System.out.println("왜 삭제 안시켜줘 엉엉" + req.getParameter("id"));
-        dbManager.deleteMemberInfo(member);
-//        if()       //저장에 실패한 경우
-//        {
-//            //alert 해줄것
-//        }
-//        else
-//        {
-//            //alert 해줄것
-//            System.out.println("delete Success");
-//        }
-        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
+        if(!dbManager.deleteMemberInfo(member)) //삭제 실패한 경우
+        {
+            printAlert("서버 오류로 정보 입력 실패했습니다",resp);
+            return;
+        }
+        if((int)req.getSession().getAttribute("authority")==1)      //요청자가 회원일 경우 로그인 페이지로 감
+        {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/default/login.jsp");
+            dispatcher.forward(req, resp);
+            return;
+        }
+        PrintWriter out = resp.getWriter();
+        out.println("<script>");
+        out.println("history.back(-1);");
+        out.println("</script>");
+
+    }
+    public boolean checkAuthority(int authority)
+    {
+        if(authority>this.authority||authority==1)      //회원이거나 관리자일 경우
+            return true;
+        return false;       //권한 없음
+    }
+    public void printAlert(String msg, HttpServletResponse resp) throws IOException
+    {
+        PrintWriter out = resp.getWriter();
+        out.println("<script>");
+        out.println("alert('" + msg + "');");
+        out.println("history.back(-1);");
+        out.println("</script>");
     }
 }

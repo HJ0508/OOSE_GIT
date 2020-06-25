@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -26,6 +27,7 @@
         .cancel{float:right;}
         .save{float:right; background-color: rgb(52, 152, 219); border-radius: 4px; margin-right:0.3rem;}
     </style>
+
 </head>
 <body>
 <div class="register-contents">
@@ -35,22 +37,23 @@
             <label>회원이름</label><input name = "name" type="text" value = ${reservations.userId}><br>
             <label>전화번호</label><input name = "tel" type="tel" value = ${reservations.phoneNum}><br>
             <label>차량번호</label><input name = "carNumber" type="text" value = ${reservations.carNumber}><br>
-            <label>숙박시설</label><select name="accommodation" value = ${reservations.accommodationId}>
-            <option value="">선택</option>
-            <option value="">1동</option>
-            <option value="">2동</option>
-            <option value="">3동</option>
-            <option value="1111">test</option>
-        </select><br>
-            <label>호실</label><select name="roomNumber">
-            <option value="">선택</option>
-            <option value="101">101</option>
-            <option value="102">102</option>
-            <option value="103">103</option>
-        </select><br>
-            <label>인원</label><input name = "headCount" type="number" placeholder="?명"><br>
-            <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00"><br>
-            <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00"><br>
+
+            <label>숙박시설</label><select id = "accommodationList" name="accommodation" >
+                <option value="">선택</option>
+                <c:forEach items="${accommodations}" var = "accommodation">
+                    <option value = "${accommodation.id}" <c:if test="${reservations.accommodationId==accommodation.id}">selected</c:if>>${accommodation.name}</option>
+                </c:forEach>
+            </select><br>
+
+            <label>호실</label><select name="roomNumber" id = "roomList" onclick="accommodationChange()" >
+                <option value="">선택</option>
+                <c:forEach items="${roomInfos}" var = "roomInfo">
+                    <option class="${roomInfo.id}" value = "${roomInfo.roomNumber}">${roomInfo.roomNumber}</option>
+                </c:forEach>
+            </select><br>
+            <label>인원</label><input name = "headCount" type="number" placeholder="?명" min="0" value=${reservations.headCount}><br>
+            <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00" value="${reservations.checkInDate}"><br>
+            <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00" value="${reservations.checkOutDate}"><br>
             <br>
             <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
@@ -59,7 +62,18 @@
     </form>
 </div>
 <script>
+    accommodationChange();
     function popupClose() { self.close();}
+    function accommodationChange() {
+        var selectedAccommodation = document.getElementById("accommodationList").value;
+
+        var roomList = document.getElementById("roomList").children;
+        for(var i=1;i<roomList.length; i++)
+            if(roomList[i].className!=selectedAccommodation)
+                roomList[i].style.display = "none";
+            else
+                roomList[i].style.display = "block";
+    }
 </script>
 </body>
 </html>

@@ -13,6 +13,7 @@
 </head>
 <body>
 <div>
+    <%@include file="../default/main_member.jsp"%>
     <form method="post" action="/reqModifyMember">
         <div class="contentDiv">
             <table>

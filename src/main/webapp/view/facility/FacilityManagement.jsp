@@ -12,12 +12,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
+    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
     <title>시설관리</title>
     <script language="javascript">
-        let modifyurl = "${pageContext.request.contextPath}/view/facility/";
+        let modi = "${pageContext.request.contextPath}/view/facility/";
         let url = "${pageContext.request.contextPath}/view/facility/";
-        let deleteurl = "${pageContext.request.contextPath}/view/facility/";
+        let deleteU = "${pageContext.request.contextPath}/view/facility/";
         function register() {
             window.open(url + "FacilityRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
@@ -26,23 +26,21 @@
             var check = document.getElementsByName("radio");
 
             for (var i = 0; i < check.length; i++) {
-
-                if (check[i].checked === true) {
-                    modifyurl = "${pageContext.request.contextPath}/view/facility/FacilityModify.jsp?name=" + encodeURI(check[i].value);
+                if (check[i].checked) {
+                    modi = "${pageContext.request.contextPath}/view/facility/FacilityModify.jsp?name=" + encodeURI(check[i].value);
                 }
             }
-            window.open(modifyurl, "modify", "width=500, height=400, left=200, top=100, resizable = no");
+            window.open(modi, "modify", "width=500, height=400, left=200, top=100, resizable = no");
         }
 
         function remove() {
             var check = document.getElementsByName("radio");
             for (var i = 0; i < check.length; i++) {
-
-                if (check[i].checked === true) {
-                    deleteurl = "${pageContext.request.contextPath}/view/facility/FacilityDelete.jsp?name=" + encodeURI(check[i].value);
+                if (check[i].checked) {
+                    deleteU = "${pageContext.request.contextPath}/view/facility/FacilityDelete.jsp?name=" + encodeURI(check[i].value);
                 }
             }
-            window.open(deleteurl, "delete", "width=500, height=400, left=200, top=100, resizable = no");
+            window.open(deleteU, "delete", "width=500, height=400, left=200, top=100, resizable = no");
         }
     </script>
 </head>
@@ -67,8 +65,6 @@
     <br>
 
     <form>
-
-
         <div class="content">
             <table border="1">
                 <tr>
@@ -93,14 +89,14 @@
                 %>
             </table>
         </div>
-        <form action="/browseFacilityManagement" method="POST">
-            <input type="submit" value="조회">
-        </form>
+
         <input type="button" value="등록" onclick="register();"/>
         <input type="button" value="수정" onclick="modify();"/>
         <input type="button" value="삭제" onclick="remove();"/>
     </form>
-
+    <form action="/browseFacilityManagement" method="POST">
+        <input type="submit" value="조회">
+    </form>
 
 
 

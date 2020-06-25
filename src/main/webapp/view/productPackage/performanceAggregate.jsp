@@ -30,7 +30,7 @@
         <ul>
             <li><a href="${pageContext.request.contextPath}/view/productPackage/browseProductPackage">관리</a></li>
             <li><a href="#" class="selected">판매 실적</a></li>
-            <li><a href="#">상품 구입</a></li>
+            <li><a href="#" onclick="showPurchasePopup()">상품 구입</a></li> <%-- ★onclick 추가 --%>
         </ul>
     </div>
 
@@ -70,4 +70,10 @@
     </div>
 </div>
 </body>
+
+<script>
+    function showPurchasePopup() {
+        window.open("/view/productPackage/purchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    } <%-- ★상품 구매 시 팝업 추가 --%>
+</script>
 </html>

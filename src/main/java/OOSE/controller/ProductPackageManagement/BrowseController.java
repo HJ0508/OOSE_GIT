@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -20,15 +21,21 @@ public class BrowseController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
+            HttpSession httpSession = req.getSession();
+            int autority = (int)httpSession.getAttribute("authority");
+            System.out.println(autority); //얘네는 테스트용
+
             ProductPackage[] productPackages = dbManager.browseProductInfo();
             req.setAttribute("productPackages", productPackages);
             // ServletContext context = req.getServletContext();
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductPackage.jsp"); /*경로 변경*/
-
-            dispatcher.forward(req, resp);
             System.out.println("Success");
         }catch(SQLException e){
+            req.setAttribute("error", 1);
             e.printStackTrace();
+        }finally{
+
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductPackage.jsp");
+            dispatcher.forward(req, resp);
         }
     }
 }

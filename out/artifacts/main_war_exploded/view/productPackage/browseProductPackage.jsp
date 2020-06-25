@@ -17,7 +17,6 @@
     <title>소공도 관광지</title>
 </head>
 <body>
-<%--jsp파일 그대로도 작동하긴 하지만 url 패턴은 /browseProductPackage로 적용--%>
 <%@include file="../default/header.jsp"%>
 
 <!-- 절  취  선 -->
@@ -27,9 +26,10 @@
         <ul>
             <li><a href="#" class="selected">관리</a></li>
             <li><a href="${pageContext.request.contextPath}/view/productPackage/performanceAggregate.jsp">판매 실적</a></li>
-            <li><a href="#">상품 구입</a></li>
+            <li><a href="#" onclick="showPurchasePopup()">상품 구입</a></li>
         </ul>
     </div>
+
     <div class="table">
         <table>
             <tr>
@@ -72,8 +72,15 @@
 </body>
 
 <script language="javascript">
+    <%
+    Object checkError = request.getAttribute("error");
+    if(checkError != null){
+    %>
+    alert("조회 중 오류가 발생했습니다.");
+    <%}
+    %>
     function showRegisterPopup() {
-        window.open("http://localhost:8080/view/productPackage/registerProductPackage.jsp", "a", "width=500, height=500, left=100, top=50, resizable=no");
+        window.open("/view/productPackage/registerProduct", "a", "width=500, height=500, left=100, top=50, resizable=no"); <!--★jsp 대신 url-->
     }
 
     function showModifyPopup() {
@@ -83,6 +90,12 @@
     function showDeletePopup(){
         window.open("/view/productPackage/deleteProduct", "a", "width=500, height=300, left=100, top=50, resizable=no");
     }
+
+    function showPurchasePopup(){
+        window.open("/view/productPackage/purchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+    }
+
+    <%-- ★등록 수정 삭제 구매 팝업 추가 및 경로 수정 --%>
 </script>
 
 </html>

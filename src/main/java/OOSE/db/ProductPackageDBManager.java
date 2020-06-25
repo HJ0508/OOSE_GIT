@@ -12,13 +12,30 @@ import OOSE.model.ProductPackage;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.SQLSyntaxErrorException;
 import java.util.Vector;
 
 public class ProductPackageDBManager {
     private DBConnector conn;
-    private int autority;
 
-    /*boolean*/
+    public boolean checkAuthority(int myAuthority, String useCase) throws SQLException{
+        String sql = "SELECT authorityId FROM oose.authority WHERE accessRange LIKE '%"+ useCase +"%'";
+        System.out.println(sql);
+        conn = new DBConnector();
+        conn.setRes((conn.getConn().prepareStatement(sql)).executeQuery());
+        ResultSet res = conn.getRes();
+
+        while(res.next()){
+            int authority = res.getInt(1);
+            if(myAuthority == authority){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     public boolean registerProductInfo(ProductPackage info) throws SQLException {
         System.out.println("entry");
         conn = new DBConnector();
@@ -98,8 +115,7 @@ public class ProductPackageDBManager {
         }
     }
 
-    /*Model.ProductPackage.Model.*/
-    public ProductPackage[] browseProductInfo() throws SQLException {
+    public ProductPackage[] browseProductInfo() throws SQLException{
         ProductPackage productPackage;
         Vector<ProductPackage> vector = new Vector<>();
         conn = new DBConnector();

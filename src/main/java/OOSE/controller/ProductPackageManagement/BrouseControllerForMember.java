@@ -22,13 +22,11 @@ public class BrouseControllerForMember extends HttpServlet {
         try{
             ProductPackage[] productPackages = dbManager.browseProductInfo();
             req.setAttribute("productPackages", productPackages);
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/browseProductForMember.jsp");
-            dispatcher.forward(req, resp);
-            System.out.println("Success!!!");
         }catch(SQLException e){
             e.printStackTrace();
+        }finally {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/productPackage/browseProductForMember.jsp");
+            dispatcher.forward(req, resp);
         }
-
     }
 }

@@ -47,28 +47,24 @@ public class ReservationDBManager extends DBConnector {
         return data.toArray(new Reservation[data.size()]);
 
     }
-    public boolean registerReservation(Reservation reservation) {
-        try {
-            query = "INSERT INTO oose.reservation ( `accommodationId`,`userId`,`roomNumber`,`carNumber`,`checkInDate`,`checkOutDate`,`totalPrice`,`reservationCode`,`headCount`)VALUES (?,?,?,?,?,?,?,?,?)";
-            pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, reservation.getAccommodationId());
-            pstmt.setString(2, reservation.getUserId());
-            pstmt.setString(3, Integer.toString(reservation.getRoomNumber()));
-            pstmt.setString(4, reservation.getCarNumber());
-            pstmt.setString(5, reservation.getCheckInDate());
-            pstmt.setString(6, reservation.getCheckOutDate());
-            pstmt.setInt(7, reservation.getTotalPrice());
-            pstmt.setString(8, reservation.getReservationCode());
-            pstmt.setInt(9, reservation.getHeadCount());
-            int tmp = pstmt.executeUpdate();
-            if (tmp != 0) return true;
-            return false;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+    public boolean registerReservation(Reservation reservation) throws SQLException, NullPointerException {
+
+        query = "INSERT INTO oose.reservation ( `accommodationId`,`userId`,`roomNumber`,`carNumber`,`checkInDate`,`checkOutDate`,`totalPrice`,`reservationCode`,`headCount`) VALUES (?,?,?,?,?,?,?,?,?)";
+        pstmt = conn.prepareStatement(query);
+        pstmt.setInt(1, reservation.getAccommodationId());
+        pstmt.setString(2, reservation.getUserId());
+        pstmt.setString(3, Integer.toString(reservation.getRoomNumber()));
+        pstmt.setString(4, reservation.getCarNumber());
+        pstmt.setString(5, reservation.getCheckInDate());
+        pstmt.setString(6, reservation.getCheckOutDate());
+        pstmt.setInt(7, reservation.getTotalPrice());
+        pstmt.setString(8, reservation.getReservationCode());
+        pstmt.setInt(9, reservation.getHeadCount());
+        int tmp = pstmt.executeUpdate();
+        if (tmp != 0) return true;
+        return false;
     }
-    public boolean modifyReservation(Reservation reservation) throws SQLException{
+    public boolean modifyReservation(Reservation reservation) throws SQLException, NullPointerException{
 
         query = "UPDATE `oose`.`reservation` SET `reservationId` = ?, `accommodationId` = ?, `userId` = ?, `roomNumber` = ?, `carNumber` = ?, `checkInDate` = ?, `checkOutDate` = ?, `totalPrice` = ?, `headCount` = ? WHERE `reservationId` = ?";
         pstmt = conn.prepareStatement(query);
@@ -117,11 +113,31 @@ public class ReservationDBManager extends DBConnector {
         return false;
     }
 
-    public boolean checkAuthority(){ // 구현하지 않음
+    public boolean checkAuthority(int userAuthority) throws SQLException{
+        query = "SELECT authorityId FROM oose.authority where accessRange like \"%숙박예약%\" order by authorityId asc";
+        pstmt = conn.prepareStatement(query);
+        res = pstmt.executeQuery();
+        res.next();
+        if(userAuthority>=res.getInt(1))
+            return true;
         return false;
     }
 
-    public boolean checkDuplicatedInfo(){
-        return false;
+    public boolean checkDuplicatedInfo(Reservation reservation) throws SQLException {
+        query = "SELECT count(*) FROM oose.reservation where accommodationId = ? and roomNumber = ? and reservationCode = '예약' and ( (checkOutDate >= ? and checkIndate <= ?) or (checkInDate between ? and ?) )";
+        pstmt = conn.prepareStatement(query);
+        pstmt.setInt(1,reservation.getAccommodationId());
+        pstmt.setInt(2, reservation.getRoomNumber());
+        pstmt.setString(3,reservation.getCheckInDate());
+        pstmt.setString(3,reservation.getCheckInDate());
+        pstmt.setString(4,reservation.getCheckInDate());
+        pstmt.setString(5,reservation.getCheckInDate());
+        pstmt.setString(6,reservation.getCheckOutDate());
+        res = pstmt.executeQuery();
+        res.next();
+
+        return res.getInt(1)!=0;
     }
+
+
 }

@@ -7,6 +7,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
     <display-name>OOSE</display-name>
     <welcome-file-list>
+        <welcome-file>view/default/login.jsp</welcome-file>
         <welcome-file>view/default/main.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
@@ -33,7 +34,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
         <servlet-name>registerReservation</servlet-name>
         <url-pattern>/reservation/registerReservation</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>deleteReservation</servlet-name>
         <servlet-class>OOSE.controller.reservation.DeleteReservation</servlet-class>
@@ -42,7 +43,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
         <servlet-name>deleteReservation</servlet-name>
         <url-pattern>/reservation/deleteReservation</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>modifyReservation</servlet-name>
         <servlet-class>OOSE.controller.reservation.ModifyReservation</servlet-class>
