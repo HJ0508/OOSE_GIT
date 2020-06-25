@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/common.css"/>
     <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/browseProduct.css"/>
     <title>사업장 관리</title>
     <script language="javascript">
@@ -25,7 +26,7 @@
             window.open(url + "workplaceRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
         function modify() {
-            var check = document.getElementsByName("radio");
+            var check = document.getElementsByName("workplaceId");
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
                     modi = "${pageContext.request.contextPath}/view/workplace/workplaceModify.jsp?workplaceId=" + encodeURI(check[i].value);
@@ -34,7 +35,7 @@
             window.open(modi, "modify", "width=500, height=400, left=200, top=100, resizable = no");
         }
         function deleteW() {
-            var check = document.getElementsByName("radio");
+            var check = document.getElementsByName("workplaceId");
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
                     deleteU = "${pageContext.request.contextPath}/view/workplace/workplaceDelete.jsp?workplaceId=" + encodeURI(check[i].value);

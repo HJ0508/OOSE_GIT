@@ -167,7 +167,7 @@ public class WorkplaceDBManager {
 
     // 승환 6/24 삭제 다시만듬
     public boolean deleteWorkplace(String s) {
-        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+        String query = "DELETE FROM oose.workplace WHERE workplaceId=?";
         try {
             dbConnector.pstmt = dbConnector.conn.prepareStatement(query);
             dbConnector.pstmt.setString(1, s);

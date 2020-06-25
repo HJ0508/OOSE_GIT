@@ -22,7 +22,7 @@
 <div class="content-container">
     <form action="/modifyWorkplaceManagement" method="POST">
         <%
-            Integer check = Integer.parseInt(request.getParameter("workplaceId"));
+            String check = request.getParameter("workplaceId");
             if(check != null) {
                 pageContext.setAttribute("check", check);
         %>
