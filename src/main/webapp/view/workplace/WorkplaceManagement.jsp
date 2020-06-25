@@ -73,14 +73,12 @@
 <!-- 절  취  선 -->
 
 <div class="sub-body">
-<%--    <div>--%>
-<%--        사업장 조회--%>
-<%--    </div>--%>
     <div class="side-menu">
         <ul>
             <li><a href="#">사업장 관리</a></li>
         </ul>
     </div>
+
     <form>
         <div class="table">
             <table border="1">
@@ -113,6 +111,7 @@
         <input type="button" value="삭제" onclick="deleteW();"/>
         </div>
     </form>
+
     <form action="/browseWorkplaceManagement" method="POST">
         <div class = "button-frame">
         <input type="submit" value="조회">
