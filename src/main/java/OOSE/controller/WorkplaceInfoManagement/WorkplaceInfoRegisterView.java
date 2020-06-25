@@ -56,20 +56,23 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
 
 
         String[] isVisible = new String[11];
-        isVisible = setIsVisible(req, isVisible);
+        isVisible = setIsVisible(req,resp, isVisible);
+        if(isVisible != null) {
+            req.setAttribute("isVisible", isVisible);
+            System.out.println(workplace.getName());
+            req.setAttribute("content", workplace);
 
-
-
-        req.setAttribute("isVisible", isVisible);
-        System.out.println(workplace.getName());
-        req.setAttribute("content", workplace);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workPlaceInfoRegister.jsp");
-        dispatcher.forward(req, resp);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view/workPlaceInfo/workPlaceInfoRegister.jsp");
+            dispatcher.forward(req, resp);
+        }
+        else{
+            htmlPrint(resp,"등록할 항목이 없습니다.");
+        }
     }
 
-    public String[] setIsVisible(HttpServletRequest req, String[] isVisible){
+    public String[] setIsVisible(HttpServletRequest req,HttpServletResponse resp, String[] isVisible){
         String[] checkedList = req.getParameterValues("workplaceInfo");
+        int count=0;
         for(int i = 0; i<11; i++){ isVisible[i] = "style=display:none"; }
 
 
@@ -79,63 +82,78 @@ public class WorkplaceInfoRegisterView  extends HttpServlet {
                 case "workplaceId":
                     if(req.getParameter("workplaceId").equals("") || req.getParameter("workplaceId")==null){
                         isVisible[0] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "workplaceName":
                     if(req.getParameter("workplaceName").equals("") || req.getParameter("workplaceName")==null){
                         isVisible[1] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "manager":
                     if(req.getParameter("manager").equals("") || req.getParameter("manager")==null){
                         isVisible[2] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "address":
                     if(req.getParameter("address").equals("") || req.getParameter("address")==null){
                         isVisible[3] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "phoneNumber":
                     if(req.getParameter("phoneNumber").equals("") || req.getParameter("phoneNumber")==null){
                         isVisible[4] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "workplaceStatus":
-                    if(req.getParameter("workplaceStatus").equals("") || req.getParameter("workspaceStatus")==null){
+                    if(req.getParameter("workplaceStatus").equals("") || req.getParameter("workplaceStatus")==null){
                         isVisible[5] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "fee":
                     if(req.getParameter("fee").equals("") || req.getParameter("fee").equals("0") || req.getParameter("fee")==null){
                         isVisible[6] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "openingTime":
                     if(req.getParameter("openingTime").equals("") || req.getParameter("openingTime")==null){
                         isVisible[7] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "closingTime":
                     if(req.getParameter("closingTime").equals("") || req.getParameter("closingTime")==null){
                         isVisible[8] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "squareMeasure":
                     if(req.getParameter("squareMeasure").equals("")|| req.getParameter("squareMeasure").equals("0") || req.getParameter("squareMeasure")==null){
                         isVisible[9] = "style=display:block";
+                        count++;
                     }
                     break;
                 case "otherInfo":
                     if(req.getParameter("otherInfo").equals("") || req.getParameter("otherInfo")==null){
                         isVisible[10] = "style=display:block";
+                        count++;
                     }
                     break;
 
             }
         }
 
-        return isVisible;
+        if(count <= 0){
+            return null; //선택된 것이 없을때
+        }else {
+            return isVisible;
+        }
     }
     private void isChecked(HttpServletRequest req, HttpServletResponse resp){
         if(req.getParameterValues("workplaceInfo") == null){ //체크된 것이 없다면

@@ -71,6 +71,7 @@
     <input type="button" value="수정" onclick = modifyOpen()>
     <input type="button" value="삭제" onclick = deleteOpen()>
     <input type="button" value="조회" onclick = browseOpen()>
+    <input type="submit" value="취소" onclick = "cancel()">
 </form>
 
 </body>
@@ -119,6 +120,10 @@
         formDatas.target = "browsePop";
         formDatas.action = "/workplace/browseWorkplaceInfo";
         formDatas.submit();
+    }
+
+    function cancel(){
+        window.close();
     }
 
 </script>
