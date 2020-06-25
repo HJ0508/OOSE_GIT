@@ -45,7 +45,7 @@
     </script>
 </head>
 <body>
-<%--<%@include file="../default/header.jsp" %>--%>
+<%@include file="../default/header.jsp" %>
 
 <div class="sidebar">
     <div>

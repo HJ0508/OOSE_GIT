@@ -8,11 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/deleteFacilityManagement")
 public class DeleteFacilityController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
+    FacilityUtil util = new FacilityUtil();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,19 +23,26 @@ public class DeleteFacilityController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            req.setCharacterEncoding("UTF-8");
-            String name = req.getParameter("name");
+        req.setCharacterEncoding("UTF-8");
+        String name = req.getParameter("name");
+        if (checkAuthority(req)) {
             boolean check = dbManager.deleteFacilityInfo(name);
-            if(check) {
-                req.setAttribute("check", check);
-                resp.sendRedirect("view/facility/FacilityDelete.jsp");
-            }else {//실패
-                req.setAttribute("check", check);
-                resp.sendRedirect("view/facility/FacilityDelete.jsp");
-            }
-        } catch(Exception e) {
+            if (check)
+                util.closeOnException(resp, "삭제 완료");
+            else
+                util.htmlPrint(resp, "삭제 실패");
+        } else {
+            util.closeOnException(resp, "권한 없음");
+        }
+    }
 
+    private boolean checkAuthority(HttpServletRequest req) {
+        HttpSession httpSession = req.getSession();
+        String user = httpSession.getAttribute("id").toString();
+        if (dbManager.checkAuthority(user, "시설삭제")) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
