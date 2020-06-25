@@ -36,7 +36,7 @@
                             <a href="${pageContext.request.contextPath}/authority">권한</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/view/workplace/workplaceBrowse.jsp">사업장</a>
+                            <a href="${pageContext.request.contextPath}/view/workplace/WorkplaceManagement.jsp">사업장</a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설</a>
