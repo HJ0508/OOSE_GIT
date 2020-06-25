@@ -7,17 +7,18 @@
   Time: 오후 6:34
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
+    <link href="${pageContext.request.contextPath}/css/FacilityManage.css" rel="stylesheet" type="text/css">
     <title>시설관리</title>
     <script language="javascript">
         let modi = "${pageContext.request.contextPath}/view/facility/";
         let url = "${pageContext.request.contextPath}/view/facility/";
         let deleteU = "${pageContext.request.contextPath}/view/facility/";
+
         function register() {
             window.open(url + "FacilityRegister.jsp", "register", "width=500, height=400, left=200, top=100");
         }
@@ -45,25 +46,14 @@
     </script>
 </head>
 <body>
-<%@include file="../default/header.jsp" %>
-
-<div class="sidebar">
-    <div>
-        <ul class="sidebar-content">
-            <li><a href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설관리</a></li>
-            <li><a href="${pageContext.request.contextPath}/view/facility/FacilityInformationManagement.jsp">시설정보관리</a>
-            </li>
-        </ul>
-    </div>
+<%@ include file="../default/header.jsp" %>
+<div class="side-menu">
+    <ul>
+        <li><a class = "alink" href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설관리</a></li>
+        <li><a class = "alink" href="${pageContext.request.contextPath}/view/facility/FacilityInformationManagement.jsp">시설정보관리</a></li>
+    </ul>
 </div>
 <div class="content-container">
-    <div id="content-name">
-        시설 조회
-    </div>
-    <br>
-    <br>
-    <br>
-
     <form>
         <div class="content">
             <table border="1">
@@ -89,17 +79,13 @@
                 %>
             </table>
         </div>
-
-        <input type="button" value="등록" onclick="register();"/>
-        <input type="button" value="수정" onclick="modify();"/>
-        <input type="button" value="삭제" onclick="remove();"/>
+        <input class="btn" type="button" value="등록" onclick="register();"/>
+        <input class="btn" type="button" value="수정" onclick="modify();"/>
+        <input class="btn" type="button" value="삭제" onclick="remove();"/>
     </form>
     <form action="/browseFacilityManagement" method="POST">
-        <input type="submit" value="조회">
+        <input class="btn" type="submit" value="조회">
     </form>
-
-
-
 </div>
 
 </body>

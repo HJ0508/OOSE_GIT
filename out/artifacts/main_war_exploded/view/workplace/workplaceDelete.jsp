@@ -19,6 +19,7 @@
 </head>
 <body>
 <div class="content-name">사업장 삭제</div>
+<br> <p>정말로 삭제하시겠습니까?</p>
 <div class="content-container">
     <form action="/deleteWorkplaceManagement" method="POST">
         <%
@@ -26,14 +27,15 @@
             if(check != null) {
                 pageContext.setAttribute("check", check);
         %>
-        사업장 ID
-        <input type="text" name = "workplaceId" value = ${check}><br>
+        사업장 ID :
+        <input type="text" readonly="readonly" name = "workplaceId" value = ${check}><br>
         <%
             }
         %>
         <input type="submit" value="삭제">
+        <input type="button" value="닫기" onclick="cl()">
     </form>
-    <input type="button" value="닫기" onclick="cl()">
+
 </div>
 </body>
 </html>

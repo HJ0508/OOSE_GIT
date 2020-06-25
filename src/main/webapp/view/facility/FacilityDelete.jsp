@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>시설 삭제</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="${pageContext.request.contextPath}/css/FacilityFunction.css" rel="stylesheet" type="text/css">
     <script language="javascript">
         function cl() {
             window.open("about:blank", "_self").close();
@@ -18,7 +18,6 @@
     </script>
 </head>
 <body>
-<div class="content-name">시설 삭제</div>
 <div class="content-container">
     <form action="/deleteFacilityManagement" method="POST">
         <%
@@ -26,14 +25,17 @@
             if(check != null) {
                 pageContext.setAttribute("check", check);
         %>
+        <div class = "name">
         시설명
         <input type="text" name = "name" value = ${check}><br>
         <%
             }
         %>
-        <input type="submit" value="삭제">
+        </div>
+        <input class = "btn" type="submit" value="삭제">
+        <input class = "btn" type="button" value="닫기" onclick="cl()">
     </form>
-    <input type="button" value="닫기" onclick="cl()">
+
 </div>
 </body>
 </html>

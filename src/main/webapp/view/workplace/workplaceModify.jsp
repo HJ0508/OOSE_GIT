@@ -19,6 +19,7 @@
 </head>
 <body>
 <div class="content-name">사업장 수정</div>
+<br>
 <div class="content-container">
     <form action="/modifyWorkplaceManagement" method="POST">
         <%
@@ -34,8 +35,9 @@
         새 사업장 ID
         <input type="text" name = "newId">
         <input type="submit" value="수정">
+        <input type="button" value="닫기" onclick="cl()">
     </form>
-    <input type="button" value="닫기" onclick="cl()">
+
 </div>
 </body>
 </html>

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<h1><b>사업장 속성 수정</b></h1>
+<h1><b>사업장 속성 등록</b></h1>
 
 
 <%
@@ -92,7 +92,7 @@
 
 
     <input type="submit" value="등록" formaction="/workplace/registerWorkplaceInfo">
-
+    <input type="submit" value="취소" onclick = "cancel()">
     <%--    <input type="submit" value="조회" formaction="/workplace/browseWorkplaceInfo">--%>
 
 </form>
@@ -107,6 +107,9 @@
         window.open(popUrl,"",popOption);
     }
 
+    function cancel(){
+        window.close();
+    }
 
 </script>
 
