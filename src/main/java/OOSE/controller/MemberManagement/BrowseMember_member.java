@@ -21,7 +21,7 @@ public class BrowseMember_member extends HttpServlet
         try
         {
             Member member = new Member();
-            member.setId(req.getParameter("id"));
+            member.setId((String)req.getSession().getAttribute("id"));
             member = dbManager.browseMemberInfo(member);
 
             req.setAttribute("member", member);
