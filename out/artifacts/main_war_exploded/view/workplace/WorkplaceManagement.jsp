@@ -12,9 +12,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/common.css"/>
-    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/browseProduct.css"/>
+    <link href="../../css/workplace.css" rel="stylesheet" type="text/css">
     <title>사업장 관리</title>
+
     <script language="javascript">
         let modi = "${pageContext.request.contextPath}/view/workplace/";
         let url = "${pageContext.request.contextPath}/view/workplace/";
@@ -70,27 +70,24 @@
 <body>
 <%@include file="../default/header.jsp"%>
 
-<%--<div class="sidebar">--%>
-<%--    <div>--%>
-<%--        <ul class="sidebar-content">--%>
-<%--            <li><a href="${pageContext.request.contextPath}/view/workplace/WorkplaceManagement.jsp">사업장관리</a></li>--%>
-<%--            <li><a href="${pageContext.request.contextPath}/view/workPlaceInfo/WorkplaceInfoManagement.jsp">사업장정보관리</a>--%>
-<%--            </li>--%>
-<%--        </ul>--%>
-<%--    </div>--%>
-<%--</div>--%>
+<!-- 절  취  선 -->
 
 <div class="sub-body">
-    <div style="text-decoration-color: brown">
-        사업장 조회
+<%--    <div>--%>
+<%--        사업장 조회--%>
+<%--    </div>--%>
+    <div class="side-menu">
+        <ul>
+            <li><a href="#">사업장 관리</a></li>
+        </ul>
     </div>
     <form>
         <div class="table">
             <table border="1">
                 <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>선택</td>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>선택</th>
                 </tr>
                 <%
                     if (request.getAttribute("workplace") != null) {
@@ -109,13 +106,17 @@
                 %>
             </table>
         </div>
+        <div class = "button-frame">
         <input type="button" value="상세정보" onclick=browseOpen()>
         <input type="button" value="등록" onclick="register();"/>
         <input type="button" value="수정" onclick="modify();"/>
         <input type="button" value="삭제" onclick="deleteW();"/>
+        </div>
     </form>
     <form action="/browseWorkplaceManagement" method="POST">
+        <div class = "button-frame">
         <input type="submit" value="조회">
+        </div>
     </form>
 </div>
 </body>
