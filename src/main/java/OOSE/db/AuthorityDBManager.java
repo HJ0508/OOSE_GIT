@@ -9,15 +9,6 @@ import java.util.Collections;
 public class AuthorityDBManager extends DBConnector
 {
     String query;
-    public boolean registerAuthority(Authority authority) throws SQLException{
-        query = "INSERT INTO `oose`.`authority` (`authorityId`, `authorityName`, `accessRange`) VALUES (?,?,?)";
-        pstmt = conn.prepareStatement(query);
-        pstmt.setInt(1,authority.getId());
-        pstmt.setString(2, authority.getName());
-        pstmt.setString(3, authority.getAccessRange());
-
-        return pstmt.execute();
-    }
     public ArrayList<Authority> browseAuthority()
     {
         try

@@ -3,6 +3,7 @@ package OOSE.db;
 import OOSE.model.Member;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Pattern;
 
 public class MemberDBManager extends DBConnector
@@ -91,15 +92,11 @@ public class MemberDBManager extends DBConnector
     {
         try
         {
-            String query = "delete from oose.member where memberId=?";
+            String query = "call oose.deleteMember(?)";
             pstmt = conn.prepareStatement(query);
             pstmt.setString(1, member.getId());
             int result = pstmt.executeUpdate();
 
-            query = "delete from oose.user where userId=?";     //사용자 테이블에서도 정보 삭제
-            pstmt=conn.prepareStatement(query);
-            pstmt.setString(1, member.getId());
-            pstmt.executeUpdate();
             return true;
         }
         catch(SQLException e)
@@ -191,5 +188,32 @@ public class MemberDBManager extends DBConnector
             return false;
 
         return true;        //위의 형식을 모두 통과하면 true 반환
+    }
+    public int findAuthority(String range)
+    {
+        try
+        {
+            String query = "select authorityId from oose.authority where accessRange like '%" + range + "%'";
+            pstmt = conn.prepareStatement(query);
+            res= pstmt.executeQuery();
+
+            ArrayList<Integer> authorityArray =new ArrayList<Integer>();
+
+            while(res.next())
+            {
+                authorityArray.add(res.getInt("authorityId"));
+            }
+            return maxAuthority(authorityArray);
+        }
+        catch(SQLException e)
+        {
+            e.getStackTrace();
+        }
+        return -1;
+    }
+    public int maxAuthority(ArrayList<Integer> list)
+    {
+        Collections.sort(list);  //정렬
+        return list.get(list.size()-1);   //가장 마지막 값이
     }
 }

@@ -7,39 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1df10d67-b921-41a9-8dba-3c1a572b48d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/DeleteAuthority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/HtmlUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/ModifyAuthority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/RegisterAuthority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AuthorityDBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/authority.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/authority/browseAuthority.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/authority/modifyAuthority.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/authority/registerAuthority.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/default/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/modifyReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/modifyReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationCancelPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationCancelPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/registerReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/main_war_exploded/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/AuthorityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/LoginManagement/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/LoginManagement/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/ReservationDBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/model/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/default/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/default/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/modifyReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/modifyReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationCancelPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationCancelPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/registerReservationPopup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationCancelBrowse.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationNavigationBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/reservation/reservationNavigationBar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/workplace/WorkplaceManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/workplace/WorkplaceManagement.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/DeleteAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement/DeleteAuthority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember_member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/BrowseMember_member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/DeleteMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/DeleteMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/ModifyMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/controller/MemberManagement/RegisterMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/AuthorityDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/AuthorityDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OOSE/db/MemberDBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/browseMemberView_member.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberSideMenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/memberSideMenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/MemberView/modifyMemberView_member.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/MemberView/modifyMemberView_member.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +85,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/OOSE/controller/AuthorityManagement" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/OOSE_GIT-jaehe_0624" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -308,7 +288,7 @@
       <workItem from="1591965008461" duration="2021000" />
       <workItem from="1592167768749" duration="20094000" />
       <workItem from="1592487410559" duration="19185000" />
-      <workItem from="1592999078634" duration="20544000" />
+      <workItem from="1592999078634" duration="21366000" />
     </task>
     <servers />
   </component>
@@ -362,10 +342,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591253100074" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1592999503710">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1593063407991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1592999503710" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1366.120.1366.728@0.0.1920.1040" timestamp="1593063407991" />
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590575683365" />
     <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1593059388243">
       <screen x="0" y="0" width="1920" height="1040" />

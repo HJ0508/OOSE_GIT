@@ -14,7 +14,6 @@ import java.io.PrintWriter;
 public class ModifyMember extends HttpServlet
 {
     private MemberDBManager dbManager=new MemberDBManager();
-    int authority=3;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
     {
@@ -44,14 +43,11 @@ public class ModifyMember extends HttpServlet
         {
             printAlert("서버 오류로 정보수정 실패했습니다",resp);
         }
-        PrintWriter out = resp.getWriter();
-        out.println("<script>");
-        out.println("history.back(-1);");
-        out.println("</script>");
+        resp.sendRedirect("/view/MemberView/browseMemberView.jsp");
     }
     public boolean checkAuthority(int authority)
     {
-        if(authority>this.authority||authority==1)      //회원이거나 관리자일 경우
+        if(authority>=dbManager.findAuthority("회원수정")||authority==1)      //회원이거나 관리자일 경우
             return true;
         return false;       //권한 없음
     }

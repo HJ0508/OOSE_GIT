@@ -56,7 +56,7 @@ public class RegisterMember extends HttpServlet
     }
     public boolean checkAuthority(int authority)
     {
-        if(this.authority>authority)        //권한이 없다면
+        if(dbManager.findAuthority("회원등록")>authority)        //권한이 없다면
             return false;
         return true;
     }

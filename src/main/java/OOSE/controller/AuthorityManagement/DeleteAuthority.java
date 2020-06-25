@@ -22,7 +22,11 @@ public class DeleteAuthority extends HttpServlet
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        dbManager.deleteAuthority(Integer.parseInt(req.getParameter("id")));
+        if(!dbManager.deleteAuthority(Integer.parseInt(req.getParameter("id"))))        //삭제 실패시
+        {
+            printAlert("서버 오류로 삭제에 실패했습니다", resp);
+            return;
+        }
         ArrayList<Authority> list= dbManager.browseAuthority();
         req.setAttribute("authorityList", list);
         req.getRequestDispatcher("/view/authority/browseAuthority.jsp").forward(req,resp);
