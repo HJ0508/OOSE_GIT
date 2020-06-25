@@ -92,15 +92,11 @@ public class MemberDBManager extends DBConnector
     {
         try
         {
-            String query = "delete from oose.member where memberId=?";
+            String query = "call oose.deleteMember(?)";
             pstmt = conn.prepareStatement(query);
             pstmt.setString(1, member.getId());
             int result = pstmt.executeUpdate();
 
-            query = "delete from oose.user where userId=?";     //사용자 테이블에서도 정보 삭제
-            pstmt=conn.prepareStatement(query);
-            pstmt.setString(1, member.getId());
-            pstmt.executeUpdate();
             return true;
         }
         catch(SQLException e)
