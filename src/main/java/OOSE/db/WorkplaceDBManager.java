@@ -146,7 +146,7 @@ public class WorkplaceDBManager extends DBConnector{
     }
 
     public boolean modifyWorkplace(String oldName, String name) {
-        String query = "UPDATE oose.workplace SET workplaceName=? WHERE workplaceName = ?";
+        String query = "UPDATE oose.workplace SET workplaceName=? WHERE workplaceId = ?";
         try {
             pstmt = conn.prepareStatement(query);
             pstmt.setString(1, name);
@@ -163,11 +163,11 @@ public class WorkplaceDBManager extends DBConnector{
         }
     }
 
-    public boolean deleteWorkplace(String s) {
-        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+    public boolean deleteWorkplace(int s) {
+        String query = "DELETE FROM oose.workplace WHERE workplaceId=?";
         try {
             pstmt = conn.prepareStatement(query);
-            pstmt.setString(1, s);
+            pstmt.setInt(1, s);
             int result = pstmt.executeUpdate();
             if (result > 0) {
                 return true;
