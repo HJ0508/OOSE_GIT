@@ -47,7 +47,7 @@ public class ModifyMember extends HttpServlet
     }
     public boolean checkAuthority(int authority)
     {
-        if(authority>dbManager.findAuthority("회원수정")||authority==1)      //회원이거나 관리자일 경우
+        if(authority>=dbManager.findAuthority("회원수정")||authority==1)      //회원이거나 관리자일 경우
             return true;
         return false;       //권한 없음
     }

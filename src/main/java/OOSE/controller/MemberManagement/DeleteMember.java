@@ -34,7 +34,7 @@ public class DeleteMember extends HttpServlet
     }
     public boolean checkAuthority(int authority)
     {
-        if(authority>dbManager.findAuthority("회원삭제")||authority==1)      //회원이거나 관리자일 경우
+        if(authority>=dbManager.findAuthority("회원삭제")||authority==1)      //회원이거나 관리자일 경우
             return true;
         return false;       //권한 없음
     }
