@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/FacilityManagement.css"/>
+    <link rel="stylesheet" type="text/html" href="${pageContext.request.contextPath}/css/browseProduct.css"/>
     <title>사업장 관리</title>
     <script language="javascript">
         let modi = "${pageContext.request.contextPath}/view/workplace/";
@@ -67,26 +67,24 @@
     </script>
 </head>
 <body>
-<%@include file="../default/header.jsp" %>
+<%@include file="../default/header.jsp"%>
 
-<div class="sidebar">
-    <div>
-        <ul class="sidebar-content">
-            <li><a href="${pageContext.request.contextPath}/view/workplace/WorkplaceManagement.jsp">사업장관리</a></li>
-            <li><a href="${pageContext.request.contextPath}/view/workPlaceInfo/WorkplaceInfoManagement.jsp">사업장정보관리</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<div class="content-container">
-    <div id="content-name">
+<%--<div class="sidebar">--%>
+<%--    <div>--%>
+<%--        <ul class="sidebar-content">--%>
+<%--            <li><a href="${pageContext.request.contextPath}/view/workplace/WorkplaceManagement.jsp">사업장관리</a></li>--%>
+<%--            <li><a href="${pageContext.request.contextPath}/view/workPlaceInfo/WorkplaceInfoManagement.jsp">사업장정보관리</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
+<%--    </div>--%>
+<%--</div>--%>
+
+<div class="sub-body">
+    <div style="text-decoration-color: brown">
         사업장 조회
     </div>
-    <br>
-    <br>
-    <br>
     <form>
-        <div class="content">
+        <div class="table">
             <table border="1">
                 <tr>
                     <td>ID</td>
