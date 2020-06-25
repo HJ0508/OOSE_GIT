@@ -102,7 +102,6 @@ public class WorkplaceDBManager extends DBConnector{
         }
         return result; //결과 반영된 행이 0이면 false, 하나이상 있으면 true
     }
-
     //승환 - 수정 6/21
     public ArrayList<Workplace> browseWorkplace(){
         String query = "SELECT workplaceId,workplaceName FROM oose.workplace";
@@ -145,12 +144,13 @@ public class WorkplaceDBManager extends DBConnector{
         }
     }
 
-    public boolean modifyWorkplace(String oldName, String name) {
-        String query = "UPDATE oose.workplace SET workplaceName=? WHERE workplaceName = ?";
+    // 승환 수정 6/24
+    public boolean modifyWorkplace(String oldId, String newId) {
+        String query = "UPDATE oose.workplace SET workplaceId=? WHERE workplaceId = ?";
         try {
             pstmt = conn.prepareStatement(query);
-            pstmt.setString(1, name);
-            pstmt.setString(2, oldName);
+            pstmt.setString(1, newId);
+            pstmt.setString(2, oldId);
             int result = pstmt.executeUpdate();
             if (result > 0) {
                 return true;
@@ -163,8 +163,9 @@ public class WorkplaceDBManager extends DBConnector{
         }
     }
 
+    // 승환 6/24 삭제 다시만듬
     public boolean deleteWorkplace(String s) {
-        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+        String query = "DELETE FROM oose.workplace WHERE workplaceId=?";
         try {
             pstmt = conn.prepareStatement(query);
             pstmt.setString(1, s);
@@ -179,6 +180,23 @@ public class WorkplaceDBManager extends DBConnector{
             return false;
         }
     }
+
+//    public boolean deleteWorkplace(String s) {
+//        String query = "DELETE FROM oose.workplace WHERE workplaceName=?";
+//        try {
+//            pstmt = conn.prepareStatement(query);
+//            pstmt.setString(1, s);
+//            int result = pstmt.executeUpdate();
+//            if (result > 0) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//            return false;
+//        }
+//    }
 
     //권한체크
     public boolean checkAuthority(String s) {
@@ -212,4 +230,5 @@ public class WorkplaceDBManager extends DBConnector{
         return false;
     }
     //승환 - 추가 끝
+
 }

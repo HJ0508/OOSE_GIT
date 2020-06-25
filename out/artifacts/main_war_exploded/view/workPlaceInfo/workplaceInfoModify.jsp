@@ -92,7 +92,7 @@
 
 
     <input type="submit" value="수정" formaction="/workplace/modifyWorkplaceInfo">
-
+    <input type="submit" value="취소" onclick = "cancel()">
     <%--    <input type="submit" value="조회" formaction="/workplace/browseWorkplaceInfo">--%>
 
 </form>
@@ -105,6 +105,9 @@
         const topPosition = (window.screen.height-400)/2;
         const popOption = "width=500, height=400, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
         window.open(popUrl,"",popOption);
+    }
+    function cancel(){
+        window.close();
     }
 
 

@@ -9,12 +9,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet("/registerFacilityManagement")
 public class RegisterFacilityController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
+    FacilityUtil util = new FacilityUtil();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,20 +25,26 @@ public class RegisterFacilityController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            req.setCharacterEncoding("UTF-8");
-            String name = req.getParameter("name");
+        req.setCharacterEncoding("UTF-8");
+        String name = req.getParameter("name");
+        if (checkAuthority(req)) {
             boolean check = dbManager.registerFacilityInfo(name);
-            if(check) {
-                req.setAttribute("check", check);
-                resp.sendRedirect("view/facility/FacilityRegister.jsp");
-            }else {//실패
-                req.setAttribute("check", check);
-                resp.sendRedirect("view/facility/FacilityRegister.jsp");
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
+            if (check)
+                util.closeOnException(resp, "등록 완료");
+            else
+                util.htmlPrint(resp, "등록 실패");
+        } else {
+            util.closeOnException(resp, "권한 없음");
         }
     }
 
+    private boolean checkAuthority(HttpServletRequest req) {
+        HttpSession httpSession = req.getSession();
+        String user = httpSession.getAttribute("id").toString();
+        if (dbManager.checkAuthority(user, "시설등록")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

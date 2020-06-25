@@ -91,12 +91,20 @@ public class FacilityDBManager {
     }
 
     //변경
-    public boolean checkAutority(String s) {
-        String query = "SELECT autority FROM manager WHERE managerName";
+    public boolean checkAuthority(String s, String str) {
+        String query = "SELECT accessRange FROM oose.authority WHERE authorityId = (SELECT authority FROM oose.manager WHERE managerId = ?)";
         try {
             conn.pstmt = conn.conn.prepareStatement(query);
-            //여기서 return말고 autority의 기준을 알아야 truefalse를 구별할텐데
-            return conn.pstmt.execute();
+            conn.pstmt.setString(1, s);
+            conn.res = conn.pstmt.executeQuery();
+            if (conn.res.next()) {
+                String result = conn.res.getString(1);
+                if(result.contains(str))
+                    return true;
+                else
+                    return false;
+            }
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -121,12 +129,12 @@ public class FacilityDBManager {
         return false;
     }
 
-    public boolean registerFacilityInforInfo(String name, String workspaceId, String facilityState, String fee, String openTime, String closeTime, String manager, String capacity) {
+    public boolean registerFacilityInforInfo(String name, String workPlaceId, String facilityState, String fee, String openTime, String closeTime, String manager, String capacity) {
         try {
             String query = "UPDATE oose.facility SET `facilityName` = ?, `workplaceId` = ?, `facilityState` = ?, `fee` = ?, `openTime` = ?, `closeTime` = ?, `manager` = ?, `capacity` = ? WHERE `facilityName` = ?";
             conn.pstmt = conn.conn.prepareStatement(query);
             conn.pstmt.setString(1, name);
-            conn.pstmt.setString(2, workspaceId);
+            conn.pstmt.setString(2, workPlaceId);
             conn.pstmt.setString(3, facilityState);
             conn.pstmt.setString(4, fee);
             conn.pstmt.setString(5, openTime);

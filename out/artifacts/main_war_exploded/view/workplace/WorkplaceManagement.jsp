@@ -56,9 +56,9 @@
         }
         function browseOpen(){
             var formDatas = window.document.forms[0];
-            const leftPosition = (window.screen.width-1000)/2;
-            const topPosition = (window.screen.height-800)/2;
-            const popOption = "width=1000, height=800, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
+            const leftPosition = (window.screen.width-500)/2;
+            const topPosition = (window.screen.height-500)/2;
+            const popOption = "width=500, height=500, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
             window.open("","browsePop",popOption);
 
             formDatas.target = "browsePop";

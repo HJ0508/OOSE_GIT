@@ -1,3 +1,7 @@
+body {
+    margin: 0 !important;
+}
+
 /* 헤더 */
 #header {
     position: absolute;
@@ -157,7 +161,7 @@ a:link, a:visited, a:hover {
 }
 
 .sub-top{
-    position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
     border-top: 0px;
@@ -177,13 +181,73 @@ a:link, a:visited, a:hover {
     height: inherit;
 }
 
+/* 좌측 메뉴 */
+.side-menu {
+    position:absolute;
+}
+.side-menu ul {
+    list-style:none;
+}
+
+.side-menu ul li {
+    margin-bottom:20px;
+}
+
+.aLink {
+    border:1px solid rgba(52, 152, 219, 0.8);
+    text-decoration: none;
+    background-color: rgba(52,152,219,0.8);
+    font-size:1.5rem;
+    padding:5px;
+    border-radius:5px;
+    color:#ffffff;
+}
+
 /*메인*/
-.content-container>* {
-    display: block;
+.content-container {
+    position:relative;
+    margin-left: 13rem;
+}
+.content {
+    background-color: rgb(230, 230, 230);
+    margin-top : 100px;
+    margin-left : 100px;
+    width : 800px;
+    height : 150px;
+    overflow:auto;
+    text-align: center;
+    display:block;
+}
+
+.content>table {
+    width : 100%;
+    border : 1px solid black;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.content th{
+    background: rgba(52, 152, 219, 0.8);
+    color:white;
+    border : 2px solid black;
+    text-align: center;
+}
+
+.content td{
+    border : 1px solid black;
+    text-align: center;
+}
+
+.btn {
+    border:1px solid rgba(52, 152, 219, 0.8);
+    text-decoration: none;
+    background-color: rgba(52,152,219,0.8);
+    font-size:1.5rem;
+    color:#ffffff;
+    margin-left : 100px;
+    margin-top : 10px;
+    padding-left:1rem;
+    padding-right:1rem;
     position:relative;
 }
 
-.sidebar>* {
-    display:block;
-    position:relative;
-}

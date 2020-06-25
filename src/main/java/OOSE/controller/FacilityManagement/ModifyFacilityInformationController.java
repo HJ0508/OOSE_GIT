@@ -8,11 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/modifyFacilityInformation")
 public class ModifyFacilityInformationController extends HttpServlet {
     FacilityDBManager dbManager = new FacilityDBManager();
+    FacilityUtil util = new FacilityUtil();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
@@ -31,17 +34,25 @@ public class ModifyFacilityInformationController extends HttpServlet {
         String closeTime = req.getParameter("closeTime");
         String manager = req.getParameter("manager");
         String capacity = req.getParameter("capacity");
-        System.out.println(name + workPlaceId + facilityState + fee + openTime + closeTime + manager + capacity);
-        //처음 콤보박스에 값가져오기
-        boolean check = dbManager.modifyFacilityInforInfo(oldName, name, workPlaceId, facilityState, fee, openTime, closeTime, manager, capacity);
-        if(check) {
-            req.setAttribute("check", check);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityInformationModify.jsp");
-            dispatcher.forward(req, resp);
-        }else {//실패
-            req.setAttribute("check", check);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("view/facility/FacilityInformationModify.jsp");
-            dispatcher.forward(req, resp);
+        if (checkAuthority(req)) {
+            //처음 콤보박스에 값가져오기
+            boolean check = dbManager.modifyFacilityInforInfo(oldName, name, workPlaceId, facilityState, fee, openTime, closeTime, manager, capacity);
+            if (check)
+                util.closeOnException(resp, "수정 완료");
+            else
+                util.htmlPrint(resp, "수정 실패");
+        } else {
+            util.closeOnException(resp, "권한 없음");
+        }
+    }
+
+    private boolean checkAuthority(HttpServletRequest req) {
+        HttpSession httpSession = req.getSession();
+        String user = httpSession.getAttribute("id").toString();
+        if (dbManager.checkAuthority(user, "시설정보수정")) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

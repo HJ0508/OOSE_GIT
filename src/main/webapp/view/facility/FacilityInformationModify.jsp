@@ -10,10 +10,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="${pageContext.request.contextPath}/css/FacilityFunction.css" rel="stylesheet" type="text/css">
     <title>시설 정보 수정</title>
 </head>
 <body>
-<div class = "content-name">시설 정보 수정</div>
 <div class = "content-container">
     <form action="/modifyFacilityInformation" method = "POST">
         <%
@@ -37,6 +37,7 @@
                 pageContext.setAttribute("manager", manager);
                 pageContext.setAttribute("capacity", capacity);
         %>
+        <div class = "name">
         기존시설명 <input type="text" name = "oldName" value = ${oldName} readonly><br>
         시설명 <input type="text" name = "name" value = ${name}><br>
         사업장ID <input type="text" name = "workPlaceId" value = ${workPlaceId}><br>
@@ -49,9 +50,10 @@
         <%
             }
         %>
-        <input type="submit" value="수정">
+        </div>
+        <input class="btn" type="submit" value="수정">
+        <input class="btn" type="button" value="취소">
     </form>
-    <input type="button" value="취소">
 </div>
 </body>
 </html>
