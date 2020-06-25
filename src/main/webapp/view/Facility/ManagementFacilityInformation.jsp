@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="OOSE.model.Facility" %><%--
+<%@ page import="OOSE.Model.Facility" %><%--
   Created by IntelliJ IDEA.
   User: tngh1
   Date: 2020-06-01
@@ -25,7 +25,7 @@
                 if (check[i].checked) {
                     radiocheck = i;
                     console.log(check[i].value);
-                    registerUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationRegister.jsp?name=" + check[i].value;
+                    registerUrl = "${pageContext.request.contextPath}/view/facility/RegisterFacilityInformation.jsp?name=" + check[i].value;
                 }
             }
             const leftPosition = (window.screen.width-500)/2;
@@ -41,7 +41,7 @@
                     radiocheck = i;
                 }
             }
-            modifyUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationModify.jsp?name=" + document.getElementsByName("name")[radiocheck].innerHTML +
+            modifyUrl = "${pageContext.request.contextPath}/view/facility/ModifyFacilityInformation.jsp?name=" + document.getElementsByName("name")[radiocheck].innerHTML +
                 "&workPlaceId=" + document.getElementsByName("workPlaceId")[radiocheck].innerHTML + "&facilityState=" + document.getElementsByName("facilityState")[radiocheck].innerHTML +
                 "&fee=" + document.getElementsByName("fee")[radiocheck].innerHTML + "&openTime=" + document.getElementsByName("openTime")[radiocheck].innerHTML +
                 "&closeTime=" + document.getElementsByName("closeTime")[radiocheck].innerHTML +
@@ -59,7 +59,7 @@
                     radiocheck = i;
                 }
             }
-            deleteUrl = "${pageContext.request.contextPath}/view/facility/FacilityInformationDelete.jsp?name=" + document.getElementsByName("name")[radiocheck].innerHTML;
+            deleteUrl = "${pageContext.request.contextPath}/view/facility/DeleteFacilityInformation.jsp?name=" + document.getElementsByName("name")[radiocheck].innerHTML;
             console.log(deleteUrl);
             const leftPosition = (window.screen.width-500)/2;
             const topPosition = (window.screen.height-450)/2;
@@ -70,7 +70,7 @@
 
 </head>
 <body>
-<%@ include file="../default/header.jsp" %>
+<%@ include file="../Default/Header.jsp" %>
 <div class="side-menu">
     <ul>
         <li><a class = "alink" href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설관리</a></li>

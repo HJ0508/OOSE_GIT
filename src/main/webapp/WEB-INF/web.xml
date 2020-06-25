@@ -19,7 +19,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
     <servlet>
         <servlet-name>browseReservation</servlet-name>
-        <servlet-class>OOSE.controller.reservation.BrowseReservation</servlet-class>
+        <servlet-class>OOSE.Controller.Reservation.BrowseReservation</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>browseReservation</servlet-name>
@@ -28,7 +28,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
     <servlet>
         <servlet-name>registerReservation</servlet-name>
-        <servlet-class>OOSE.controller.reservation.RegisterReservation</servlet-class>
+        <servlet-class>OOSE.Controller.Reservation.RegisterReservation</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registerReservation</servlet-name>
@@ -37,7 +37,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
     
     <servlet>
         <servlet-name>deleteReservation</servlet-name>
-        <servlet-class>OOSE.controller.reservation.DeleteReservation</servlet-class>
+        <servlet-class>OOSE.Controller.Reservation.DeleteReservation</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteReservation</servlet-name>
@@ -46,7 +46,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
     
     <servlet>
         <servlet-name>modifyReservation</servlet-name>
-        <servlet-class>OOSE.controller.reservation.ModifyReservation</servlet-class>
+        <servlet-class>OOSE.Controller.Reservation.ModifyReservation</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>modifyReservation</servlet-name>
@@ -55,7 +55,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
     <servlet>
         <servlet-name>registerAuthority</servlet-name>
-        <servlet-class>OOSE.controller.AuthorityManagement.RegisterAuthority</servlet-class>
+        <servlet-class>OOSE.Controller.AuthorityManagement.RegisterAuthority</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registerAuthority</servlet-name>
@@ -64,7 +64,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
     <servlet>
         <servlet-name>modifyAuthority</servlet-name>
-        <servlet-class>OOSE.controller.AuthorityManagement.ModifyAuthority</servlet-class>
+        <servlet-class>OOSE.Controller.AuthorityManagement.ModifyAuthority</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>modifyAuthority</servlet-name>

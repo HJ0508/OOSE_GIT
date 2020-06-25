@@ -1,4 +1,4 @@
-<%@ page import="OOSE.model.*" %>
+<%@ page import="OOSE.Model.*" %>
 <%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,7 +23,7 @@
             const leftPosition = (window.screen.width-500)/2;
             const topPosition = (window.screen.height-450)/2;
             const popOption = "width=500, height=450, top="+topPosition+", left="+leftPosition+", resizable=no, scrollbars=no, status=no, menubar=no, toolbar=no, location=no;";    //팝업창 옵션(optoin)
-            window.open(url + "FacilityRegister.jsp", "register", popOption);
+            window.open(url + "RegisterFacility.jsp", "register", popOption);
         }
 
         function modify() {
@@ -31,7 +31,7 @@
 
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
-                    modi = "${pageContext.request.contextPath}/view/facility/FacilityModify.jsp?name=" + encodeURI(check[i].value);
+                    modi = "${pageContext.request.contextPath}/view/facility/ModifyFacility.jsp?name=" + encodeURI(check[i].value);
                 }
             }
             const leftPosition = (window.screen.width-500)/2;
@@ -44,7 +44,7 @@
             var check = document.getElementsByName("radio");
             for (var i = 0; i < check.length; i++) {
                 if (check[i].checked) {
-                    deleteU = "${pageContext.request.contextPath}/view/facility/FacilityDelete.jsp?name=" + encodeURI(check[i].value);
+                    deleteU = "${pageContext.request.contextPath}/view/facility/DeleteFacility.jsp?name=" + encodeURI(check[i].value);
                 }
             }
             const leftPosition = (window.screen.width-500)/2;
@@ -55,7 +55,7 @@
     </script>
 </head>
 <body>
-<%@ include file="../default/header.jsp" %>
+<%@ include file="../Default/Header.jsp" %>
 <div class="side-menu">
     <ul>
         <li><a class = "alink" href="${pageContext.request.contextPath}/view/facility/FacilityManagement.jsp">시설관리</a></li>
