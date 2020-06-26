@@ -73,7 +73,7 @@
 
 <script>
     function showPurchasePopup() {
-        window.open("/view/ProductPackage/purchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+        window.open("/view/ProductPackage/PurchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
     } <%-- ★상품 구매 시 팝업 추가 --%>
 </script>
 </html>

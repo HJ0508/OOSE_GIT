@@ -92,7 +92,7 @@
     }
 
     function showPurchasePopup(){
-        window.open("/view/ProductPackage/purchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
+        window.open("/view/ProductPackage/PurchaseProduct", "a", "width=500, height=500, left=100, top=50, resizable=no");
     }
 
     <%-- ★등록 수정 삭제 구매 팝업 추가 및 경로 수정 --%>
