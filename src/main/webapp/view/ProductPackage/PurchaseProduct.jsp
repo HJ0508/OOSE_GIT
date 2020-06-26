@@ -20,7 +20,7 @@
 <div class="purchase-head">
     <h2>상품 구입</h2>
 </div>
-<form action="purchaseProduct">
+<form action="PurchaseProduct">
     <div class="purchase-body">
 
         <br><br><br>

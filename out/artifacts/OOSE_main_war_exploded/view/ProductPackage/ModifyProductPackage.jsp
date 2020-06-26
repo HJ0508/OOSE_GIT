@@ -18,7 +18,7 @@
     <h2>상품 수정</h2>
 </div>
 <div class="register-body">
-    <form action="modifyProduct" method="post">
+    <form action="ModifyProduct" method="post">
         <br><br><br>
 
         <label> 상품 명

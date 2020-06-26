@@ -16,7 +16,7 @@
 <div class="delete-head">
     <h2>상품패키지 삭제</h2>
 </div>
-<form action="deleteProduct" onsubmit="showPopup()">
+<form action="DeleteProduct" onsubmit="showPopup()">
     <div class="delete-body">
         <label>
             <select name="name">

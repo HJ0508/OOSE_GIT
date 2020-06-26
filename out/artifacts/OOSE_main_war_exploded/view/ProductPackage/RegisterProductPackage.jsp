@@ -21,7 +21,7 @@
 </div>
 <div class="register-body">
 
-    <form action="registerProduct" method="post">
+    <form action="RegisterProduct" method="post">
         <br><br><br>
         <label> 상품 명 <input name="name" type="text"></label> <br><br>
         <label> 가격 <input name="price" type="text"></label> <br><br>
