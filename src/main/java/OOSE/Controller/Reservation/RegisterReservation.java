@@ -40,10 +40,11 @@ public class RegisterReservation extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             checkAuthority(request);
-            System.out.println(request.getParameter("accommodation"));
+            int price = accommodationInfoDBManager.getRoomPrice(Integer.parseInt(request.getParameter("accommodation")),Integer.parseInt(request.getParameter("roomNumber")));
+
             Reservation reservation = new Reservation(0, Integer.parseInt(request.getParameter("accommodation")),
                     Integer.parseInt(request.getParameter("roomNumber")), request.getParameter("name"), request.getParameter("tel"), request.getParameter("carNumber"),
-                    request.getParameter("checkIn"), request.getParameter("checkOut"), 0, request.getParameter("condition"), Integer.parseInt(request.getParameter("headCount")));
+                    request.getParameter("checkIn"), request.getParameter("checkOut"), price*Integer.parseInt(request.getParameter("headCount")), request.getParameter("condition"), Integer.parseInt(request.getParameter("headCount")));
             if(reservationDBManager.checkDuplicatedInfo(reservation))
                 util.closeOnException(response, "중복된 예약정보 내역이 존재합니다.");
             else {

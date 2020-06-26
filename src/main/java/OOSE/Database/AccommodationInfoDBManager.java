@@ -30,4 +30,16 @@ public class AccommodationInfoDBManager extends DBConnector{
         }
         return result.toArray(new Accommodation[result.size()]);
     }
+
+    public int getRoomPrice(int accommodationId, int roomNumber) throws SQLException {
+        query = "SELECT `roominfo`.`roomPrice` FROM `oose`.`roominfo` where accomodationId = ? and roomNumber = ?";
+        pstmt = conn.prepareStatement(query);
+        pstmt.setInt(1, accommodationId);
+        pstmt.setInt(2, roomNumber);
+
+        res = pstmt.executeQuery();
+        res.next();
+        System.out.println("roomPrice: "+res.getInt(1));
+        return res.getInt(1);
+    }
 }

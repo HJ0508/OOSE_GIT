@@ -54,6 +54,7 @@
             <label>인원</label><input name = "headCount" type="number" placeholder="?명" min="0" value=${reservations.headCount}><br>
             <label>시작일</label><input name = "checkIn" type="date" placeholder="0000-00-00" value="${reservations.checkInDate}"><br>
             <label>종료일</label><input name = "checkOut" type="date" placeholder="0000-00-00" value="${reservations.checkOutDate}"><br>
+            <label>가격</label><input name = "name" type="text" value = ${reservations.totalPrice}><br>
             <br>
             <button class="cancel" type="button" onclick=popupClose()>취소</button>
             <input class="save" type="submit" value="저장">
